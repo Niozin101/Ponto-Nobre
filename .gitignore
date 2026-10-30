@@ -1,0 +1,16 @@
+# Local Netlify folder
+.netlify
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+# pasta gerada para o deploy (cópia do index.html e dos assets)
+publicar/
+
+# configurações locais e fotos antigas substituídas
+.claude/
+assets/produtos/_antigas/

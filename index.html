@@ -1,0 +1,3036 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ponto Nobre | Camisas e Brindes Personalizados</title>
+<meta name="description" content="Camisas, polos, moletons, mochilas, copos Stanley e chaveiros com a logo da sua empresa. Bordado, gravação a laser e impressão 3D. Monte o pedido e receba o orçamento pelo WhatsApp.">
+<meta name="theme-color" content="#04060c">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icone-32.png?v=2">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/icone-48.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icone-512.png?v=2">
+<link rel="apple-touch-icon" href="assets/icone-180.png?v=2">
+<!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook).
+     Os endereços precisam ser completos; se o domínio mudar, troque "https://pontonobre.pages.dev" aqui. -->
+<link rel="canonical" href="https://pontonobre.pages.dev/">
+<meta property="og:url" content="https://pontonobre.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Ponto Nobre">
+<meta property="og:title" content="Ponto Nobre | Camisas e Brindes Personalizados">
+<meta property="og:description" content="Uniformes e brindes com a logo da sua empresa: bordado, gravação a laser e impressão 3D. Orçamento pelo WhatsApp.">
+<meta property="og:image" content="https://pontonobre.pages.dev/assets/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo Ponto Nobre com camisa, moletom, polo e copo personalizados">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ponto Nobre",
+  "description": "Camisas personalizadas, uniformes e brindes com bordado, gravação a laser e impressão 3D.",
+  "url": "https://pontonobre.pages.dev/",
+  "logo": "https://pontonobre.pages.dev/assets/logo-ponto-nobre.png",
+  "telephone": "+55 11 97829-1132",
+  "sameAs": ["https://www.instagram.com/pontonobre_bordados/"]
+}
+</script>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Cinzel:wght@600;700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: vitrine escura em faixas costuradas — herói com pilares, grade de produtos configuráveis, kits prontos, passo a passo e gaveta de orçamento */
+:root {
+  --ink: #050811;
+  --panel: #0b1324;
+  --panel-2: #101a32;
+  --line: #1d2945;
+  --prata: #cfd4dd;
+  --prata-linha: rgba(207, 212, 221, .32);
+  --prata-fundo: rgba(207, 212, 221, .06);
+  --fg: #eef2fb;
+  --muted: #8f9bb8;
+  --blue: #1f6bff;
+  --blue-hi: #5b93ff;
+  --blue-deep: #0b3fb8;
+  --glow: rgba(31, 107, 255, .38);
+  --ok: #2fc477;
+  --wa: #25d366;
+  --silver: linear-gradient(180deg, #ffffff 0%, #c9ccd3 45%, #8d929c 55%, #e4e6ea 100%);
+  --f-brand: "Cinzel", "Trajan Pro", Georgia, serif;
+  --f-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --radius: 14px;
+  --max: 1180px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+img { max-width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  /* exceções: brilho do título e logo sendo bordada são curtos e suaves, então aparecem para todos */
+  .hero h1 .b { animation: brilho-prata 4.5s ease-in-out .6s infinite both !important; }
+  .foto-logo.bordando .costura { animation: costura-some 1.5s ease var(--ja, 0ms) both !important; }
+  .foto-logo.bordando .costura rect { animation: costura-linha .7s ease-out var(--ja, 0ms) both !important; }
+  .foto-logo.bordando img { animation: logo-borda .75s cubic-bezier(.3,.7,.3,1) calc(var(--ja, 0ms) + .55s) both !important; }
+  .chaveiro-carregando .anel { animation: carregando-gira 1.4s linear infinite !important; }   /* sem ele parece travado */
+}
+body {
+  background: var(--ink);
+  color: var(--fg);
+  font: 400 16px/1.6 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60;
+  background: var(--ink);
+}
+.wrap {
+  max-width: var(--max); margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button, .btn, label.btn, .sw, .tam-chip, input[type="number"] { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+/* resposta visível no toque */
+.qty button:active, .it-tam button:active, .tam-chip:active { transform: scale(.92); }
+.qty button, .it-tam button, .tam-chip { transition: transform .08s ease, background-color .12s ease; user-select: none; -webkit-user-select: none; }
+:focus-visible { outline: 2px solid var(--blue-hi); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+.eyebrow {
+  font: 700 12px/1 var(--f-display); letter-spacing: .16em; text-transform: uppercase; color: var(--prata);
+}
+
+/* Costura: a linha pespontada que separa as faixas, como no tecido */
+.seam { height: 0; border: 0; border-top: 2px dashed rgba(255,255,255,.14); margin: 0; position: relative; }
+.seam::before, .seam::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,.05);
+}
+.seam::before { top: -7px; } .seam::after { top: 4px; }
+
+/* Cabeçalho */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: rgba(4, 6, 12, .86); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; gap: 24px; padding-block: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; }
+.brand-mark { width: 62px; height: auto; }
+.brand-name {
+  font: 700 20px/1 var(--f-brand); letter-spacing: .04em;
+  background: var(--silver); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.brand-name span { display: block; margin-top: 4px; font: 600 9.5px/1.2 var(--f-body); letter-spacing: .28em; color: var(--muted); -webkit-text-fill-color: var(--muted); text-transform: uppercase; }
+.hero-logo { display: block; width: 100%; max-width: 440px; height: auto; margin: 0 auto 8px; }
+.hero-side { display: grid; gap: 20px; min-width: 0; }
+
+/* Vitrine rotativa da abertura */
+.vitrine {
+  position: relative; display: block; aspect-ratio: 4 / 3; max-width: 100%; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line); background: #1f3557; box-shadow: 0 24px 60px rgba(0,0,0,.5);
+}
+.vitrine .foto-box {
+  position: absolute; inset: 0;
+  opacity: 0; transform: scale(1.04); transition: opacity .5s ease, transform 2.8s ease;
+}
+.vitrine .foto-box.on { opacity: 1; transform: scale(1); }
+.vitrine-legenda {
+  position: absolute; left: 14px; right: 14px; bottom: 14px; z-index: 1;
+  display: flex; align-items: end; justify-content: space-between; gap: 12px;
+}
+.vitrine-legenda .nome { text-decoration: none; color: var(--fg);
+  background: rgba(4,6,12,.82); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; backdrop-filter: blur(6px);
+}
+.vitrine-legenda b { display: block; font: 700 14px/1.2 var(--f-body); }
+.vitrine-legenda span { color: var(--muted); font-size: 13px; }
+.pontos { display: flex; gap: 6px; padding: 8px; background: rgba(4,6,12,.7); border-radius: 999px; }
+.pontos button { width: 9px; height: 9px; border-radius: 50%; border: 0; padding: 0; background: rgba(255,255,255,.35); }
+.pontos button[aria-current="true"] { background: var(--prata); width: 22px; border-radius: 999px; }
+.nav { display: flex; gap: 22px; }
+.nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 15px; }
+.nav a:hover { color: var(--fg); }
+.cart-btn {
+  display: inline-flex; align-items: center; gap: 8px; border: 0; color: #fff;
+  background: linear-gradient(180deg, #3a7dff, var(--blue)); box-shadow: 0 6px 20px var(--glow);
+  border-radius: 999px; padding: 10px 12px 10px 16px;
+  font: 700 14px/1 var(--f-body);
+}
+.cart-btn:hover { background: linear-gradient(180deg, #4d8bff, #2a74ff); }
+.cart-btn .count { background: #fff; color: var(--blue-deep); }
+.count.pulo { animation: pulo .45s ease; }
+@keyframes pulo { 40% { transform: scale(1.45); } }
+.count {
+  min-width: 22px; height: 22px; border-radius: 999px; background: var(--blue); color: #fff;
+  font: 700 12px/22px var(--f-mono); text-align: center; padding: 0 6px;
+}
+@media (max-width: 760px) { .nav { display: none; } }
+@media (max-width: 420px) {
+  .top .wrap { gap: 10px; }
+  .brand { gap: 6px; min-width: 0; } .brand-name { font-size: 14px; white-space: nowrap; } .brand-name span { display: none; }
+  .brand-mark { width: 36px; } .cart-btn { padding: 9px 8px 9px 11px; gap: 6px; font-size: 12px; letter-spacing: .03em; }
+}
+
+/* Herói */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 38%, rgba(140,160,200,.0) 38%, rgba(140,160,200,.10) 41%, transparent 47%),
+    linear-gradient(115deg, transparent 0 52%, rgba(207,212,221,.05) 54%, transparent 58%),
+    radial-gradient(60% 80% at 10% 0%, rgba(40,70,140,.30), transparent 70%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.018) 0 2px, transparent 2px 6px);
+}
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: center; padding-block: 72px 64px; }
+.hero h1 { font-family: var(--f-brand); font-weight: 700; line-height: 1.04; font-size: clamp(38px, 5.6vw, 70px); letter-spacing: .005em; }
+.hero h1 .b {
+  display: block; color: transparent;
+  /* prata da logo + um brilho que passa uma vez pela frase ao abrir a página */
+  background-image: linear-gradient(105deg, rgba(255,255,255,0) 42%, rgba(255,255,255,.95) 50%, rgba(255,255,255,0) 58%), var(--silver);
+  background-size: 260% 100%, 100% 100%;
+  background-position: 130% 0, 0 0;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text; background-clip: text;
+  animation: brilho-prata 4.5s ease-in-out .6s infinite both;
+}
+/* o brilho passa em ~1,9s e descansa um pouco antes de passar de novo */
+@keyframes brilho-prata { 0% { background-position: 130% 0, 0 0; } 42%, 100% { background-position: -40% 0, 0 0; } }
+.hero .sub { margin: 18px 0 0; font: 600 17px/1.5 var(--f-body); color: #d5dbe8; }
+.cta-nota { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+.hero p.lead { color: var(--muted); max-width: 52ch; margin: 18px 0 30px; font-size: 17px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 10px; padding: 14px 22px;
+  font: 700 15px/1 var(--f-body); letter-spacing: .01em; text-decoration: none; border: 1px solid transparent; cursor: pointer;
+}
+.btn-primary { background: linear-gradient(180deg, #3a7dff, var(--blue)); color: #fff; box-shadow: 0 10px 30px var(--glow); }
+.btn-primary:hover { background: linear-gradient(180deg, #4d8bff, #2a74ff); }
+.btn-ghost { border-color: var(--line); background: rgba(255,255,255,.03); color: var(--fg); }
+.btn-ghost:hover { border-color: var(--prata-linha); }
+.pillars { display: grid; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(10,16,32,.72); }
+.pillar { display: flex; gap: 16px; align-items: center; padding: 20px 22px; }
+.pillar + .pillar { border-top: 1px dashed var(--line); }
+.pillar svg { flex: none; width: 40px; height: 40px; color: var(--prata); }
+.pillar b { display: block; font: 700 16px/1.25 var(--f-body); }
+.pillar span { color: var(--muted); font-size: 14px; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; gap: 32px; padding-block: 48px; } }
+@media (max-width: 480px) {
+  .cta-row .btn { flex: 1 1 100%; }
+  .vitrine-legenda { left: 10px; right: 10px; bottom: 10px; }
+  .vitrine-legenda .nome { padding: 7px 10px; }
+  .vitrine-legenda b { font-size: 12px; }
+  .vitrine-legenda span { font-size: 12px; }
+}
+
+/* Seções */
+section.band .wrap { padding-block: 72px; }
+.head { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: end; justify-content: space-between; margin-bottom: 32px; }
+.head h2 {
+  font-family: var(--f-brand); font-weight: 700; font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin-top: 10px;
+  background: var(--silver); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.head p { color: var(--muted); max-width: 46ch; margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 8px 16px;
+  font-weight: 600; font-size: 14px; color: var(--muted);
+}
+.chip[aria-pressed="true"] { border-color: var(--prata-linha); color: var(--fg); background: var(--prata-fundo); }
+
+/* Cartões de produto */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 20px; }
+.card {
+  display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--panel-2), var(--panel)); overflow: hidden; min-width: 0;
+  transition: border-color .2s, transform .2s;
+}
+.card:hover { border-color: var(--prata-linha); }
+.art {
+  position: relative; aspect-ratio: 16 / 11; max-width: 100%;
+  background: radial-gradient(70% 70% at 50% 45%, rgba(120,145,190,.12), transparent 70%),
+              repeating-linear-gradient(135deg, rgba(255,255,255,.02) 0 2px, transparent 2px 7px), #070b16;
+  border-bottom: 1px dashed var(--line);
+  display: grid; place-items: center;
+}
+.art svg.produto { width: 62%; height: 88%; filter: drop-shadow(0 16px 22px rgba(0,0,0,.55)); }
+.art svg.produto .b, .kit-thumb svg.produto .b { fill: var(--c); stroke: var(--d); stroke-width: 1.6; stroke-linejoin: round; transition: fill .25s; }
+.art svg.produto .k, .kit-thumb svg.produto .k { fill: none; stroke: var(--d); stroke-width: 1.6; stroke-linecap: round; }
+.art svg.produto .h, .kit-thumb svg.produto .h { fill: none; stroke: var(--c); stroke-width: 11; stroke-linecap: round; transition: stroke .25s; }
+.art svg.produto .logo, .kit-thumb svg.produto .logo { fill: var(--l); }
+/* Foto 4:3 com a logo do cliente posicionada por cima, no peito */
+.art { overflow: hidden; }
+.lados {
+  position: absolute; z-index: 2; right: 12px; top: 12px; display: flex; padding: 3px; gap: 2px;
+  border-radius: 999px; background: rgba(4,6,12,.78); border: 1px solid var(--line);
+}
+.lados button {
+  border: 0; background: transparent; color: #c9d3ea; border-radius: 999px; padding: 6px 11px;
+  font: 700 11px/1 var(--f-display); letter-spacing: .1em; text-transform: uppercase;
+}
+.lados button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+.art .foto-box {
+  position: absolute; left: 0; top: 50%; width: 100%; aspect-ratio: 4 / 3; transform: translateY(-50%);
+  transition: transform .3s ease;
+}
+/* Zoom na foto do produto: acompanha o mouse (ou o toque no celular) */
+.art:has(.foto-box) { cursor: zoom-in; }
+.art.zoom .foto-box { transform: translateY(-50%) scale(2.4); }
+.art.zoom { cursor: zoom-out; }
+.art[data-giro] { cursor: grab; touch-action: pan-y; }   /* chaveiro: gira em vez de ampliar */
+.art[data-giro].girando { cursor: grabbing; }
+.lupa {
+  position: absolute; z-index: 1; right: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 6px;
+  font: 600 12px/1 var(--f-body); color: #c9d3ea; padding: 7px 10px; border-radius: 999px;
+  background: rgba(4,6,12,.75); border: 1px solid var(--line); pointer-events: none; transition: opacity .2s;
+}
+.lupa svg { width: 14px; height: 14px; }
+.art.zoom .lupa { opacity: 0; }
+.lupa-toque { display: none; }
+@media (hover: none) { .lupa-mouse { display: none; } .lupa-toque { display: inline; } }
+.foto-box .foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* tela de carregamento do chaveiro 3D: o mesmo fundo azul das fotos, um anel girando e o aviso */
+.chaveiro-carregando {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  background: radial-gradient(75% 75% at 50% 42%, #40608a, #1f3454); color: #c9d3ea; font: 600 13px/1.3 var(--f-body); text-align: center; padding: 12px;
+}
+.chaveiro-carregando .anel {
+  width: 38px; height: 38px; border-radius: 50%; border: 3px solid rgba(255,255,255,.18); border-top-color: #fff;
+  animation: carregando-gira .8s linear infinite;
+}
+@keyframes carregando-gira { to { transform: rotate(360deg); } }
+/* nas miniaturas (orçamento, kits) só o anel, menor */
+.mini .chaveiro-carregando span:not(.anel), .kit-thumb .chaveiro-carregando span:not(.anel) { display: none; }
+.mini .chaveiro-carregando .anel, .kit-thumb .chaveiro-carregando .anel { width: 18px; height: 18px; border-width: 2px; }
+.foto-box .chaveiro-foto { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; }
+.foto-box .foto { transition: opacity .22s ease; }
+.foto-box .foto.trocando { opacity: .25; }
+.foto-box .foto-logo { position: absolute; transform: rotate(var(--giro, 0deg)) scale(var(--esc, 1)); transform-origin: center; transition: transform .15s ease; }
+/* ao ajustar tamanho/giro, a área da logo pisca com a linha de costura para mostrar onde está */
+.foto-logo.realce .costura { opacity: .85; }
+.foto-logo.realce .costura rect { stroke-dashoffset: 0; stroke-dasharray: 3 2; }
+/* filtro #bordado (no fim da página): textura de linha, relevo do ponto e sombra no tecido */
+.foto-logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: url(#bordado); }
+/* Logo sendo bordada: uma linha de costura contorna a área e a logo vai se preenchendo da esquerda para a direita */
+.foto-logo .costura { position: absolute; inset: -6%; width: 112%; height: 112%; overflow: visible; opacity: 0; pointer-events: none; }
+.foto-logo .costura rect {
+  fill: none; stroke: #e4e8ef; stroke-width: 1.4; vector-effect: non-scaling-stroke;
+  stroke-dasharray: 100; stroke-dashoffset: 100;
+}
+.foto-logo.bordando .costura { animation: costura-some 1.5s ease var(--ja, 0ms) both; }
+.foto-logo.bordando .costura rect { animation: costura-linha .7s ease-out var(--ja, 0ms) both; }
+.foto-logo.bordando img { animation: logo-borda .75s cubic-bezier(.3,.7,.3,1) calc(var(--ja, 0ms) + .55s) both; }
+@keyframes costura-linha { to { stroke-dashoffset: 0; } }
+@keyframes costura-some { 0% { opacity: 1; } 60% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes logo-borda {
+  from { clip-path: inset(0 100% 0 0); transform: scale(.96); }
+  to { clip-path: inset(0 0 0 0); transform: none; }
+}
+/* Copo: gravação a laser, a logo sempre sai prateada (uma cor só), qualquer que seja a cor da logo */
+.foto-box.gravado .foto-logo img { filter: brightness(0) invert(.82) drop-shadow(0 1px 0 rgba(0,0,0,.55)); opacity: .92; }
+.tag {
+  position: absolute; z-index: 1; left: 14px; top: 14px; font: 700 11px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase;
+  padding: 7px 10px; border-radius: 999px; background: rgba(4,6,12,.75); border: 1px solid var(--line); color: #c9d3ea;
+}
+.body { display: flex; flex-direction: column; gap: 14px; padding: 20px; flex: 1; }
+.card h3 { font-weight: 800; font-size: 22px; line-height: 1.15; letter-spacing: -.005em; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 14px; margin: 0; }
+.meta dt { color: var(--muted); }
+.meta dd { margin: 0; font-weight: 600; }
+.opt-label { font: 700 11px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: flex; justify-content: space-between; }
+.opt-label em { font-style: normal; color: var(--fg); letter-spacing: .04em; text-transform: none; font: 600 13px/1 var(--f-body); }
+.sizes { display: flex; flex-wrap: wrap; gap: 6px; }
+.size {
+  min-width: 42px; padding: 7px 8px; border-radius: 7px; border: 1.5px solid #3a4766; background: transparent;
+  font: 700 13px/1 var(--f-mono);
+}
+.size[aria-pressed="true"] { border-color: var(--blue); background: var(--blue); color: #fff; }
+.size.single { min-width: 0; padding: 7px 14px; font-family: var(--f-display); letter-spacing: .1em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw {
+  width: 30px; height: 30px; border-radius: 50%; border: 2px solid rgba(255,255,255,.18); background: var(--s); padding: 0;
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,.25);
+}
+.sw[aria-pressed="true"] { outline: 2px solid var(--prata); outline-offset: 3px; border-color: rgba(255,255,255,.6); }
+/* cor da logo do chaveiro: mesmas bolinhas, um pouco menores; "automática" é meio branca, meio preta */
+.swl { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,.18); background: var(--s); padding: 0; box-shadow: inset 0 -4px 8px rgba(0,0,0,.25); }
+.swl[aria-pressed="true"] { outline: 2px solid var(--prata); outline-offset: 3px; border-color: rgba(255,255,255,.6); }
+.swl.auto { background: linear-gradient(135deg, #f2f3f5 0 50%, #17181c 50% 100%); }
+.swl.metal { background: linear-gradient(135deg, color-mix(in srgb, var(--s), #fff 45%), var(--s) 45%, color-mix(in srgb, var(--s), #000 30%)); }
+.buy { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.price { font: 700 12px/1.2 var(--f-display); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.price strong { display: block; font: 900 26px/1.05 var(--f-display); font-stretch: 105%; color: var(--fg); letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
+.price strong small { font-size: 15px; color: var(--muted); font-weight: 700; }
+.actions { display: flex; gap: 8px; align-items: center; }
+.qty { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.qty button { width: 34px; height: 40px; background: var(--panel); border: 0; font-size: 18px; font-weight: 700; }
+@media (hover: hover) { .qty button:hover { background: var(--line); } }
+.qty input {
+  width: 46px; height: 40px; border: 0; background: transparent; text-align: center; color: var(--fg);
+  font: 700 14px var(--f-mono); -moz-appearance: textfield;
+}
+.qty input::-webkit-outer-spin-button, .qty input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.add { padding: 12px 16px; font-size: 13px; }
+.tams-sel { display: grid; gap: 8px; }
+.tams-sel .opt-label { margin-bottom: 0; }
+.tam-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.tam-chip {
+  position: relative; display: grid; gap: 2px; justify-items: center; padding: 7px 0 6px; border-radius: 9px;
+  border: 1.5px solid #3a4766; background: transparent; color: var(--muted);
+}
+.tam-chip span { font: 700 13px/1 var(--f-mono); }
+.tam-chip b { font: 700 11px/1 var(--f-mono); min-height: 11px; color: var(--prata); }
+.tam-chip.tem { color: var(--fg); border-color: var(--prata-linha); background: var(--prata-fundo); }
+.tam-chip[aria-pressed="true"] { border-color: var(--blue); background: var(--blue); color: #fff; }
+.tam-chip[aria-pressed="true"] b { color: #fff; }
+.tam-step { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.tam-step-rot { color: var(--muted); font-size: 14px; }
+.tam-step-rot b { color: var(--fg); font-family: var(--f-mono); }
+.tam-step .qty button { width: 42px; height: 42px; font-size: 20px; }
+.tam-step .qty input { width: 56px; height: 42px; font-size: 16px; }
+.resumo { padding: 0 2px; }
+.resumo h4 { margin: 0 0 8px; font: 700 11px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--prata); }
+.resumo ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.resumo li b { font-size: 14px; }
+.resumo li .cor { color: var(--muted); font-size: 13px; }
+.resumo .tams { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+.resumo .tam { display: inline-flex; gap: 5px; align-items: baseline; padding: 3px 8px; border-radius: 6px; background: var(--panel); border: 1px solid var(--line); font: 700 13px var(--f-mono); }
+.resumo .tam i { font-style: normal; color: var(--muted); font-size: 11px; }
+.resumo .tot { padding: 3px 8px; font: 600 13px var(--f-body); color: var(--prata); }
+.resumo .tot-geral { margin: 0; font-size: 15px; color: var(--muted); }
+.resumo .tot-geral b { color: var(--fg); }
+
+/* Kits prontos */
+.kits { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 20px; }
+.kit {
+  display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+  border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  transition: border-color .2s;
+}
+.kit:hover { border-color: var(--prata-linha); }
+.kit-fotos { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 2px; background: var(--line); border-bottom: 1px dashed var(--line); }
+.kit-thumb { position: relative; aspect-ratio: 1; overflow: hidden; background: #1f3557; display: grid; place-items: center; }
+.kit-thumb .foto-box { position: absolute; top: 0; bottom: 0; left: 50%; aspect-ratio: 4 / 3; transform: translateX(-50%); }
+.kit-thumb svg.produto { width: 80%; height: 80%; }
+.kit-body { display: flex; flex-direction: column; gap: 12px; padding: 18px; flex: 1; }
+.kit h3 { font-weight: 800; font-size: 20px; line-height: 1.15; letter-spacing: -.005em; }
+.kit-para { margin: -4px 0 0; color: var(--muted); font-size: 14px; }
+.kit-itens { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; }
+.kit-itens li { display: flex; justify-content: space-between; gap: 10px; }
+.kit-itens li span:last-child { color: var(--muted); font: 600 13px var(--f-mono); white-space: nowrap; }
+.kit-nota { margin: 0; color: var(--muted); font-size: 12px; }
+.kit .buy { padding-top: 14px; }
+.price strong.sob { font-size: 19px; color: var(--prata); }
+
+/* Como funciona */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+.step { border-top: 1px solid var(--prata-linha); padding-top: 18px; }
+.step::before { counter-increment: s; content: "Etapa " counter(s); font: 700 12px/1 var(--f-mono); color: var(--prata); letter-spacing: .08em; text-transform: uppercase; }
+.step h3 { font-size: 19px; font-weight: 800; margin: 10px 0 8px; }
+.step p { color: var(--muted); margin: 0; font-size: 15px; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+
+/* Faixa CTA + rodapé */
+.cta-band .wrap { padding-block: 56px; }
+.cta-box {
+  display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between;
+  border-radius: 18px; padding: 32px; border: 1px solid var(--prata-linha); background:
+    linear-gradient(115deg, rgba(207,212,221,.06) 0 30%, transparent 30%),
+    linear-gradient(135deg, #16274f, #0b1324);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+.cta-box h2 { font-family: var(--f-brand); font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; line-height: 1.15; }
+.cta-box p { margin: 8px 0 0; color: rgba(255,255,255,.85); }
+.cta-box .btn { background: #fff; color: #0a1b48; }
+footer .wrap { padding-block: 32px 100px; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+
+/* Gaveta de orçamento */
+.scrim { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,.6); }
+.drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 90; width: min(460px, 100%);
+  background: var(--panel); border-left: 1px solid var(--line); display: flex; flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); padding-right: env(safe-area-inset-right, 0px);
+  animation: slide .25s ease-out;
+}
+@keyframes slide { from { transform: translateX(30px); opacity: .6; } }
+.d-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 22px; border-bottom: 1px dashed var(--line); }
+.d-head h2 { font-family: var(--f-brand); font-size: 22px; font-weight: 700; }
+.x { width: 38px; height: 38px; border-radius: 9px; border: 1px solid var(--line); background: transparent; font-size: 20px; }
+.d-body { flex: 1; overflow-y: auto; padding: 18px 22px; display: flex; flex-direction: column; gap: 18px; }
+.empty { text-align: center; color: var(--muted); padding: 40px 10px; border: 1px dashed var(--line); border-radius: var(--radius); }
+.empty b { display: block; color: var(--fg); font-family: var(--f-display); font-size: 17px; margin-bottom: 6px; }
+.items { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.item { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 12px; align-items: start; padding: 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel-2); }
+.item .mini { position: relative; overflow: hidden; width: 52px; height: 52px; border-radius: 9px; background: #070b16; display: grid; place-items: center; }
+/* foto real no orçamento: corte quadrado no centro da foto 4:3 */
+.item .mini .foto-box { position: absolute; top: 0; bottom: 0; left: 50%; aspect-ratio: 4 / 3; transform: translateX(-50%); }
+.item .mini svg { width: 44px; height: 44px; }
+.item .mini svg .b { fill: var(--c); stroke: var(--d); stroke-width: 2.5; }
+.item .mini svg .k { fill: none; stroke: var(--d); stroke-width: 2.5; }
+.item .mini svg .h { fill: none; stroke: var(--c); stroke-width: 11; stroke-linecap: round; }
+.item .mini svg .logo { fill: var(--l); }
+.item b { font: 700 14px/1.25 var(--f-body); display: block; }
+.item span { color: var(--muted); font-size: 13px; }
+.item-info { display: grid; gap: 4px; min-width: 0; }
+.item-topo { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.item-tams { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.it-tam {
+  display: inline-flex; align-items: center; gap: 2px; padding: 2px 3px 2px 8px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--panel);
+}
+.it-tam i { font: 700 11px/1 var(--f-mono); font-style: normal; color: var(--muted); margin-right: 3px; }
+.it-tam b { font: 700 13px/1 var(--f-mono); min-width: 22px; text-align: center; }
+.it-tam button { width: 26px; height: 26px; border: 0; border-radius: 6px; background: transparent; font-size: 15px; font-weight: 700; color: var(--fg); }
+@media (hover: hover) { .it-tam button:hover { background: var(--line); } }
+.rm { background: none; border: 0; color: var(--muted); font-size: 12px; text-decoration: underline; padding: 0; }
+.total { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); }
+.total span { color: var(--muted); font-size: 14px; }
+.total strong { font: 700 18px/1.2 var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.note { color: var(--muted); font-size: 13px; margin: -8px 0 0; }
+.field { display: grid; gap: 6px; }
+.field label { font: 700 11px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.field input, .field textarea {
+  width: 100%; border: 1px solid var(--line); background: var(--ink); color: var(--fg); border-radius: 9px; padding: 11px 12px; font: 15px var(--f-body);
+}
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--blue); }
+.d-foot { padding: 16px 22px 20px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+.d-foot .btn { width: 100%; }
+.d-foot .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+
+/* Aviso */
+@media (hover: none) { .arrastar { display: none; } }
+.toast {
+  position: fixed; left: 50%; transform: translateX(-50%); z-index: 100;
+  bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  background: var(--fg); color: var(--ink); font-weight: 700; padding: 12px 18px; border-radius: 10px; font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5); max-width: calc(100% - 32px);
+}
+/* no celular o aviso vai para o topo, para não cobrir os botões de baixo */
+@media (max-width: 760px) {
+  .toast { bottom: auto; top: calc(78px + env(safe-area-inset-top, 0px)); text-align: center; }
+}
+/* Barra do orçamento: aparece embaixo assim que há algum item, em qualquer tela */
+.barra-orc {
+  position: fixed; z-index: 44; bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  left: 50%; transform: translateX(-50%); width: min(560px, calc(100% - 200px));
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 10px 10px 10px 18px; border-radius: 16px;
+  background: rgba(11,19,36,.95); border: 1px solid var(--prata-linha); backdrop-filter: blur(10px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.55);
+  animation: sobe .3s ease-out;
+}
+@keyframes sobe { from { transform: translate(-50%, 20px); opacity: 0; } }
+.barra-info { min-width: 0; display: grid; gap: 2px; }
+.barra-info b { font: 700 15px/1.2 var(--f-body); }
+.barra-info span { color: var(--muted); font: 600 13px/1.2 var(--f-mono); font-variant-numeric: tabular-nums; }
+.barra-orc .btn { padding: 13px 18px; font-size: 13px; white-space: nowrap; }
+@media (max-width: 760px) { .so-largo { display: none; } }
+body.tem-orc footer .wrap { padding-bottom: 110px; }
+@media (max-width: 760px) {
+  .barra-orc {
+    left: max(12px, env(safe-area-inset-left, 0px)); right: calc(88px + env(safe-area-inset-right, 0px));
+    width: auto; transform: none; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); padding: 8px 8px 8px 14px;
+  }
+  @keyframes sobe { from { transform: translateY(20px); opacity: 0; } }
+  .barra-info b { font-size: 13px; }
+  .barra-info span { font-size: 11px; }
+  .barra-orc .btn { padding: 12px 12px; font-size: 12px; }
+}
+
+/* Botão fixo do WhatsApp */
+.wa-float {
+  position: fixed; z-index: 45; right: calc(18px + env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--wa); color: #fff; box-shadow: 0 10px 28px rgba(0,0,0,.45), 0 0 0 4px rgba(37,211,102,.18);
+  transition: transform .2s;
+}
+.wa-float:hover { transform: scale(1.07); }
+.wa-float svg { width: 32px; height: 32px; }
+
+/* Envio da logo: um patch bordado com borda pespontada */
+.patch {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center;
+  margin-bottom: 28px; padding: 18px 20px; border-radius: var(--radius);
+  background: var(--prata-fundo); border: 2px dashed var(--prata-linha); outline: 6px solid rgba(207,212,221,.03);
+  transition: background .2s, border-color .2s;
+}
+.patch.drag { background: rgba(207,212,221,.12); border-color: var(--prata); }
+.patch-thumb {
+  width: 72px; height: 72px; border-radius: 12px; display: grid; place-items: center; overflow: hidden;
+  background: repeating-conic-gradient(#1a2440 0 25%, #121a30 0 50%) 0 0 / 14px 14px; border: 1px solid var(--line);
+}
+.patch-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+.patch-thumb svg { width: 30px; height: 30px; color: var(--prata); }
+.patch b { display: block; font: 700 18px/1.25 var(--f-body); }
+.patch p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.patch-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.patch-actions .btn { padding: 12px 16px; font-size: 13px; cursor: pointer; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+input.sr:focus-visible + label { outline: 2px solid var(--blue-hi); outline-offset: 3px; }
+@media (max-width: 640px) { .patch { grid-template-columns: auto 1fr; } .patch-actions { grid-column: 1 / -1; justify-content: stretch; } .patch-actions .btn { flex: 1; } }
+.logos { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.logos li {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) auto auto; gap: 12px; align-items: center;
+  padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+}
+.logos .patch-thumb { width: 44px; height: 44px; border-radius: 8px; }
+.logos .nome { font-size: 14px; overflow-wrap: anywhere; }
+.logos .nome small { display: block; color: var(--muted); font-size: 12px; }
+.logos select {
+  background: var(--ink); color: var(--fg); border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 10px; font: 600 14px var(--f-body); cursor: pointer;
+}
+.logos .acoes { display: flex; gap: 6px; }
+.logos .ajustes { grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.aj-resumo { color: var(--muted); font-size: 13px; }
+.mini-btn.ajustar { color: var(--fg); border-color: var(--prata-linha); display: inline-flex; align-items: center; gap: 6px; }
+.mini-btn.ajustar svg { width: 15px; height: 15px; }
+.mini-btn:disabled { opacity: .45; cursor: default; }
+
+/* Editor da logo: arrastar para mover, puxar o canto para o tamanho e a bolinha de cima para girar */
+.editor {
+  width: min(720px, calc(100% - 24px)); max-height: calc(100% - 24px); padding: 0; overflow: auto;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); color: var(--fg);
+}
+.editor::backdrop { background: rgba(0,0,0,.7); }
+.ed-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-bottom: 1px dashed var(--line); }
+.ed-head h2 { margin: 0; font-family: var(--f-brand); font-size: 20px; font-weight: 700; }
+.ed-head p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.ed-pecas { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 16px 0; }
+.ed-pecas button {
+  border: 1px solid var(--line); background: transparent; color: #c9d3ea; border-radius: 999px; padding: 7px 12px;
+  font: 600 13px/1 var(--f-body); cursor: pointer;
+}
+.ed-pecas button[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+.ed-palco {
+  position: relative; margin: 12px 16px 0; aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden;
+  background: #1f3557; touch-action: none; user-select: none; -webkit-user-select: none; cursor: move;
+}
+.ed-palco .foto-box { position: absolute; inset: 0; }
+.ed-palco .foto-logo { pointer-events: none; transition: none; }
+.ed-palco .foto-logo:not(.ativa) { opacity: .4; }
+.moldura { position: absolute; border: 1.5px dashed rgba(255,255,255,.95); border-radius: 4px; box-shadow: 0 0 0 1px rgba(0,0,0,.35); outline: none; }
+.moldura:focus-visible { border-color: var(--blue-hi); border-style: solid; }
+.moldura::before { content: ""; position: absolute; left: 50%; top: -24px; height: 24px; border-left: 1.5px solid rgba(255,255,255,.95); }
+.alca {
+  position: absolute; width: 22px; height: 22px; border-radius: 50%; background: #fff;
+  border: 3px solid var(--blue); box-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+.alca::before { content: ""; position: absolute; inset: -12px; }   /* área de toque maior que a bolinha */
+.alca-tam { right: -11px; bottom: -11px; cursor: nwse-resize; }
+.alca-giro { left: 50%; top: -42px; margin-left: -11px; cursor: grab; }
+.ed-controles { display: grid; gap: 10px; padding: 14px 16px; }
+.ed-dica { margin: 0; color: var(--muted); font-size: 13px; }
+.ed-toque { display: none; }
+@media (hover: none) { .ed-toque { display: inline; } }
+.ed-faixa { display: grid; grid-template-columns: 72px minmax(0, 1fr) 52px; align-items: center; gap: 10px; font-size: 14px; }
+.ed-faixa input { width: 100%; accent-color: var(--blue); }
+.ed-faixa output { font: 700 13px/1 var(--f-mono); text-align: right; }
+.ed-pe { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; padding: 0 16px 16px; }
+.ed-pe .btn:disabled { opacity: .45; cursor: default; }
+@media (max-width: 640px) {
+  .editor { width: 100%; max-width: 100%; max-height: 100%; border-radius: 0; }
+  .ed-palco { margin-inline: 0; border-radius: 0; }
+  .ed-pe .btn { flex: 1; }
+}
+.mini-btn {
+  border: 1px solid var(--line); background: transparent; border-radius: 8px; padding: 8px 10px;
+  font: 600 13px var(--f-body); color: var(--muted); text-decoration: none; cursor: pointer;
+}
+.mini-btn:hover { color: var(--fg); border-color: var(--prata-linha); }
+@media (max-width: 640px) {
+  .logos li { grid-template-columns: 44px minmax(0, 1fr); }
+  .logos select, .logos .acoes, .logos .ajustes { grid-column: 1 / -1; }
+  .logos .acoes .mini-btn { flex: 1; text-align: center; }
+}
+.logo-box { display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px dashed var(--line); border-radius: 12px; font-size: 14px; }
+.logo-box .patch-thumb { width: 48px; height: 48px; flex: none; }
+.logo-box span { color: var(--muted); flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.logo-box label { color: var(--prata); font-weight: 700; cursor: pointer; text-decoration: underline; white-space: nowrap; }
+
+/* Perguntas frequentes */
+.faq { display: grid; gap: 10px; max-width: 860px; }
+.faq details { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+.faq details[open] { border-color: var(--prata-linha); }
+.faq summary {
+  list-style: none; cursor: pointer; padding: 18px 20px; display: flex; justify-content: space-between; gap: 16px; align-items: center;
+  font: 700 17px/1.3 var(--f-display);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; font: 700 22px/1 var(--f-mono); color: var(--prata); transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0; padding: 0 20px 18px; color: var(--muted); max-width: 70ch; }
+.faq details p + p { margin-top: -8px; }
+.faq details ul { margin: -6px 0 0; padding: 0 20px 18px 40px; color: var(--muted); display: grid; gap: 4px; }
+.faq details strong { color: var(--fg); font-weight: 600; }
+.faq-grupo { display: grid; gap: 10px; }
+.faq-grupo + .faq-grupo { margin-top: 18px; }
+.faq-grupo h3 {
+  margin: 0 0 2px; font: 700 12px/1 var(--f-display); letter-spacing: .16em; text-transform: uppercase; color: var(--prata);
+}
+.faq-cta {
+  margin-top: 26px; max-width: 860px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 22px; border-radius: var(--radius); border: 1px dashed var(--prata-linha); background: var(--prata-fundo);
+}
+.faq-cta b { display: block; font: 700 18px/1.25 var(--f-body); }
+.faq-cta span { color: var(--muted); font-size: 14px; }
+.btn-wa { background: var(--wa); color: #06210f; }
+.btn-wa:hover { filter: brightness(1.08); }
+.btn-wa svg { width: 18px; height: 18px; }
+
+/* Rodapé */
+.social { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--fg); font-weight: 600; }
+.social:hover { color: var(--prata); }
+.contatos { display: grid; gap: 10px; justify-items: start; }
+.social svg { width: 20px; height: 20px; }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Ponto Nobre, início">
+      <img class="brand-mark" src="assets/asas.png" alt="" width="62" height="21">
+      <span class="brand-name">Ponto Nobre<span>Camisas personalizadas</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#kits">Kits</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <button class="cart-btn" id="openCart" type="button" aria-label="Abrir orçamento">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="M9 11h6M9 15h4"/></svg>
+      <span class="lbl">Orçamento</span>
+      <span class="count" id="count">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Veja sua logo <span class="b">bordada antes de pedir</span></h1>
+        <p class="sub">Uniformes e brindes personalizados para a sua empresa</p>
+        <p class="lead">Envie a logo da sua empresa e veja na hora como ela fica em camisas, baby looks, polos, suéteres, moletons, mochilas, copos e chaveiros. Depois é só montar o pedido e receber o orçamento pelo WhatsApp.</p>
+        <div class="cta-row">
+          <label class="btn btn-primary" for="logoFile">Enviar minha logo</label>
+          <a class="btn btn-ghost" href="#produtos">Ver catálogo</a>
+        </div>
+        <p class="cta-nota">Qualquer imagem serve: o fundo sai sozinho.</p>
+      </div>
+      <div class="hero-side">
+      <div class="vitrine" id="vitrine" aria-roledescription="carrossel" aria-label="Produtos com bordado Ponto Nobre">
+        <div class="vitrine-legenda">
+          <a class="nome" href="#produtos" id="vitrineNome"><b></b><span></span></a>
+          <div class="pontos" id="pontos"></div>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M20 4l13 5v10c0 9-6 14-13 17C13 33 7 28 7 19V9l13-5z"/><path d="M14 20l4 4 8-9" stroke-linecap="round"/></svg>
+          <div><b>Qualidade premium</b><span>Tecidos e materiais selecionados para durar.</span></div>
+        </div>
+        <div class="pillar">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M30 5c-6 2-14 12-18 22"/><path d="M33 8L12 27"/><path d="M12 27c-2 3-5 4-7 4 1-2 1-5 4-7"/><path d="M8 35c6-1 12-1 26-2" stroke-dasharray="2 3"/></svg>
+          <div><b>Personalização do seu jeito</b><span>Bordado, gravação a laser ou impressão 3D.</span></div>
+        </div>
+        <div class="pillar">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h20v16H3zM23 16h8l5 6v5H23z"/><circle cx="10" cy="29" r="3"/><circle cx="29" cy="29" r="3"/><path d="M0 16h7M2 21h6" stroke-linecap="round"/></svg>
+          <div><b>Atendimento especializado</b><span>Ajudamos a escolher peça, cor e técnica.</span></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="seam">
+
+  <section class="band" id="produtos">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Catálogo</div>
+          <h2>Escolha, personalize, peça</h2>
+        </div>
+        <div class="chips" role="group" aria-label="Filtrar produtos">
+          <button class="chip" type="button" data-f="todos" aria-pressed="true">Todos</button>
+          <button class="chip" type="button" data-f="vestuario" aria-pressed="false">Vestuário</button>
+          <button class="chip" type="button" data-f="acessorios" aria-pressed="false">Acessórios e brindes</button>
+        </div>
+      </div>
+      <div class="patch" id="patch">
+        <div class="patch-thumb" id="patchThumb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg>
+        </div>
+        <div>
+          <b id="patchTitle">Veja os produtos com a sua logo</b>
+          <p id="patchText">Envie a logo da sua empresa em qualquer formato de imagem. O fundo é removido automaticamente e ela aparece em todos os produtos.<span class="arrastar"> Também dá para arrastar o arquivo até aqui.</span></p>
+        </div>
+        <div class="patch-actions">
+          <input class="sr" type="file" id="logoFile" accept="image/*">
+          <label class="btn btn-primary" for="logoFile" id="logoBtn">Enviar minha logo</label>
+        </div>
+        <ul class="logos" id="logosLista" hidden></ul>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <hr class="seam">
+
+  <section class="band" id="kits">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Kits prontos</div>
+          <h2>Combinações que funcionam</h2>
+        </div>
+        <p>Escolha um kit, a cor e quantas pessoas vão receber. Todas as peças entram no orçamento de uma vez, com a sua logo.</p>
+      </div>
+      <div class="kits" id="kitsGrid"></div>
+    </div>
+  </section>
+
+  <hr class="seam">
+
+  <section class="band" id="como-funciona">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Como funciona</div>
+          <h2>Do catálogo à entrega</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Monte o orçamento</h3><p>Escolha produto, tamanho, cor e quantidade e adicione à lista.</p></div>
+        <div class="step"><h3>Envie pelo WhatsApp</h3><p>A lista vai pronta na mensagem. Mande junto o arquivo da sua logo.</p></div>
+        <div class="step"><h3>Aprove a arte</h3><p>Mostramos uma prévia da personalização antes de produzir.</p></div>
+        <div class="step"><h3>Receba seu pedido</h3><p>Produção conferida peça por peça e entrega combinada com você.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="seam">
+
+  <section class="band" id="duvidas">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Perguntas frequentes</div>
+          <h2>Dúvidas comuns</h2>
+        </div>
+        <p>As perguntas que mais recebemos, separadas por assunto.</p>
+      </div>
+      <div class="faq">
+        <div class="faq-grupo">
+          <h3>Pedido e orçamento</h3>
+          <details>
+            <summary>Como faço um pedido pelo site?</summary>
+            <ul>
+              <li>Escolha os produtos ou um kit pronto, com tamanho, cor e quantidade.</li>
+              <li>Se quiser, envie a sua logo para ver a prévia nas peças.</li>
+              <li>Abra o orçamento e toque em <strong>Enviar pelo WhatsApp</strong>. A lista vai pronta na mensagem.</li>
+              <li>Mande o arquivo da logo na conversa e aguarde a nossa resposta com os valores.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Por que os preços não aparecem no site?</summary>
+            <p>Porque o valor muda conforme a quantidade, a técnica, o tamanho da arte e o número de logos em cada peça. Montando o orçamento, você recebe o preço certo para o seu pedido, sem surpresa depois.</p>
+          </details>
+          <details>
+            <summary>Posso misturar tamanhos e cores no mesmo pedido?</summary>
+            <p>Sim. Adicione cada combinação separada no orçamento, por exemplo 10 camisas M pretas e 5 camisas G brancas. Nos kits, os tamanhos ficam como "a definir" e você informa na conversa.</p>
+          </details>
+          <details>
+            <summary>Existe quantidade mínima?</summary>
+            <p>Depende do produto e da técnica. Informe a quantidade no orçamento e respondemos com as condições para o seu pedido.</p>
+          </details>
+        </div>
+
+        <div class="faq-grupo">
+          <h3>Logo e personalização</h3>
+          <details>
+            <summary>Em que formato envio minha logo?</summary>
+            <p>O ideal é <strong>PNG com fundo transparente</strong> ou um arquivo vetorial (<strong>PDF, SVG, AI ou CDR</strong>). Um JPG em boa resolução também serve.</p>
+            <p>Para a prévia do site, qualquer imagem funciona: o fundo é removido automaticamente. Para a produção, mande na conversa o arquivo com a melhor qualidade que você tiver.</p>
+          </details>
+          <details>
+            <summary>Posso colocar mais de uma logo na mesma peça?</summary>
+            <p>Sim. No site dá para combinar até 10 logos, escolhendo o lugar de cada uma: peito esquerdo, peito direito, centro do peito, manga direita, manga esquerda ou costas. Se duas ficarem no mesmo lugar, a segunda entra logo abaixo, e você pode ajustar em "Ajustar na peça". Nas roupas, o botão "Costas" mostra a prévia das costas; na mochila e no copo, a logo das costas vai só na lista do pedido.</p>
+          </details>
+          <details>
+            <summary>Quais técnicas vocês usam?</summary>
+            <ul>
+              <li><strong>Bordado:</strong> feito com linha, em relevo e muito durável. Ideal para logos pequenas e médias no peito e na manga.</li>
+              <li><strong>Gravação a laser:</strong> marca o próprio inox do copo, em um tom só, e não sai com o uso.</li>
+              <li><strong>Impressão 3D:</strong> a logo vira uma peça em relevo, usada nos chaveiros.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Qual técnica serve para cada produto?</summary>
+            <ul>
+              <li><strong>Camisa, baby look, polo, suéteres, moletom e mochila:</strong> bordado.</li>
+              <li><strong>Copo Stanley:</strong> gravação a laser.</li>
+              <li><strong>Chaveiro:</strong> impressão 3D.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>A prévia do site mostra exatamente como vai ficar?</summary>
+            <p>A prévia serve para você ter uma boa ideia de posição, tamanho e cor. Antes de produzir, enviamos a arte final, ajustada para a técnica escolhida, e só começamos depois da sua aprovação.</p>
+          </details>
+        </div>
+
+        <div class="faq-grupo">
+          <h3>Produtos, produção e entrega</h3>
+          <details>
+            <summary>Quais tamanhos e cores vocês têm?</summary>
+            <p>Camisa, polo, suéteres e moletom vão do <strong>PP ao G3</strong>, e a baby look do <strong>PP ao GG</strong>. Mochila e chaveiro têm tamanho único, e o copo Stanley tem 473 ml. As cores disponíveis aparecem em cada produto do catálogo. O copo é feito só na cor preta.</p>
+          </details>
+          <details>
+            <summary>Qual o prazo de produção?</summary>
+            <p>O prazo varia conforme a quantidade e a técnica. Ele é informado junto com o orçamento, antes de você fechar o pedido.</p>
+          </details>
+          <details>
+            <summary>Como funcionam o pagamento e a entrega?</summary>
+            <p>As formas de pagamento e a entrega são combinadas no atendimento pelo WhatsApp, de acordo com o pedido e a sua cidade.</p>
+          </details>
+        </div>
+      </div>
+      <div class="faq-cta">
+        <div><b>Ainda ficou com dúvida?</b><span>Fale direto com a gente. Ajudamos a escolher peça, cor e técnica.</span></div>
+        <a class="btn btn-wa" id="faqWa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+          Chamar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-box">
+        <div>
+          <h2>Sua marca em cada detalhe</h2>
+          <p>Uniformes para a equipe, kits para clientes e brindes para eventos.</p>
+        </div>
+        <button class="btn" type="button" id="ctaCart">Abrir meu orçamento</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <hr class="seam">
+  <div class="wrap">
+    <span>© 2026 Ponto Nobre · Camisas Personalizadas</span>
+    <div class="contatos">
+      <a class="social" id="insta" href="#" target="_blank" rel="noopener" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span id="instaNome"></span>
+      </a>
+      <a class="social" id="footWa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div class="barra-orc" id="barraOrc" hidden>
+  <div class="barra-info"><b id="barraQtd">0 itens</b><span id="barraTotal">R$ 0,00</span></div>
+  <button class="btn btn-primary" type="button" id="fab">Ver orçamento</button>
+</div>
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Falar com a Ponto Nobre no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+</a>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Seu orçamento">
+  <div class="d-head">
+    <h2>Seu orçamento</h2>
+    <button class="x" type="button" id="closeCart" aria-label="Fechar">×</button>
+  </div>
+  <div class="d-body">
+    <div class="empty" id="empty"><b>Nenhum item ainda</b>Escolha um produto no catálogo e toque em “Adicionar”.</div>
+    <ul class="items" id="items"></ul>
+    <div class="resumo" id="resumo" hidden></div>
+    <div id="summary" hidden>
+      <div class="total" id="linhaTotal"><span>Estimativa</span><strong id="total">R$ 0,00</strong></div>
+      <p class="note" id="notaOrc">Valor final confirmado no atendimento, conforme arte e quantidade.</p>
+    </div>
+    <div class="logo-box">
+      <div class="patch-thumb" id="drawerThumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg></div>
+      <span id="drawerLogo">Nenhuma logo escolhida.</span>
+      <label for="logoFile">Escolher</label>
+    </div>
+    <form id="form" class="field-group" style="display:grid;gap:14px">
+      <div class="field"><label for="nome">Seu nome</label><input id="nome" autocomplete="name" placeholder="Ex.: Ana Souza"></div>
+      <div class="field"><label for="empresa">Empresa</label><input id="empresa" autocomplete="organization" placeholder="Ex.: Café Aurora"></div>
+      <div class="field"><label for="obs">Observações</label><textarea id="obs" rows="3" placeholder="Posição da logo, prazo desejado, cidade de entrega…"></textarea></div>
+    </form>
+  </div>
+  <div class="d-foot">
+    <a class="btn btn-primary" id="wa" href="#" target="_blank" rel="noopener" aria-disabled="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+      Enviar pelo WhatsApp
+    </a>
+    <button class="btn btn-ghost" type="button" id="copy">Copiar mensagem</button>
+  </div>
+</aside>
+
+<dialog class="editor" id="editor" aria-labelledby="edTitulo">
+  <div class="ed-head">
+    <div><h2 id="edTitulo">Ajustar logo</h2><p id="edLugar"></p></div>
+    <button class="x" type="button" data-fechar aria-label="Fechar">×</button>
+  </div>
+  <div class="ed-pecas" id="edPecas" role="group" aria-label="Ver na peça"></div>
+  <div class="ed-palco" id="edPalco">
+    <div class="foto-box"><img class="foto" alt=""></div>
+    <div class="moldura" id="moldura" tabindex="0" role="group" aria-label="Logo: arraste ou use as setas do teclado para mover">
+      <span class="alca alca-giro" title="Girar"></span><span class="alca alca-tam" title="Tamanho"></span>
+    </div>
+  </div>
+  <div class="ed-controles">
+    <p class="ed-dica">Arraste para mover. Puxe a bolinha do canto para mudar o tamanho e a de cima para girar.<span class="ed-toque"> Com dois dedos você aumenta e gira de uma vez.</span> Muda só a peça escolhida acima; as outras continuam como estão.</p>
+    <label class="ed-faixa"><span>Tamanho</span><input type="range" id="edEsc" min="40" max="200" step="1"><output id="edEscVal"></output></label>
+    <label class="ed-faixa"><span>Girar</span><input type="range" id="edGiro" min="-180" max="180" step="1"><output id="edGiroVal"></output></label>
+  </div>
+  <div class="ed-pe">
+    <button class="btn btn-ghost" type="button" id="edRestaurar">Restaurar</button>
+    <button class="btn btn-ghost" type="button" id="edTodas">Usar em todas</button>
+    <button class="btn btn-primary" type="button" data-fechar>Pronto</button>
+  </div>
+</dialog>
+
+<!-- Logo do cliente com cara de bordado: fios (ruído esticado na horizontal), relevo do ponto com luz de cima e sombra no tecido -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="bordado" x="-10%" y="-10%" width="120%" height="135%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.75 0.1" numOctaves="2" seed="4" result="ruido"/>
+    <feColorMatrix in="ruido" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="fios"/>
+    <feComposite in="SourceGraphic" in2="fios" operator="arithmetic" k1="0.45" k2="0.8" result="tecido"/>
+    <feGaussianBlur in="SourceAlpha" stdDeviation="0.8" result="altura"/>
+    <feDiffuseLighting in="altura" surfaceScale="1.7" diffuseConstant="1" lighting-color="#fff" result="luz"><feDistantLight azimuth="235" elevation="52"/></feDiffuseLighting>
+    <feComposite in="tecido" in2="luz" operator="arithmetic" k1="1.2" result="relevo"/>
+    <feSpecularLighting in="altura" surfaceScale="1.7" specularConstant=".55" specularExponent="16" lighting-color="#fff" result="brilho"><feDistantLight azimuth="235" elevation="52"/></feSpecularLighting>
+    <feComposite in="brilho" in2="SourceAlpha" operator="in" result="brilhoNaLogo"/>
+    <feComposite in="relevo" in2="brilhoNaLogo" operator="arithmetic" k2="1" k3=".35" result="ponto"/>
+    <feComposite in="ponto" in2="SourceAlpha" operator="in" result="logo"/>
+    <feOffset in="SourceAlpha" dy="1" result="desl"/>
+    <feGaussianBlur in="desl" stdDeviation=".9" result="desf"/>
+    <feFlood flood-color="#000" flood-opacity=".35"/>
+    <feComposite in2="desf" operator="in" result="sombra"/>
+    <feMerge><feMergeNode in="sombra"/><feMergeNode in="logo"/></feMerge>
+  </filter>
+</svg>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+// Troque pelo número com DDI + DDD, só dígitos (ex.: "5511987654321").
+// Vazio: o WhatsApp abre para a pessoa escolher o contato.
+const WHATSAPP_NUMERO = "5511978291132";
+// Usuário do Instagram sem o @ (ex.: "pontonobre"). Vazio: o link não aparece.
+const INSTAGRAM_USUARIO = "pontonobre_bordados";
+// false: o site não mostra valores, só recebe pedidos de orçamento. true: mostra os preços.
+const MOSTRAR_PRECOS = false;
+
+// Logo enviada pelo cliente: só fica no navegador dele, para a prévia.
+let logos = [];   // { url, nome, pos } — cada logo vai num lugar da peça
+const MAX_LOGOS = 10;
+let logoSeq = 0;
+// Tamanho (esc) e giro de cada logo, ajustados pelo cliente na lista de logos
+// Encaixe automático: a logo ocupa sempre o mesmo espaço da posição (mesma área),
+// mas a caixa toma o formato da logo — larga, quadrada ou alta — sem passar de 35% do limite da posição.
+// As fotos são 4:3, então 1% da altura vale 0,75% da largura.
+// Nas mangas com "cw" (largura da manga, em % da foto) a logo vai de um lado a outro da manga.
+function caixaDaLogo(area, proporcao) {
+  if (!proporcao) return area;
+  const K = 0.75, LIMITE = 1.35;
+  if (area.cw) {
+    let w = area.cw, h = w / proporcao / K;
+    const hMax = area.cw * 0.7 / K;                  // logo quadrada ou alta: menor, para não sair da manga
+    if (h > hMax) { w *= hMax / h; h = hMax; }
+    return { x: area.x + area.w / 2 - w / 2, y: area.y + area.h / 2 - h / 2, w, h };
+  }
+  const espaco = area.w * area.h * K;                 // área em "pixels" da foto
+  let w = Math.sqrt(espaco * proporcao);              // largura em % da foto
+  let h = Math.sqrt(espaco / proporcao) / K;          // altura em % da foto
+  const corte = Math.min(1, (area.w * LIMITE) / w, (area.h * LIMITE) / h);
+  w *= corte; h *= corte;
+  return { x: area.x + area.w / 2 - w / 2, y: area.y + area.h / 2 - h / 2, w, h };
+}
+
+// Cada logo tem um ajuste por peça: logo.ajustes[id] = { esc, giro, dx, dy }. Peça sem ajuste fica no padrão.
+const PADRAO = { esc: 1, giro: 0, dx: 0, dy: 0 };
+const ajusteDe = (logo, id) => logo.ajustes[id] || PADRAO;
+// Deslocamento (dx, dy) é medido no tamanho da área do lugar, então "Usar em todas" fica igual em cada peça
+function aplicarAjuste(el, aj) {
+  const d = el.dataset;
+  el.style.left = Number(d.x) + aj.dx * Number(d.aw) + "%";
+  el.style.top = Number(d.y) + aj.dy * Number(d.ah) + "%";
+  el.style.setProperty("--esc", aj.esc);
+  el.style.setProperty("--giro", `${Number(d.base || 0) + aj.giro}deg`);
+}
+// O que mudou no ajuste: ["tamanho 120%", "girada 15°", "mais para cima"].
+// Direita/esquerda de quem veste: na foto da frente a direita da foto é o lado esquerdo da pessoa.
+// Na mochila vale o lado de quem olha a foto.
+function ajustePartes(aj, pos, id) {
+  const partes = [];
+  if (aj.esc !== 1) partes.push(`tamanho ${Math.round(aj.esc * 100)}%`);
+  if (aj.giro) partes.push(`girada ${aj.giro}°`);
+  const lados = [];
+  if (Math.abs(aj.dy) >= 0.05) lados.push(aj.dy < 0 ? "para cima" : "para baixo");
+  if (Math.abs(aj.dx) >= 0.05) lados.push(id === "mochila" ? (aj.dx > 0 ? "para a direita" : "para a esquerda")
+    : (aj.dx > 0) === (pos === "costas") ? "para a direita de quem veste" : "para a esquerda de quem veste");
+  if (lados.length) partes.push(`mais ${lados.join(" e ")}`);
+  return partes;
+}
+// Peças em que a logo foi ajustada, com o que mudou: [["Polo Piquet", ["tamanho 120%"]], …]
+const pecasAjustadas = l => Object.entries(l.ajustes)
+  .map(([id, aj]) => [prod(id).nome, ajustePartes(aj, l.pos, id)]).filter(([, partes]) => partes.length);
+const esc = t => String(t).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+const C = {
+  Branco: "#eef0f3", Preto: "#232427", Cinza: "#8a8d93", Azul: "#1a2752", AzulClaro: "#1a2752",
+  Marinho: "#1a2752", Vermelho: "#d0202a", Verde: "#0f7a3d", Rosa: "#ee8cc1", Bege: "#e5d4b6"
+};
+const cor = (n, hex) => [n, hex || C[n]];
+const ROUPA = ["PP", "P", "M", "G", "GG", "G3"];
+
+const PRODUTOS = [
+  { id: "camisa", cat: "vestuario", nome: "Camisa Gola Careca", shape: "tee", mat: "Algodão / Poliéster", pers: "Bordado",
+    tam: ROUPA, cores: ["Branco","Preto","Cinza","Azul","Vermelho","Verde"].map(n => cor(n)), min: 55.99, max: 62.70 },
+  { id: "babylook", cat: "vestuario", nome: "Baby Look", shape: "tee", mat: "Algodão / Poliéster", pers: "Bordado",
+    tam: ["PP", "P", "M", "G", "GG"], cores: ["Branco","Preto","Cinza","Azul","Vermelho","Verde","Rosa"].map(n => cor(n)), min: 55.99, max: 62.70 },
+  { id: "polo", cat: "vestuario", nome: "Polo Piquet", shape: "polo", mat: "Piquet Premium", pers: "Bordado",
+    tam: ROUPA, cores: ["Branco","Preto","Cinza","Azul","Vermelho","Verde"].map(n => cor(n)), min: 69.99, max: 75.75 },
+  { id: "sueter", cat: "vestuario", nome: "Suéter", shape: "sweater", mat: "Moletinho", pers: "Bordado",
+    tam: ROUPA, cores: ["Branco","Preto","Cinza","Marinho","Vermelho","Verde","Bege"].map(n => cor(n)), min: 119.99, max: 119.99 },
+  { id: "trico", cat: "vestuario", nome: "Suéter de Tricô", shape: "sweater", mat: "Tricô", pers: "Bordado",
+    tam: ROUPA, cores: ["Branco","Preto","Cinza","Marinho","Vermelho","Verde","Bege"].map(n => cor(n)), min: 119.99, max: 119.99 },
+  { id: "moletom", cat: "vestuario", nome: "Blusa Moletom", shape: "hoodie", mat: "Moletom Flanelado", pers: "Bordado",
+    tam: ROUPA, cores: [cor("Branco"),cor("Preto"),cor("Cinza"),cor("Marinho"),cor("Vermelho"),cor("Verde"),cor("Azul", C.AzulClaro),cor("Rosa"),cor("Bege")], min: 149.99, max: 149.99 },
+  { id: "mochila", cat: "acessorios", nome: "Mochila", shape: "bag", mat: "Poliéster / Nylon", pers: "Bordado",
+    tam: ["Único"], cores: [cor("Preto"), cor("Cinza")], min: 199.99, max: 199.99 },
+  { id: "copo", cat: "acessorios", nome: "Copo Stanley Personalizado", shape: "cup", mat: "Aço Inox (Stanley)", pers: "Gravação a Laser",
+    tam: ["Único · 473 ml"], cores: [cor("Preto")], min: 30, max: 30 },
+  { id: "chaveiro", cat: "acessorios", nome: "Chaveiro Personalizado", shape: "key", mat: "Plástico PLA (Impressão 3D)", pers: "Impressão 3D",
+    tam: ["Único · formato da logo"], cores: [cor("Preto"),cor("Cinza"),cor("Branco"),cor("Azul", C.AzulClaro),cor("Vermelho"),cor("Verde")], min: 10, max: 10 }
+];
+
+const brl = v => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+const faixa = (a, b) => a === b ? brl(a) : brl(a) + " a " + brl(b);
+
+function tons(hex) {
+  const n = parseInt(hex.slice(1), 16);
+  const r = n >> 16 & 255, g = n >> 8 & 255, b = n & 255;
+  const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return lum > 0.55
+    ? { d: "rgba(0,0,0,.32)", l: "#16171b" }
+    : { d: "rgba(255,255,255,.30)", l: "#ffffff" };
+}
+// Fotos reais com a logo Ponto Nobre
+const FOTOS = {
+  camisa: "assets/produtos/camisa.jpg",
+  babylook: "assets/produtos/babylook.jpg",
+  polo: "assets/produtos/polo.jpg",
+  sueter: "assets/produtos/sueter.jpg",
+  moletom: "assets/produtos/moletom.jpg",
+  trico: "assets/produtos/trico.jpg",
+  "camisa-costas": "assets/produtos/camisa-costas.jpg",
+  "babylook-costas": "assets/produtos/babylook-costas.jpg",
+  "polo-costas": "assets/produtos/polo-costas.jpg",
+  "sueter-costas": "assets/produtos/sueter-costas.jpg",
+  "moletom-costas": "assets/produtos/moletom-costas.jpg",
+  "trico-costas": "assets/produtos/trico-costas.jpg",
+  mochila: "assets/produtos/mochila.jpg",
+  copo: "assets/produtos/copo.jpg"
+};
+// Cor da peça na foto original (as demais cores são geradas a partir dela)
+const COR_DA_FOTO = { mochila: "Preto", copo: "Preto", chaveiro: "Preto" };
+const corDaFoto = id => COR_DA_FOTO[id] || "Branco";
+
+// Fotos geradas por ferramentas/gerar_cores.py: a cor da foto original não tem sufixo,
+// "-liso" é a peça sem a logo Ponto Nobre (para receber a logo do cliente)
+// Peças fotografadas sem logo não precisam da versão "-liso"
+const SEM_LOGO = new Set(["camisa-costas", "babylook-costas", "polo-costas", "sueter-costas", "moletom-costas", "trico-costas"]);
+// Produtos que também têm foto das costas: id do produto → id da foto das costas
+const COSTAS = { camisa: "camisa-costas", babylook: "babylook-costas", polo: "polo-costas", sueter: "sueter-costas", moletom: "moletom-costas", trico: "trico-costas" };
+const corBase = id => corDaFoto(id.replace(/-costas$/, ""));
+// Trocou fotos? Aumente a versão para o navegador de quem já visitou não mostrar as antigas
+const VERSAO_FOTOS = 2;
+const fotoNaCor = (id, cor, liso) =>
+  FOTOS[id].replace(".jpg", (liso && !SEM_LOGO.has(id) ? "-liso" : "") + (cor === corBase(id) ? "" : `-${cor.toLowerCase()}`) + ".jpg") + `?v=${VERSAO_FOTOS}`;
+
+// Lugares da logo nas peças de roupa (direito/esquerdo de quem veste)
+const POSICOES = {
+  "peito-esq": "Peito esquerdo",
+  "peito-dir": "Peito direito",
+  "centro": "Centro do peito",
+  "manga-dir": "Manga direita",
+  "manga-esq": "Manga esquerda",
+  "costas": "Costas"
+};
+const ORDEM_POSICOES = ["peito-esq", "manga-dir", "peito-dir", "manga-esq", "centro", "costas"];
+
+// Onde fica cada lugar em cada foto, em % (x, y, largura, altura)
+const LOGO_AREAS = {
+  camisa: {
+    "peito-esq": { x: 53.8, y: 28.6, w: 12.4, h: 9.3 }, "peito-dir": { x: 33.8, y: 28.6, w: 12.4, h: 9.3 },
+    "centro": { x: 39, y: 27, w: 22, h: 16 },
+    "manga-dir": { x: 19, y: 23, w: 7, h: 6, r: 35, cw: 13.5 }, "manga-esq": { x: 73, y: 23, w: 7, h: 6, r: -35, cw: 13.5 }
+  },
+  babylook: {
+    "peito-esq": { x: 53.7, y: 28.2, w: 11.4, h: 10.8 }, "peito-dir": { x: 34.9, y: 28.2, w: 11.4, h: 10.8 },
+    "centro": { x: 38, y: 24, w: 24, h: 16 },
+    "manga-dir": { x: 20.25, y: 23.4, w: 7, h: 6, r: 35, cw: 7.5 }, "manga-esq": { x: 72.75, y: 23.4, w: 7, h: 6, r: -35, cw: 7.5 }
+  },
+  polo: {
+    "peito-esq": { x: 54.8, y: 31.5, w: 12.2, h: 9.9 }, "peito-dir": { x: 33, y: 31.5, w: 12.2, h: 9.9 },
+    "centro": { x: 39, y: 38, w: 22, h: 15 },
+    "manga-dir": { x: 18.8, y: 29, w: 7, h: 6, r: 35, cw: 13 }, "manga-esq": { x: 73, y: 29, w: 7, h: 6, r: -35, cw: 13 }
+  },
+  sueter: {
+    "peito-esq": { x: 53.2, y: 31.5, w: 12.4, h: 9 }, "peito-dir": { x: 34.4, y: 31.5, w: 12.4, h: 9 },
+    "centro": { x: 38, y: 28, w: 24, h: 16 },
+    "manga-dir": { x: 21.75, y: 35.4, w: 6.5, h: 5.5, r: 38, cw: 10 }, "manga-esq": { x: 71.75, y: 35.4, w: 6.5, h: 5.5, r: -38, cw: 10 }
+  },
+  moletom: {
+    "peito-esq": { x: 54, y: 41, w: 10.5, h: 7.8 }, "peito-dir": { x: 35.5, y: 41, w: 10.5, h: 7.8 },
+    "centro": { x: 38, y: 37, w: 24, h: 16 },
+    "manga-dir": { x: 23.4, y: 44.9, w: 6.5, h: 5.5, r: 60, cw: 11 }, "manga-esq": { x: 70.1, y: 44.9, w: 6.5, h: 5.5, r: -60, cw: 11 }
+  },
+  trico: {
+    "peito-esq": { x: 53.6, y: 22.4, w: 10.1, h: 8.2 }, "peito-dir": { x: 36.3, y: 22.4, w: 10.1, h: 8.2 },
+    "centro": { x: 39.9, y: 20.5, w: 20.3, h: 14.7 },
+    "manga-dir": { x: 27.5, y: 27.9, w: 5.5, h: 4.6, r: 10, cw: 7.5 }, "manga-esq": { x: 67, y: 27.9, w: 5.5, h: 4.6, r: -10, cw: 7.5 }
+  },
+  "trico-costas": { "costas": { x: 38, y: 18.7, w: 24, h: 18.4 } },
+  "camisa-costas": { "costas": { x: 38, y: 18, w: 24, h: 18 } },
+  "babylook-costas": { "costas": { x: 38, y: 20, w: 24, h: 17 } },
+  "polo-costas": { "costas": { x: 38, y: 19, w: 24, h: 18 } },
+  "sueter-costas": { "costas": { x: 38, y: 22, w: 24, h: 17 } },
+  "moletom-costas": { "costas": { x: 38, y: 38, w: 24, h: 17 } }
+};
+// Mochila e copo não têm peito nem manga: as logos ocupam os espaços na ordem em que foram enviadas
+const ESPACOS = {
+  mochila: [{ x: 49.5, y: 27.5, w: 20.5, h: 15.5 }, { x: 53, y: 65, w: 14, h: 10 }],   // frente, bolso
+  copo: [{ x: 41, y: 39.5, w: 20, h: 14.5 }]                                          // frente
+};
+
+// Lista de { logo, área } que aparecem na foto deste produto
+function logosNoProduto(id) {
+  if (LOGO_AREAS[id]) return logos.map(l => ({ logo: l, area: LOGO_AREAS[id][l.pos] })).filter(x => x.area);
+  const daFrente = logos.filter(l => l.pos !== "costas");   // logo das costas não vai na mochila nem no copo
+  return (ESPACOS[id] || []).slice(0, daFrente.length).map((area, i) => ({ logo: daFrente[i], area }));
+}
+
+let atualizarVitrine = () => {};
+
+// Produtos com imagem: foto real, ou o chaveiro, que é desenhado aqui com a cor e a logo escolhidas
+const temFoto = id => !!FOTOS[id] || id === "chaveiro";
+
+const misturar = (hex, alvo, t) => {
+  const a = parseInt(hex.slice(1), 16), b = parseInt(alvo.slice(1), 16);
+  const c = [16, 8, 0].map(sh => Math.round(((a >> sh) & 255) * (1 - t) + ((b >> sh) & 255) * t));
+  return "#" + c.map(v => v.toString(16).padStart(2, "0")).join("");
+};
+
+// Chaveiro em impressão 3D: placa com volume e brilho, argola de metal e a logo em relevo, numa cor só
+let chaveiroN = 0;
+function chaveiroSVG(hex, logoUrl, logoHex) {
+  const n = ++chaveiroN;
+  const logoCor = logoHex || hexLogo(corLogoAuto(hex));
+  const lateral = misturar(hex, "#000000", 0.45);
+  return `<svg class="chaveiro-foto" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="cf${n}" cx="50%" cy="42%" r="75%">
+        <stop offset="0" stop-color="#40608a"/><stop offset="1" stop-color="#1f3454"/>
+      </radialGradient>
+      <linearGradient id="cb${n}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fff" stop-opacity=".30"/>
+        <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+        <stop offset="1" stop-color="#000" stop-opacity=".22"/>
+      </linearGradient>
+      <linearGradient id="cm${n}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f4f6f9"/><stop offset=".35" stop-color="#9aa1ab"/>
+        <stop offset=".6" stop-color="#e6e9ee"/><stop offset="1" stop-color="#6f7680"/>
+      </linearGradient>
+      <mask id="cx${n}">
+        <rect x="0" y="0" width="400" height="300" fill="#fff"/>
+        <circle cx="190" cy="110" r="13" fill="#000"/>
+      </mask>
+      <filter id="cs${n}" x="-30%" y="-200%" width="160%" height="500%"><feGaussianBlur stdDeviation="9"/></filter>
+      <filter id="cl${n}" x="-15%" y="-15%" width="130%" height="140%">
+        <feFlood flood-color="${logoCor}" result="tinta"/>
+        <feComposite in="tinta" in2="SourceAlpha" operator="in" result="logo"/>
+        <feOffset in="SourceAlpha" dy="2.2" result="desl"/>
+        <feGaussianBlur in="desl" stdDeviation="1.2" result="desf"/>
+        <feFlood flood-color="#000" flood-opacity=".45"/>
+        <feComposite in2="desf" operator="in" result="sombra"/>
+        <feMerge><feMergeNode in="sombra"/><feMergeNode in="logo"/></feMerge>
+      </filter>
+    </defs>
+    <rect width="400" height="300" fill="url(#cf${n})"/>
+    <ellipse cx="250" cy="266" rx="98" ry="13" fill="#000" opacity=".5" filter="url(#cs${n})"/>
+    <g transform="rotate(-8 240 165)" mask="url(#cx${n})">
+      <rect x="160" y="88" width="170" height="170" rx="32" fill="${lateral}"/>
+      <rect x="160" y="80" width="170" height="170" rx="32" fill="${hex}"/>
+      <rect x="160" y="80" width="170" height="170" rx="32" fill="url(#cb${n})"/>
+      <rect x="161.5" y="81.5" width="167" height="167" rx="31" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+      <circle cx="190" cy="110" r="15" fill="none" stroke="#000" stroke-opacity=".25" stroke-width="3"/>
+      <image href="${logoUrl}" x="184" y="114" width="124" height="118" preserveAspectRatio="xMidYMid meet" filter="url(#cl${n})"/>
+    </g>
+    <circle cx="150" cy="80" r="50" fill="none" stroke="#2a2f37" stroke-width="9" opacity=".35" transform="translate(2 4)"/>
+    <circle cx="150" cy="80" r="50" fill="none" stroke="url(#cm${n})" stroke-width="7"/>
+  </svg>`;
+}
+
+// Cores de filamento para a logo do chaveiro (Dourado e Prata são PLA "seda", com brilho de metal).
+// Sem escolha, a logo é automática: branca em chaveiro escuro e preta em chaveiro claro.
+const CORES_LOGO = [["Branco", "#f2f3f5"], ["Preto", "#17181c"], ["Cinza", "#8a8d93"], ["Vermelho", "#d0202a"], ["Azul", "#1f4fbf"],
+  ["Verde", "#0f7a3d"], ["Amarelo", "#f5c400"], ["Laranja", "#f07a1a"], ["Rosa", "#ee8cc1"], ["Dourado", "#c9a227"], ["Prata", "#c3c7cd"]];
+const LOGO_METAL = new Set(["Dourado", "Prata"]);
+const corLogoAuto = hex => tons(hex).l === "#ffffff" ? "Branco" : "Preto";
+const hexLogo = nome => (CORES_LOGO.find(c => c[0] === nome) || CORES_LOGO[0])[1];
+const hexChaveiro = cor => { const p = PRODUTOS.find(x => x.id === "chaveiro"); return (p.cores.find(c => c[0] === cor) || p.cores[0])[1]; };
+const nomeLogoDe = est => est.corLogo || corLogoAuto(hexChaveiro(est.cor));
+
+// Chaveiro no formato da logo: a placa segue o contorno da logo, com uma borda em volta e a argola no alto.
+// Calculado uma vez por logo numa grade pequena: engorda a logo, fecha os vãos entre as partes e tapa os buracos.
+// Enquanto calcula (ou se a logo não vira uma peça só), aparece a placa quadrada de chaveiroSVG.
+const silhuetas = new Map();   // url da logo → { valor: silhueta | null | undefined (calculando), promessa }
+function silhuetaDe(url) {
+  if (!silhuetas.has(url)) {
+    const reg = { valor: undefined };
+    reg.promessa = calcularSilhueta(url).catch(() => null).then(v => (reg.valor = v));
+    silhuetas.set(url, reg);
+  }
+  return silhuetas.get(url);
+}
+
+// Distância de cada pixel até o pixel marcado mais próximo (duas passadas, vizinhos retos e diagonais)
+function mapaDistancia(alvo, w, h) {
+  const d = new Float32Array(w * h), D = Math.SQRT2;
+  for (let i = 0; i < d.length; i++) d[i] = alvo[i] ? 0 : 1e9;
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const i = y * w + x;
+    let v = d[i];
+    if (x > 0) v = Math.min(v, d[i - 1] + 1);
+    if (y > 0) {
+      v = Math.min(v, d[i - w] + 1);
+      if (x > 0) v = Math.min(v, d[i - w - 1] + D);
+      if (x < w - 1) v = Math.min(v, d[i - w + 1] + D);
+    }
+    d[i] = v;
+  }
+  for (let y = h - 1; y >= 0; y--) for (let x = w - 1; x >= 0; x--) {
+    const i = y * w + x;
+    let v = d[i];
+    if (x < w - 1) v = Math.min(v, d[i + 1] + 1);
+    if (y < h - 1) {
+      v = Math.min(v, d[i + w] + 1);
+      if (x < w - 1) v = Math.min(v, d[i + w + 1] + D);
+      if (x > 0) v = Math.min(v, d[i + w - 1] + D);
+    }
+    d[i] = v;
+  }
+  return d;
+}
+
+// Marca (com o número da peça) cada pedaço ligado de "sim"; devolve quantos pedaços há
+function separarPedacos(sim, w, h, marca) {
+  let n = 0;
+  for (let s = 0; s < sim.length; s++) {
+    if (!sim[s] || marca[s]) continue;
+    n++;
+    const pilha = [s];
+    marca[s] = n;
+    while (pilha.length) {
+      const i = pilha.pop(), x = i % w;
+      for (const j of [x > 0 ? i - 1 : -1, x < w - 1 ? i + 1 : -1, i - w, i + w]) {
+        if (j >= 0 && j < sim.length && sim[j] && !marca[j]) { marca[j] = n; pilha.push(j); }
+      }
+    }
+  }
+  return n;
+}
+
+// Borra (média de caixa) nas duas direções; usado para arredondar o contorno da placa
+function borrar(a, w, h, r) {
+  const t = new Float32Array(a.length), out = new Float32Array(a.length), n = 2 * r + 1;
+  for (let y = 0; y < h; y++) {
+    let s = 0;
+    for (let x = -r; x <= r; x++) s += a[y * w + Math.min(w - 1, Math.max(0, x))];
+    for (let x = 0; x < w; x++) {
+      t[y * w + x] = s / n;
+      s += a[y * w + Math.min(w - 1, x + r + 1)] - a[y * w + Math.max(0, x - r)];
+    }
+  }
+  for (let x = 0; x < w; x++) {
+    let s = 0;
+    for (let y = -r; y <= r; y++) s += t[Math.min(h - 1, Math.max(0, y)) * w + x];
+    for (let y = 0; y < h; y++) {
+      out[y * w + x] = s / n;
+      s += t[Math.min(h - 1, y + r + 1) * w + x] - t[Math.max(0, y - r) * w + x];
+    }
+  }
+  return out;
+}
+const liso = (a, b, v) => { const t = Math.min(1, Math.max(0, (v - a) / (b - a))); return t * t * (3 - 2 * t); };
+
+// Luz de um relevo com bisel de "B" pixels: a borda sobe da base até o topo; luz vem de cima à esquerda.
+// Devolve quanto clarear (luz) e escurecer (sombra) cada pixel em relação ao topo plano.
+function luzDoRelevo(a, w, h, B) {
+  const fora = new Uint8Array(a.length);
+  for (let i = 0; i < a.length; i++) fora[i] = a[i] < 0.5;
+  const din = mapaDistancia(fora, w, h);
+  const alt = new Float32Array(a.length);
+  for (let i = 0; i < a.length; i++) { const t = Math.min(din[i], B) / B; alt[i] = t * (2 - t); }
+  const L = [-0.55, -0.65, 0.75], nL = Math.hypot(...L), plano = L[2] / nL;
+  const luz = new Float32Array(a.length), sombra = new Float32Array(a.length);
+  for (let y = 1; y < h - 1; y++) for (let x = 1; x < w - 1; x++) {
+    const i = y * w + x;
+    const nx = -(alt[i + 1] - alt[i - 1]) / 2 * B * 0.9, ny = -(alt[i + w] - alt[i - w]) / 2 * B * 0.9;
+    const v = (nx * L[0] + ny * L[1] + L[2]) / (Math.hypot(nx, ny, 1) * nL);
+    luz[i] = Math.min(1, Math.max(0, (v - plano) * 1.8)) * a[i];
+    sombra[i] = Math.min(1, Math.max(0, (plano - v) * 1.8)) * a[i];
+  }
+  return { luz, sombra };
+}
+
+async function calcularSilhueta(url) {
+  const bmp = await createImageBitmap(await (await fetch(url)).blob());
+  // grade de 440 px no lado maior: dá para o 3D pegar letras pequenas; U mantém as medidas proporcionais
+  const MAX = 440, U = MAX / 300, k = MAX / Math.max(bmp.width, bmp.height);
+  const lw = Math.max(1, Math.round(bmp.width * k)), lh = Math.max(1, Math.round(bmp.height * k));
+  const BORDA = 11 * U, FECHO = 22 * U, ABA = 28 * U, FURO = 14 * U;   // em pixels da grade
+  const pad = Math.round(BORDA + FECHO + ABA * 2);
+  const w = lw + pad * 2, h = lh + pad * 2, n = w * h;
+  const cv = document.createElement("canvas");
+  cv.width = w; cv.height = h;
+  const ctx = cv.getContext("2d", { willReadFrequently: true });
+  ctx.drawImage(bmp, pad, pad, lw, lh);
+  bmp.close();
+  const px = ctx.getImageData(0, 0, w, h).data;
+  const logoA = new Float32Array(n), logo = new Uint8Array(n);
+  for (let i = 0; i < n; i++) { logoA[i] = px[i * 4 + 3] / 255; logo[i] = logoA[i] > 0.24; }
+
+  // engorda (borda + fecho) e depois emagrece (fecho): a placa contorna a logo e une as partes próximas
+  const d1 = mapaDistancia(logo, w, h);
+  const fora = new Uint8Array(n);
+  for (let i = 0; i < n; i++) fora[i] = d1[i] > BORDA + FECHO;
+  const d2 = mapaDistancia(fora, w, h);
+  const placa = new Uint8Array(n);
+  for (let i = 0; i < n; i++) placa[i] = d2[i] > FECHO;
+
+  // buracos (miolo de letras, vãos fechados) viram placa: só é fora o que chega até a borda
+  const vazio = placa.map(v => 1 - v), regiao = new Int32Array(n);
+  separarPedacos(vazio, w, h, regiao);
+  for (let i = 0; i < n; i++) if (vazio[i] && regiao[i] !== regiao[0]) placa[i] = 1;
+  if (separarPedacos(placa, w, h, new Int32Array(n)) !== 1) return null;   // partes longe demais: não vira peça só
+
+  // aba da argola no canto de cima à esquerda; entra antes de arredondar, para emendar sem "pescoço"
+  let melhor = Infinity, ax = 0, ay = 0;
+  for (let i = 0; i < n; i++) if (placa[i]) {
+    const x = i % w, y = (i - x) / w;
+    if (x + y < melhor) { melhor = x + y; ax = x; ay = y; }
+  }
+  const fx = ax + ABA * 0.3, fy = ay + ABA * 0.3;
+  let alfa = new Float32Array(n);
+  for (let i = 0; i < n; i++) {
+    const x = i % w, y = (i - x) / w;
+    alfa[i] = placa[i] || Math.hypot(x - fx, y - fy) <= ABA ? 1 : 0;
+  }
+  // arredonda o contorno (cantos vivos e degraus somem) e abre o furo
+  alfa = borrar(borrar(alfa, w, h, Math.round(4 * U)), w, h, Math.round(4 * U));
+  for (let i = 0; i < n; i++) {
+    const x = i % w, y = (i - x) / w;
+    alfa[i] = liso(0.38, 0.62, alfa[i]) * Math.min(1, Math.max(0, Math.hypot(x - fx, y - fy) - FURO + 0.5));
+  }
+  const relevoPlaca = luzDoRelevo(alfa, w, h, 7 * U);
+  const la = borrar(logoA, w, h, 1);
+  const relevoLogo = luzDoRelevo(la, w, h, 2.5 * U);
+
+  // recorta só a placa e guarda cada camada como imagem (branca ou preta, com transparência)
+  let x0 = w, y0 = h, x1 = 0, y1 = 0;
+  for (let i = 0; i < n; i++) if (alfa[i] > 0.01) {
+    const x = i % w, y = (i - x) / w;
+    x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y);
+  }
+  x0 = Math.max(0, x0 - 3); y0 = Math.max(0, y0 - 3); x1 = Math.min(w - 1, x1 + 3); y1 = Math.min(h - 1, y1 + 3);
+  const ow = x1 - x0 + 1, oh = y1 - y0 + 1;
+  const camada = (valores, tom) => {
+    const c = document.createElement("canvas");
+    c.width = ow; c.height = oh;
+    const cx = c.getContext("2d"), img = cx.createImageData(ow, oh);
+    for (let y = 0; y < oh; y++) for (let x = 0; x < ow; x++) {
+      const o = (y * ow + x) * 4;
+      img.data[o] = img.data[o + 1] = img.data[o + 2] = tom;
+      img.data[o + 3] = Math.round(valores[(y + y0) * w + x + x0] * 255);
+    }
+    cx.putImageData(img, 0, 0);
+    return c;
+  };
+  const recorte = valores => {
+    const r = new Float32Array(ow * oh);
+    for (let y = 0; y < oh; y++) r.set(valores.subarray((y + y0) * w + x0, (y + y0) * w + x0 + ow), y * ow);
+    return r;
+  };
+  return {
+    w: ow, h: oh, furo: { x: fx - x0, y: fy - y0 },
+    grade: { placa: recorte(alfa), logo: recorte(la) },   // para o 3D
+    placa: camada(alfa, 255), placaLuz: camada(relevoPlaca.luz, 255), placaSombra: camada(relevoPlaca.sombra, 0),
+    logo: camada(la, 255), logoLuz: camada(relevoLogo.luz, 255), logoSombra: camada(relevoLogo.sombra, 0)
+  };
+}
+
+// Foto do chaveiro desenhada em canvas: placa vista de cima em ângulo, com espessura em camadas
+// (as linhas da impressão 3D na lateral), bisel de luz, plástico fosco, logo em relevo e argola de metal
+// passando pelo furo. Guardada por logo e cor, porque leva alguns milissegundos para desenhar.
+const fotosChaveiro = new Map();
+let ruidoFosco = null;
+function chaveiroContorno(hex, url, s, logoHex) {
+  const chave = url + "|" + hex + "|" + logoHex;
+  if (fotos3D.has(chave)) return `<img class="chaveiro-foto" src="${fotos3D.get(chave)}" alt="">`;
+  if (!fotosChaveiro.has(chave)) fotosChaveiro.set(chave, desenharChaveiro(hex, s, logoHex));
+  return `<img class="chaveiro-foto" src="${fotosChaveiro.get(chave)}" alt="">`;
+}
+
+function desenharChaveiro(hex, s, logoHex) {
+  const W = 960, H = 720;
+  const novo = () => { const c = document.createElement("canvas"); c.width = W; c.height = H; return c; };
+  const pintar = (src, cor) => {
+    const c = novo(), x = c.getContext("2d");
+    x.drawImage(src, 0, 0);
+    x.globalCompositeOperation = "source-in";
+    x.fillStyle = cor;
+    x.fillRect(0, 0, W, H);
+    return c;
+  };
+  // a placa ocupa até 680×470, um pouco girada e achatada (vista de cima, em ângulo)
+  const f = Math.min(680 / s.w, 470 / s.h);
+  const CX = W * 0.53, CY = H * 0.55, GIRO = -7 * Math.PI / 180, ACHATA = 0.86, T = 15;
+  const posicionar = x => { x.translate(CX, CY); x.scale(1, ACHATA); x.rotate(GIRO); };
+  const naTela = (img, firme) => {
+    const c = novo(), x = c.getContext("2d");
+    x.imageSmoothingQuality = "high";
+    posicionar(x);
+    x.drawImage(img, -s.w * f / 2, -s.h * f / 2, s.w * f, s.h * f);
+    if (firme) {   // ampliada, a borda fica borrada: deixa nítida de novo
+      const d = x.getImageData(0, 0, W, H);
+      for (let i = 3; i < d.data.length; i += 4) d.data[i] = Math.round(liso(0.3, 0.7, d.data[i] / 255) * 255);
+      x.putImageData(d, 0, 0);
+    }
+    return c;
+  };
+  if (!ruidoFosco) {
+    ruidoFosco = document.createElement("canvas");
+    ruidoFosco.width = ruidoFosco.height = 128;
+    const x = ruidoFosco.getContext("2d"), d = x.createImageData(128, 128);
+    for (let i = 0; i < d.data.length; i += 4) { const v = Math.random() * 255; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; }
+    x.putImageData(d, 0, 0);
+  }
+
+  const cv = novo(), c = cv.getContext("2d");
+  const fundo = c.createRadialGradient(W * 0.5, H * 0.42, 0, W * 0.5, H * 0.42, W * 0.75);
+  fundo.addColorStop(0, "#40608a"); fundo.addColorStop(1, "#1f3454");
+  c.fillStyle = fundo;
+  c.fillRect(0, 0, W, H);
+
+  const forma = naTela(s.placa, true);
+  // sombra no fundo: uma larga e suave e uma curta, de contato
+  const sombra = (blur, dy, a) => {
+    c.save();
+    c.shadowColor = `rgba(4,10,24,${a})`; c.shadowBlur = blur; c.shadowOffsetX = 10000 + 8; c.shadowOffsetY = dy;
+    c.drawImage(forma, -10000, 0);
+    c.restore();
+  };
+  sombra(34, T + 22, 0.55);
+  sombra(7, T + 4, 0.5);
+
+  // argola: espiral dupla de metal; a metade de trás é desenhada antes da placa, a da frente depois
+  const R = Math.min(78, Math.max(52, Math.min(s.w, s.h) * f * 0.3));
+  const hx = (s.furo.x - s.w / 2) * f, hy = (s.furo.y - s.h / 2) * f;
+  const ang = Math.PI / 4, rx = hx - R * Math.cos(ang), ry = hy - R * Math.sin(ang);
+  const argola = (de, ate) => {
+    c.save();
+    posicionar(c);
+    const brilho = c.createLinearGradient(rx - R, ry - R, rx + R, ry + R);
+    [["0", "#f6f8fb"], [".3", "#8e959f"], [".55", "#eef1f5"], [".8", "#7a818b"], ["1", "#d9dde3"]].forEach(([p, cor]) => brilho.addColorStop(p, cor));
+    for (const volta of [0, 3.6]) {
+      const raio = R - volta;
+      c.beginPath(); c.arc(rx, ry, raio, de, ate);
+      c.lineCap = "round";
+      c.strokeStyle = "rgba(10,14,22,.55)"; c.lineWidth = 7.5; c.stroke();
+      c.strokeStyle = brilho; c.lineWidth = 5.2; c.stroke();
+      c.beginPath(); c.arc(rx, ry, raio - 1.2, de, ate);
+      c.strokeStyle = "rgba(255,255,255,.75)"; c.lineWidth = 1.1; c.stroke();
+    }
+    c.restore();
+  };
+  argola(ang - Math.PI, ang);
+
+  // espessura: a placa empilhada para baixo, mais escura no fundo, com linhas de camada
+  const lateral = pintar(forma, misturar(hex, "#000000", 0.42));
+  const linha = pintar(forma, "#ffffff");
+  for (let i = T; i >= 1; i--) {
+    c.globalAlpha = 1;
+    c.drawImage(lateral, 0, i);
+    if (i % 2 === 0) { c.globalAlpha = 0.07; c.drawImage(linha, 0, i); }
+  }
+  c.globalAlpha = 1;
+
+  // topo: cor, luz geral, bisel, logo em relevo e textura fosca
+  const topo = pintar(forma, hex), t = topo.getContext("2d");
+  t.globalCompositeOperation = "source-atop";
+  const geral = t.createLinearGradient(CX - 300, CY - 220, CX + 300, CY + 220);
+  geral.addColorStop(0, "rgba(255,255,255,.13)"); geral.addColorStop(0.5, "rgba(255,255,255,0)"); geral.addColorStop(1, "rgba(0,0,0,.16)");
+  t.fillStyle = geral;
+  t.fillRect(0, 0, W, H);
+  t.globalAlpha = 0.85; t.drawImage(naTela(s.placaLuz), 0, 0);
+  t.globalAlpha = 0.7; t.drawImage(naTela(s.placaSombra), 0, 0);
+  t.globalAlpha = 1;
+  const logoForma = naTela(s.logo, true);
+  const logoCor = logoHex;
+  t.drawImage(pintar(logoForma, misturar(logoCor, "#000000", 0.35)), 0, 2.5);
+  t.drawImage(pintar(logoForma, logoCor), 0, 0);
+  t.globalAlpha = 0.9; t.drawImage(naTela(s.logoLuz), 0, 0);
+  t.globalAlpha = 0.6; t.drawImage(naTela(s.logoSombra), 0, 0);
+  t.globalAlpha = 0.05; t.fillStyle = t.createPattern(ruidoFosco, "repeat"); t.fillRect(0, 0, W, H);
+  c.drawImage(topo, 0, 0);
+
+  argola(ang, ang + Math.PI);
+  return cv.toDataURL("image/jpeg", 0.88);
+}
+
+// ===== Chaveiro em 3D de verdade (three.js) =====
+// O motor 3D só é baixado quando o chaveiro aparece. Um único renderizador desenha as fotos (guardadas por
+// logo e cor) e também a peça girando quando a pessoa passa o mouse ou arrasta no card.
+// Sem 3D (navegador antigo ou sem internet para baixar o motor), fica a versão desenhada de desenharChaveiro.
+const THREE_URL = "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js";
+let motor3D = null, motor3DPronto = null, motor3DFalhou = false;
+const fotos3D = new Map(), pedidos3D = new Map();   // "url|cor" → foto pronta / promessa
+function carregar3D() {
+  // só depois que a página terminou de abrir, para não atrasar o resto do site
+  const ocioso = () => new Promise(ok => {
+    const ir = () => (window.requestIdleCallback || setTimeout)(ok, { timeout: 2000 });
+    document.readyState === "complete" ? ir() : addEventListener("load", ir, { once: true });
+  });
+  if (!motor3D) motor3D = ocioso().then(() => import(THREE_URL)).then(montarCena).catch(() => null).then(m => { motor3DFalhou = !m; return (motor3DPronto = m); });
+  return motor3D;
+}
+function foto3DDe(url, hex, s, logoHex, metal) {
+  const chave = url + "|" + hex + "|" + logoHex;
+  if (!pedidos3D.has(chave)) {
+    pedidos3D.set(chave, carregar3D().then(m => {
+      if (!m) return false;
+      fotos3D.set(chave, desenhar3D(m, s, hex, 0, 0, logoHex, metal).toDataURL("image/jpeg", 0.9));
+      return true;
+    }).catch(() => false));
+  }
+  return pedidos3D.get(chave);
+}
+
+// Contornos de nível 0,5 de uma grade (marching squares). Cada contorno é uma lista de [x, y] fechada.
+function contornos(a, w, h) {
+  const v = (x, y) => (x < 0 || y < 0 || x >= w || y >= h) ? 0 : a[y * w + x];
+  const W2 = w + 2;
+  const chave = (x, y, vert) => ((y + 1) * W2 + (x + 1)) * 2 + vert;   // aresta horizontal (0) ou vertical (1)
+  const ponto = new Map(), vizinhos = new Map();
+  const naAresta = (x, y, vert) => {
+    const k = chave(x, y, vert);
+    if (!ponto.has(k)) {
+      const a0 = v(x, y), a1 = vert ? v(x, y + 1) : v(x + 1, y);
+      const t = Math.min(1, Math.max(0, (0.5 - a0) / ((a1 - a0) || 1e-6)));
+      ponto.set(k, vert ? [x, y + t] : [x + t, y]);
+    }
+    return k;
+  };
+  const ligar = (p, q) => {
+    if (!vizinhos.has(p)) vizinhos.set(p, []);
+    if (!vizinhos.has(q)) vizinhos.set(q, []);
+    vizinhos.get(p).push(q); vizinhos.get(q).push(p);
+  };
+  for (let y = -1; y < h; y++) for (let x = -1; x < w; x++) {
+    const tl = v(x, y) >= 0.5, tr = v(x + 1, y) >= 0.5, br = v(x + 1, y + 1) >= 0.5, bl = v(x, y + 1) >= 0.5;
+    const caso = tl * 8 + tr * 4 + br * 2 + bl;
+    if (caso === 0 || caso === 15) continue;
+    const T = () => naAresta(x, y, 0), R = () => naAresta(x + 1, y, 1), B = () => naAresta(x, y + 1, 0), L = () => naAresta(x, y, 1);
+    const meio = (v(x, y) + v(x + 1, y) + v(x + 1, y + 1) + v(x, y + 1)) / 4 >= 0.5;
+    switch (caso) {
+      case 1: case 14: ligar(L(), B()); break;
+      case 2: case 13: ligar(B(), R()); break;
+      case 3: case 12: ligar(L(), R()); break;
+      case 4: case 11: ligar(T(), R()); break;
+      case 6: case 9: ligar(T(), B()); break;
+      case 7: case 8: ligar(L(), T()); break;
+      case 5: if (meio) { ligar(T(), L()); ligar(R(), B()); } else { ligar(T(), R()); ligar(L(), B()); } break;
+      case 10: if (meio) { ligar(T(), R()); ligar(L(), B()); } else { ligar(L(), T()); ligar(R(), B()); } break;
+    }
+  }
+  const visto = new Set(), lacos = [];
+  for (const inicio of vizinhos.keys()) {
+    if (visto.has(inicio)) continue;
+    const laco = [];
+    let ant = -1, atual = inicio;
+    while (!visto.has(atual)) {
+      visto.add(atual);
+      laco.push(ponto.get(atual));
+      const [p, q] = vizinhos.get(atual);
+      const prox = p !== ant ? p : q;
+      ant = atual; atual = prox;
+    }
+    if (laco.length > 2) lacos.push(laco);
+  }
+  return lacos;
+}
+
+// Tira pontos quase em linha reta (Douglas-Peucker), para o 3D ficar leve
+function simplificar(pts, tol) {
+  if (pts.length < 8) return pts;
+  const manter = new Uint8Array(pts.length);
+  const passo = (i, j) => {
+    const [ax, ay] = pts[i], [bx, by] = pts[j], dx = bx - ax, dy = by - ay, L = Math.hypot(dx, dy) || 1;
+    let maior = 0, k = -1;
+    for (let m = i + 1; m < j; m++) {
+      const d = Math.abs((pts[m][0] - ax) * dy - (pts[m][1] - ay) * dx) / L;
+      if (d > maior) { maior = d; k = m; }
+    }
+    if (maior > tol) { manter[k] = 1; passo(i, k); passo(k, j); }
+  };
+  const meio = pts.length >> 1;
+  manter[0] = manter[meio] = 1;
+  passo(0, meio);
+  pts.push(pts[0]); passo(meio, pts.length - 1); pts.pop();
+  return pts.filter((_, i) => manter[i]);
+}
+
+// Contornos → formas do three.js: os de fora viram peças, os de dentro viram buracos (e ilhas dentro de buracos, peças)
+function formas3D(THREE, lacos, escala, cx, cy) {
+  const area = p => { let s = 0; for (let i = 0, j = p.length - 1; i < p.length; j = i++) s += (p[j][0] - p[i][0]) * (p[j][1] + p[i][1]); return s / 2; };
+  const dentro = (pt, p) => {
+    let d = false;
+    for (let i = 0, j = p.length - 1; i < p.length; j = i++) {
+      if ((p[i][1] > pt[1]) !== (p[j][1] > pt[1]) && pt[0] < (p[j][0] - p[i][0]) * (pt[1] - p[i][1]) / (p[j][1] - p[i][1]) + p[i][0]) d = !d;
+    }
+    return d;
+  };
+  const lista = lacos.map(p => simplificar(p, 0.35)).filter(p => p.length > 2 && Math.abs(area(p)) > 3)
+    .sort((a, b) => Math.abs(area(b)) - Math.abs(area(a)));
+  const nivel = [], pai = [], forma = [];
+  const caminho = (p, C) => { const c = new C(); p.forEach(([x, y], i) => c[i ? "lineTo" : "moveTo"]((x - cx) * escala, -(y - cy) * escala)); return c; };
+  lista.forEach((p, i) => {
+    pai[i] = -1;
+    for (let j = i - 1; j >= 0; j--) if (dentro(p[0], lista[j])) { pai[i] = j; break; }   // o menor que contém
+    nivel[i] = pai[i] < 0 ? 0 : nivel[pai[i]] + 1;
+    if (nivel[i] % 2 === 0) forma[i] = caminho(p, THREE.Shape);
+    else forma[pai[i]].holes.push(caminho(p, THREE.Path));
+  });
+  return forma.filter(Boolean);
+}
+
+// Texturas pequenas que se repetem: linhas de camada (lateral) e linhas de preenchimento na diagonal (topo)
+function texturaListras(THREE, diagonal) {
+  const N = 32, c = document.createElement("canvas");
+  c.width = c.height = N;
+  const x = c.getContext("2d"), d = x.createImageData(N, N);
+  for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+    const fase = diagonal ? (i + j) / N : j / N;
+    const v = 128 + 127 * Math.cos(fase * Math.PI * 2), o = (j * N + i) * 4;
+    d.data[o] = d.data[o + 1] = d.data[o + 2] = v; d.data[o + 3] = 255;
+  }
+  x.putImageData(d, 0, 0);
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  return t;
+}
+
+function montarCena(THREE) {
+  const W = 960, H = 720;
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setSize(W, H, false);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  // sem o tom de cinema (ACES): ele desbota as cores, e a cor do chaveiro tem que bater com a do catálogo
+  renderer.toneMapping = THREE.LinearToneMapping;
+  renderer.toneMappingExposure = 0.95;
+
+  const cena = new THREE.Scene();
+  const fundo = document.createElement("canvas");
+  fundo.width = 480; fundo.height = 360;
+  const fx = fundo.getContext("2d"), g = fx.createRadialGradient(240, 150, 0, 240, 150, 360);
+  g.addColorStop(0, "#40608a"); g.addColorStop(1, "#1f3454");
+  fx.fillStyle = g; fx.fillRect(0, 0, 480, 360);
+  cena.background = new THREE.CanvasTexture(fundo);
+  cena.background.colorSpace = THREE.SRGBColorSpace;
+
+  // reflexos de estúdio: uma sala escura com softboxes, convertida em mapa de ambiente
+  const sala = new THREE.Scene(), cubo = new THREE.BoxGeometry(1, 1, 1);
+  sala.add(new THREE.Mesh(new THREE.BoxGeometry(40, 40, 40), new THREE.MeshBasicMaterial({ color: 0x2a3550, side: THREE.BackSide })));
+  [[0, 15, 0, 14, 0.2, 14, 5], [-16, 7, 5, 0.2, 9, 12, 3.2], [16, 5, -4, 0.2, 7, 12, 1.6], [0, 6, 16, 12, 6, 0.2, 1.2]].forEach(([x, y, z, sx, sy, sz, i]) => {
+    const m = new THREE.Mesh(cubo, new THREE.MeshBasicMaterial({ color: new THREE.Color(i, i, i) }));
+    m.position.set(x, y, z); m.scale.set(sx, sy, sz); sala.add(m);
+  });
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  cena.environment = pmrem.fromScene(sala, 0.035).texture;
+
+  const sol = new THREE.DirectionalLight(0xffffff, 1.6);
+  sol.position.set(-9, 12, 7);
+  sol.castShadow = true;
+  sol.shadow.mapSize.set(2048, 2048);
+  Object.assign(sol.shadow.camera, { left: -10, right: 10, top: 10, bottom: -10, near: 1, far: 40 });
+  sol.shadow.bias = -0.0004;
+  sol.shadow.radius = 4;
+  cena.add(sol, new THREE.AmbientLight(0xbfd0ff, 0.25));
+  const chao = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), new THREE.ShadowMaterial({ opacity: 0.6 }));
+  chao.rotation.x = -Math.PI / 2;
+  chao.receiveShadow = true;
+  cena.add(chao);
+
+  const camera = new THREE.PerspectiveCamera(26, W / H, 0.1, 200);
+  return {
+    THREE, renderer, cena, camera, atual: null,
+    camadas: texturaListras(THREE, false), preenchimento: texturaListras(THREE, true)
+  };
+}
+
+// Monta (uma vez por logo) a peça: placa extrudada, logo em relevo e argola de metal em espiral dupla
+function malha3D(m, s) {
+  if (s.malha3d) return s.malha3d;
+  const { THREE } = m;
+  const escala = 10 / Math.max(s.w, s.h), cx = s.w / 2, cy = s.h / 2;
+  const E = 0.5, BISEL = 0.11, RELEVO = 0.2;
+  const material = mapa => {
+    const t = mapa.clone();
+    t.needsUpdate = true;
+    return t;
+  };
+  const camadas = material(m.camadas), preench = material(m.preenchimento);
+  camadas.repeat.set(1, 1 / 0.045);       // uma linha a cada ~0,2 mm de altura
+  preench.repeat.set(1 / 0.12, 1 / 0.12);
+  const plastico = (bump, escalaBump) => new THREE.MeshPhysicalMaterial({
+    roughness: 0.48, metalness: 0, clearcoat: 0.12, clearcoatRoughness: 0.55, bumpMap: bump, bumpScale: escalaBump
+  });
+  const topo = plastico(preench, 0.35), lado = plastico(camadas, 0.9);
+  const logoTopo = plastico(preench, 0.35), logoLado = plastico(camadas, 0.9);
+
+  const grupo = new THREE.Group();
+  const placaGeo = new THREE.ExtrudeGeometry(formas3D(THREE, contornos(s.grade.placa, s.w, s.h), escala, cx, cy),
+    { depth: E, bevelEnabled: true, bevelThickness: BISEL, bevelSize: BISEL, bevelSegments: 4, curveSegments: 6 });
+  const placa = new THREE.Mesh(placaGeo, [topo, lado]);
+  const logoGeo = new THREE.ExtrudeGeometry(formas3D(THREE, contornos(s.grade.logo, s.w, s.h), escala, cx, cy),
+    { depth: RELEVO, bevelEnabled: true, bevelThickness: 0.04, bevelSize: 0.025, bevelSegments: 2, curveSegments: 4 });
+  const logo = new THREE.Mesh(logoGeo, [logoTopo, logoLado]);
+  logo.position.z = E + BISEL;
+  [placa, logo].forEach(o => { o.castShadow = true; o.receiveShadow = true; });
+
+  // argola: passa pelo furo, inclinada, com o centro para cima e à esquerda da placa
+  const R = 2.5, fio = 0.12;
+  class Espiral extends THREE.Curve {
+    getPoint(t, alvo = new THREE.Vector3()) {
+      const a = t * Math.PI * 2 * 1.94;
+      return alvo.set(R * Math.cos(a), R * Math.sin(a), t * 0.34 - 0.17);
+    }
+  }
+  const metal = new THREE.MeshStandardMaterial({ color: 0xdfe3e8, metalness: 1, roughness: 0.18 });
+  const aro = new THREE.Mesh(new THREE.TubeGeometry(new Espiral(), 260, fio, 12, false), metal);
+  aro.castShadow = true;
+  const hx = (s.furo.x - cx) * escala, hy = -(s.furo.y - cy) * escala;
+  const dir = Math.atan2(-1, 1);              // do centro da argola até o furo: para baixo e à direita
+  const giro = new THREE.Group();
+  aro.rotation.z = dir;
+  aro.position.set(-R * Math.cos(dir), -R * Math.sin(dir), 0);
+  giro.add(aro);
+  giro.position.set(hx, hy, E / 2);
+  giro.quaternion.setFromAxisAngle(new THREE.Vector3(-Math.sin(dir), Math.cos(dir), 0), -0.75);
+  // sombra de contato: o contorno borrado, logo embaixo da peça (a da luz quase some sob a placa)
+  const P = 20, sw = s.w + P * 2, sh = s.h + P * 2, base = new Float32Array(sw * sh);
+  for (let y = 0; y < s.h; y++) base.set(s.grade.placa.subarray(y * s.w, (y + 1) * s.w), (y + P) * sw + P);
+  const borrada = borrar(borrar(base, sw, sh, 7), sw, sh, 7);
+  const sc = document.createElement("canvas");
+  sc.width = sw; sc.height = sh;
+  const sx = sc.getContext("2d"), si = sx.createImageData(sw, sh);
+  for (let i = 0; i < borrada.length; i++) si.data[i * 4 + 3] = Math.round(borrada[i] * 200);
+  sx.putImageData(si, 0, 0);
+  const sombra = new THREE.Mesh(new THREE.PlaneGeometry(sw * escala, sh * escala),
+    new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sc), transparent: true, depthWrite: false }));
+  sombra.position.set(0.3, -0.4, -BISEL + 0.01);   // um pouco para baixo e à direita, longe da luz
+  const peca = new THREE.Group();
+  peca.add(sombra, placa, logo, giro);
+  peca.rotation.x = -Math.PI / 2;            // deitada no chão
+  peca.position.y = BISEL;
+  grupo.add(peca);
+
+  const caixa = new THREE.Box3().setFromObject(grupo), centro = caixa.getCenter(new THREE.Vector3()), tam = caixa.getSize(new THREE.Vector3());
+  // gira em torno do centro da peça (com a argola), não da origem
+  peca.position.x -= centro.x; peca.position.z -= centro.z;
+  grupo.position.set(centro.x, 0, centro.z);
+  s.malha3d = { grupo, centro, raio: Math.max(tam.x, tam.z) / 2, topo, lado, logoTopo, logoLado };
+  return s.malha3d;
+}
+
+// Desenha a peça na cor pedida; giro e inclinação (em radianos) vêm de quando a pessoa mexe no card
+function desenhar3D(m, s, hex, giro = 0, incl = 0, logoHex = hexLogo(corLogoAuto(hex)), metal = false) {
+  const { THREE, renderer, cena, camera } = m;
+  const p = malha3D(m, s);
+  if (m.atual !== p.grupo) {
+    if (m.atual) cena.remove(m.atual);
+    cena.add(p.grupo);
+    m.atual = p.grupo;
+  }
+  p.topo.color.set(hex); p.lado.color.set(hex);
+  p.logoTopo.color.set(logoHex); p.logoLado.color.set(logoHex);
+  // filamento "seda" (dourado, prata): brilho de metal
+  [p.logoTopo, p.logoLado].forEach(mt => { mt.metalness = metal ? 0.75 : 0; mt.roughness = metal ? 0.28 : 0.48; });
+  p.grupo.rotation.y = -0.14 + giro;
+  // câmera de cima, em ângulo, de um jeito que a peça (com a argola) caiba no quadro
+  // de lado a peça ocupa mais altura na foto: a câmera se afasta um pouco
+  const elev = 0.98 - incl, dist = p.raio * 4.3 * (1 + 0.28 * Math.abs(Math.sin(giro)));
+  camera.position.set(p.centro.x + Math.sin(0.12) * Math.cos(elev) * dist, Math.sin(elev) * dist, p.centro.z + Math.cos(0.12) * Math.cos(elev) * dist);
+  camera.lookAt(p.centro.x, 0, p.centro.z + p.raio * 0.08);
+  renderer.render(cena, camera);
+  return renderer.domElement;
+}
+
+// No card: com mouse, a peça gira acompanhando o cursor; no celular, arrastando para os lados.
+// Ao sair (ou soltar), volta devagar para a posição da foto.
+// No card: arrastando (mouse ou dedo) a peça gira livre, 360° — a largura do card dá uma volta inteira.
+// Com o mouse, para cima e para baixo também inclina; no dedo, o vertical continua rolando a página.
+// Ao soltar, ela fica parada onde a pessoa deixou por um tempo e depois volta devagar para a posição da foto.
+function ativarGiro(art) {
+  art.dataset.giro = "";
+  let giro = 0, incl = 0, alvoG = 0, alvoI = 0, quadro = 0, arrasto = null, tela = null, espera = 0;
+  const atual = () => {
+    const est = estado.chaveiro;
+    const hex = hexChaveiro(est.cor), nome = nomeLogoDe(est), logoHex = hexLogo(nome);
+    const url = logos.length ? logos[0].url : "assets/logo-ponto-nobre.png";
+    const s = silhuetas.get(url)?.valor;
+    return s && motor3DPronto && fotos3D.has(url + "|" + hex + "|" + logoHex) ? { s, hex, logoHex, metal: LOGO_METAL.has(nome) } : null;
+  };
+  const passo = () => {
+    quadro = 0;
+    const d = atual(), box = art.querySelector(".foto-box");
+    if (!d || !box) return;
+    giro += (alvoG - giro) * 0.2;
+    incl += (alvoI - incl) * 0.2;
+    if (!tela || !tela.isConnected) {
+      tela = document.createElement("canvas");
+      tela.className = "chaveiro-foto";
+      tela.width = 960; tela.height = 720;
+      box.replaceChildren(tela);
+    }
+    tela.getContext("2d").drawImage(desenhar3D(motor3DPronto, d.s, d.hex, giro, incl, d.logoHex, d.metal), 0, 0);
+    if (arrasto || Math.abs(alvoG - giro) > 0.002 || Math.abs(alvoI - incl) > 0.002) quadro = requestAnimationFrame(passo);
+  };
+  const pedir = () => { if (!quadro) quadro = requestAnimationFrame(passo); };
+  // volta pelo caminho mais curto (sem desenrolar as voltas dadas)
+  const voltar = () => {
+    const volta = Math.PI * 2;
+    giro -= Math.round(giro / volta) * volta;
+    alvoG = alvoI = 0;
+    pedir();
+  };
+  art.addEventListener("pointerdown", e => {
+    if (e.button > 0 || e.target.closest(".lados")) return;
+    clearTimeout(espera);
+    arrasto = { x: e.clientX, y: e.clientY, g: alvoG, i: alvoI, mouse: e.pointerType === "mouse" };
+    if (arrasto.mouse) {
+      try { art.setPointerCapture(e.pointerId); } catch (erro) { /* segue sem captura */ }
+      e.preventDefault();
+    }
+    art.classList.add("girando");
+  });
+  art.addEventListener("pointermove", e => {
+    if (!arrasto) return;
+    const r = art.getBoundingClientRect();
+    alvoG = arrasto.g + (e.clientX - arrasto.x) / r.width * Math.PI * 2;
+    if (arrasto.mouse) alvoI = Math.min(0.45, Math.max(-0.45, arrasto.i + (e.clientY - arrasto.y) / r.height * 1.2));
+    pedir();
+  });
+  const soltar = () => {
+    if (!arrasto) return;
+    arrasto = null;
+    art.classList.remove("girando");
+    espera = setTimeout(voltar, 2500);
+  };
+  art.addEventListener("pointerup", soltar);
+  art.addEventListener("pointercancel", soltar);
+}
+
+// Monta a foto da peça na cor; com logo do cliente, usa a peça lisa e põe a logo dele no peito
+const CARREGANDO_CHAVEIRO = `<div class="chaveiro-carregando" role="status"><span class="anel" aria-hidden="true"></span><span>Montando o chaveiro em 3D…</span></div>`;
+
+// corLogo: só no chaveiro, o nome da cor da logo (vazio = automática)
+function montarFoto(box, id, cor, lado = "frente", corLogo) {
+  const p = PRODUTOS.find(x => x.id === id);
+  const fotoId = lado === "costas" && COSTAS[id] ? COSTAS[id] : id;
+  if (id === "chaveiro") {
+    const hex = (p.cores.find(c => c[0] === cor) || p.cores[0])[1];
+    const url = logos.length ? logos[0].url : "assets/logo-ponto-nobre.png";
+    const s = silhuetaDe(url);
+    const nomeLogo = corLogo || corLogoAuto(hex), logoHex = hexLogo(nomeLogo), metal = LOGO_METAL.has(nomeLogo);
+    const chave = box.dataset.chaveiro = url + "|" + hex + "|" + logoHex;
+    // enquanto o contorno ou o 3D são montados, aparece a tela de carregamento; a versão desenhada
+    // só entra se o 3D não funcionar (motor não carregou) ou se a logo não vira uma peça só
+    if (s.valor === null) box.innerHTML = chaveiroSVG(hex, url, logoHex);
+    else if (s.valor && (fotos3D.has(chave) || motor3DFalhou)) box.innerHTML = chaveiroContorno(hex, url, s.valor, logoHex);
+    else if (!box.querySelector(".chaveiro-carregando")) box.innerHTML = CARREGANDO_CHAVEIRO;
+    const redesenhar = () => { if (box.isConnected && box.dataset.chaveiro === chave) montarFoto(box, id, cor, lado, corLogo); };
+    if (s.valor === undefined) s.promessa.then(redesenhar);
+    else if (s.valor && !fotos3D.has(chave) && !motor3DFalhou) foto3DDe(url, hex, s.valor, logoHex, metal).then(redesenhar);
+    box.setAttribute("role", "img");
+    box.setAttribute("aria-label", `${p.nome} na cor ${cor.toLowerCase()} com ${logos.length ? "a sua logo" : "a logo Ponto Nobre"} em ${nomeLogo.toLowerCase()}`);
+    return;
+  }
+  const foto = box.querySelector(".foto");
+  const comLogo = logos.length > 0;
+  const novaSrc = fotoNaCor(fotoId, cor, comLogo);
+  // troca de cor ou de lado: a foto some rapidinho e volta já na nova cor
+  if (foto.getAttribute("src") && foto.getAttribute("src") !== novaSrc) {
+    foto.classList.add("trocando");
+    foto.onload = foto.onerror = () => foto.classList.remove("trocando");
+  }
+  foto.src = novaSrc;
+  foto.alt = `${p.nome}${fotoId !== id ? " (costas)" : ""} na cor ${cor.toLowerCase()}${comLogo ? " com a sua logo" : SEM_LOGO.has(fotoId) ? "" : " com logo bordada"}`;
+  box.querySelectorAll(".foto-logo").forEach(el => el.remove());
+  logosNoProduto(fotoId).forEach(({ logo, area }) => {
+    const el = document.createElement("div");
+    el.className = "foto-logo";
+    el.innerHTML = `<img src="${logo.url}" alt=""><svg class="costura" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="98" rx="8" pathLength="100"/></svg>`;
+    // o copo fica sempre no padrão dele: sem encaixe automático e sem ajuste de tamanho/giro
+    const padrao = fotoId === "copo";
+    const cx = padrao ? area : caixaDaLogo(area, logo.proporcao);
+    Object.assign(el.style, { left: cx.x + "%", top: cx.y + "%", width: cx.w + "%", height: cx.h + "%" });
+    if (!padrao) {
+      Object.assign(el.dataset, { lid: logo.id, peca: id, x: cx.x, y: cx.y, aw: area.w, ah: area.h });
+      el.dataset.base = area.r || 0;   // giro automático da manga
+      aplicarAjuste(el, ajusteDe(logo, id));
+    }
+    // logo recém-colocada ou que mudou de lugar: aparece sendo "bordada".
+    // Se a peça for redesenhada no meio, a animação continua de onde estava.
+    const passou = Date.now() - (logo.bordadoEm || 0);
+    if (passou < 1600) {
+      el.classList.add("bordando");
+      el.style.setProperty("--ja", `-${passou}ms`);
+    }
+    box.appendChild(el);
+  });
+  const hex = (p.cores.find(c => c[0] === cor) || p.cores[0])[1];
+  box.classList.toggle("escura", tons(hex).l === "#ffffff");
+  box.classList.toggle("gravado", id === "copo");
+}
+
+const FOTO_BOX = `<div class="foto-box"><img class="foto" alt="" loading="lazy"></div>`;
+const GIRAR = `<span class="lupa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg><span class="lupa-mouse">Arraste para girar</span><span class="lupa-toque">Arraste para girar</span></span>`;
+const LUPA = `<span class="lupa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg><span class="lupa-mouse">Passe o mouse para ampliar</span><span class="lupa-toque">Toque para ampliar</span></span>`;
+
+// Zoom na foto do produto: no computador segue o mouse; no celular, um toque liga e desliga
+function ativarZoom(art) {
+  const caixa = () => art.querySelector(".foto-box");
+  const mirar = e => {
+    const box = caixa();
+    const r = art.getBoundingClientRect();
+    const alturaFoto = r.width * 3 / 4, topo = (r.height - alturaFoto) / 2;
+    const x = Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100));
+    const y = Math.max(0, Math.min(100, (e.clientY - r.top - topo) / alturaFoto * 100));
+    box.style.transformOrigin = `${x}% ${y}%`;
+  };
+  art.addEventListener("pointermove", e => {
+    if (e.pointerType !== "mouse" || !caixa()) return;
+    mirar(e);
+    art.classList.add("zoom");
+  });
+  art.addEventListener("pointerleave", e => { if (e.pointerType === "mouse") art.classList.remove("zoom"); });
+  art.addEventListener("click", e => {
+    if (!caixa() || matchMedia("(hover: hover)").matches || e.target.closest(".lados")) return;
+    mirar(e);
+    art.classList.toggle("zoom");
+  });
+}
+
+// "Automática (branco)" ou o nome da cor escolhida para a logo do chaveiro
+function rotuloLogo(card) {
+  const est = estado.chaveiro;
+  card.querySelector("[data-cor-logo]").textContent = est.corLogo || `Automática (${corLogoAuto(hexChaveiro(est.cor)).toLowerCase()})`;
+}
+
+function mostrarArte(card) {
+  const box = card.querySelector(".art .foto-box");
+  if (!box) return;
+  const est = estado[card.dataset.id];
+  montarFoto(box, card.dataset.id, est.cor, est.lado, est.corLogo);
+  card.querySelectorAll("[data-lado]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lado === est.lado));
+  card.querySelector(".art svg.produto").setAttribute("hidden", "");
+}
+
+function pintar(el, hex) {
+  const t = tons(hex);
+  el.style.setProperty("--c", hex);
+  el.style.setProperty("--d", t.d);
+  el.style.setProperty("--l", t.l);
+}
+
+const LOGO = (x, y, s, r) => logos.length
+  ? `<g transform="translate(${x} ${y}) scale(${s})"><image href="${logos[0].url}" x="-19" y="-19" width="38" height="38" preserveAspectRatio="xMidYMid meet"/></g>`
+  : `<g class="logo" transform="translate(${x} ${y}) rotate(${r || -12}) scale(${s})">
+     <path d="M-11 -9 L-7 -19 L-3 -12 L0 -21 L3 -12 L7 -19 L11 -9 Z"/>
+     <text x="0" y="1" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="900" font-size="11">SEU</text>
+     <text x="0" y="12" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="900" font-size="11">LOGO</text>
+   </g>`;
+
+const TEE = "M74 28 L46 38 L16 66 L34 92 L54 80 L54 176 L146 176 L146 80 L166 92 L184 66 L154 38 L126 28 Q100 50 74 28Z";
+const LONG = "M74 28 L50 36 Q36 42 32 66 L20 156 L42 160 L56 96 L56 176 L144 176 L144 96 L158 160 L180 156 L168 66 Q164 42 150 36 L126 28 Q100 46 74 28Z";
+
+const ART = () => ({
+  tee: `<path class="b" d="${TEE}"/><path class="k" d="M74 28 Q100 56 126 28"/><path class="k" d="M58 46 L54 80 M142 46 L146 80"/>${LOGO(100, 104, 1.15)}`,
+  polo: `<path class="b" d="${TEE}"/><path class="k" d="M58 46 L54 80 M142 46 L146 80"/><path class="k" d="M100 50 L100 84"/>
+         <circle cx="100" cy="62" r="2.4" class="logo"/><circle cx="100" cy="75" r="2.4" class="logo"/>
+         <path class="b" d="M74 28 L100 52 L126 28 L119 21 L100 31 L81 21 Z"/>${LOGO(126, 96, .72, -8)}`,
+  sweater: `<path class="b" d="${LONG}"/><path class="k" d="M74 28 Q100 52 126 28 M79 32 Q100 47 121 32"/>
+            <path class="k" d="M56 166 L144 166 M23 146 L43 150 M177 146 L157 150"/>${LOGO(100, 104, 1.1)}`,
+  hoodie: `<path class="b" d="${LONG}"/><path class="b" d="M72 34 Q62 4 100 4 Q138 4 128 34 Q100 52 72 34Z"/>
+           <path class="k" d="M84 30 Q100 42 116 30"/><path class="k" d="M94 44 L92 70 M106 44 L108 70"/>
+           <path class="k" d="M68 130 L132 130 L142 164 L58 164 Z M56 168 L144 168"/>${LOGO(100, 100, .95)}`,
+  bag: `<path class="h" d="M82 44 Q82 16 100 16 Q118 16 118 44"/><rect class="b" x="46" y="36" width="108" height="146" rx="28"/>
+        <path class="k" d="M58 62 Q100 50 142 62"/><rect class="b" x="62" y="104" width="76" height="64" rx="14"/>
+        <path class="k" d="M70 116 L130 116"/>${LOGO(100, 146, .8, -8)}`,
+  cup: `<path class="h" d="M140 76 Q172 76 170 110 Q168 142 134 144"/><path class="b" d="M58 52 L142 52 L130 182 Q100 189 70 182 Z"/>
+        <path style="fill:none;stroke:#c3c8d2;stroke-width:5;stroke-linecap:round" d="M114 38 L124 8"/>
+        <rect class="b" x="52" y="34" width="96" height="22" rx="8"/><path class="k" d="M61 72 L139 72"/>${LOGO(100, 124, 1.05)}`,
+  key: `<g transform="rotate(-10 112 120)"><rect class="b" x="62" y="70" width="100" height="100" rx="22"/>
+        <circle cx="84" cy="92" r="8" fill="#04060c"/>${LOGO(116, 134, 1.05, 0)}</g>
+        <circle cx="80" cy="62" r="34" fill="none" stroke="#c3c8d2" stroke-width="5"/>`
+});
+const svg = p => `<svg class="produto" viewBox="0 0 200 200" aria-hidden="true">${ART()[p.shape]}</svg>`;
+
+const estado = {};
+const grid = document.getElementById("grid");
+
+PRODUTOS.forEach(p => {
+  estado[p.id] = { tam: p.tam.length > 1 ? "M" : p.tam[0], cor: p.cores[0][0], qtd: p.tam.length > 1 ? 10 : 20, lado: "frente",
+                   grade: gradeVazia(p.tam), ativo: p.tam.includes("M") ? "M" : p.tam[0] };
+  const card = document.createElement("article");
+  card.className = "card";
+  card.dataset.cat = p.cat;
+  card.dataset.id = p.id;
+  const unico = p.tam.length === 1;
+  card.innerHTML = `
+    <div class="art">${temFoto(p.id) ? FOTO_BOX + (p.id === "chaveiro" ? GIRAR : LUPA) : ""}${COSTAS[p.id] ? `<div class="lados" role="group" aria-label="Lado da peça"><button type="button" data-lado="frente" aria-pressed="true">Frente</button><button type="button" data-lado="costas" aria-pressed="false">Costas</button></div>` : ""}${svg(p)}<span class="tag">${p.pers}</span></div>
+    <div class="body">
+      <h3>${p.nome}</h3>
+      <dl class="meta"><dt>Material</dt><dd>${p.mat}</dd><dt>Técnica</dt><dd>${p.pers}</dd></dl>
+      ${unico ? `<div>
+        <div class="opt-label">Tamanho</div>
+        <div class="sizes" role="group" aria-label="Tamanho">
+          <button type="button" class="size single" data-t="${p.tam[0]}" aria-pressed="true">${p.tam[0]}</button>
+        </div>
+      </div>` : gradeHTML(p.tam, estado[p.id])}
+      <div>
+        <div class="opt-label">Cor <em data-cor>${estado[p.id].cor}</em></div>
+        <div class="swatches" role="group" aria-label="Cor">
+          ${p.cores.map(([n, h]) => `<button type="button" class="sw" style="--s:${h}" data-c="${n}" data-h="${h}" aria-label="${n}" title="${n}" aria-pressed="${n === estado[p.id].cor}"></button>`).join("")}
+        </div>
+      </div>
+      ${p.id === "chaveiro" ? `<div>
+        <div class="opt-label">Cor da logo <em data-cor-logo></em></div>
+        <div class="swatches" role="group" aria-label="Cor da logo">
+          <button type="button" class="swl auto" data-l="" aria-label="Automática" title="Automática: contrasta com a cor do chaveiro" aria-pressed="true"></button>
+          ${CORES_LOGO.map(([n, h]) => `<button type="button" class="swl${LOGO_METAL.has(n) ? " metal" : ""}" style="--s:${h}" data-l="${n}" aria-label="${n}" title="${n}" aria-pressed="false"></button>`).join("")}
+        </div>
+      </div>` : ""}
+      <div class="buy">
+        ${MOSTRAR_PRECOS ? `<div class="price">${p.min === p.max ? "Unidade" : "Unidade, por tamanho"}
+          <strong>${p.min === p.max ? brl(p.min) : `${brl(p.min)} <small>a ${brl(p.max)}</small>`}</strong></div>`
+          : `<div class="price">Valor<strong class="sob">Sob orçamento</strong></div>`}
+        <div class="actions">
+          ${unico ? `<div class="qty">
+            <button type="button" data-q="-1" aria-label="Diminuir quantidade">−</button>
+            <input type="number" id="q-${p.id}" min="1" value="${estado[p.id].qtd}" aria-label="Quantidade de ${p.nome}">
+            <button type="button" data-q="1" aria-label="Aumentar quantidade">+</button>
+          </div>` : ""}
+          <button type="button" class="btn btn-primary add">Adicionar</button>
+        </div>
+      </div>
+    </div>`;
+  const art = card.querySelector(".art");
+  if (p.id === "chaveiro") { ativarGiro(art); rotuloLogo(card); } else ativarZoom(art);
+  pintar(art, p.cores[0][1]);
+  mostrarArte(card);
+
+  card.addEventListener("click", e => {
+    const s = e.target.closest(".size");
+    if (s) {
+      estado[p.id].tam = s.dataset.t;
+      card.querySelectorAll(".size").forEach(b => b.setAttribute("aria-pressed", b === s));
+    }
+    const w = e.target.closest(".sw");
+    if (w) {
+      estado[p.id].cor = w.dataset.c;
+      card.querySelectorAll(".sw").forEach(b => b.setAttribute("aria-pressed", b === w));
+      card.querySelector("[data-cor]").textContent = w.dataset.c;
+      pintar(art, w.dataset.h);
+      mostrarArte(card);
+      if (p.id === "chaveiro") rotuloLogo(card);
+    }
+    const wl = e.target.closest(".swl");
+    if (wl) {
+      estado.chaveiro.corLogo = wl.dataset.l || null;
+      card.querySelectorAll(".swl").forEach(b => b.setAttribute("aria-pressed", b === wl));
+      rotuloLogo(card);
+      mostrarArte(card);
+    }
+    const q = e.target.closest("[data-q]");
+    if (q) {
+      const inp = card.querySelector("input");
+      inp.value = Math.max(1, (parseInt(inp.value, 10) || 1) + Number(q.dataset.q));
+    }
+    const ladoBtn = e.target.closest("[data-lado]");
+    if (ladoBtn) {
+      estado[p.id].lado = ladoBtn.dataset.lado;
+      card.querySelector(".art").classList.remove("zoom");
+      mostrarArte(card);
+    }
+    const add = e.target.closest(".add");
+    if (add && unico) {
+      const qtd = Math.max(1, parseInt(card.querySelector(".qty input").value, 10) || 1);
+      adicionar(p, estado[p.id].tam, estado[p.id].cor, qtd, p.id === "chaveiro" ? nomeLogoDe(estado.chaveiro) : undefined);
+      confirmarAdicao(add);
+    } else if (add) {
+      // roupas: adiciona todos os tamanhos escolhidos de uma vez
+      const pedidos = pedidosDa(estado[p.id]);
+      if (!pedidos.length) {
+        toast("Toque num tamanho e escolha a quantidade");
+        return;
+      }
+      pedidos.forEach(([t, q]) => somar(p, t, estado[p.id].cor, q));
+      salvar(); render();
+      const total = pedidos.reduce((s, [, q]) => s + q, 0);
+      toast(`${total} ${p.nome} (${estado[p.id].cor.toLowerCase()}) adicionadas: ${pedidos.map(([t, q]) => `${t} ${q}`).join(" · ")}`);
+      estado[p.id].grade = gradeVazia(p.tam);
+      atualizarGrade(card.querySelector("[data-grade]"), estado[p.id]);
+      confirmarAdicao(add);
+    }
+  });
+  if (!unico) ligarGrade(card.querySelector("[data-grade]"), estado[p.id]);
+  grid.appendChild(card);
+});
+
+// Filtro
+document.querySelectorAll(".chip").forEach(ch => ch.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === ch));
+  const f = ch.dataset.f;
+  grid.querySelectorAll(".card").forEach(c => { c.hidden = f !== "todos" && c.dataset.cat !== f; });
+}));
+
+// Orçamento
+let carrinho = [];
+try { carrinho = JSON.parse(localStorage.getItem("orcamento") || "[]").filter(i => PRODUTOS.some(p => p.id === i.id)); } catch (e) { carrinho = []; }
+const salvar = () => { try { localStorage.setItem("orcamento", JSON.stringify(carrinho)); } catch (e) {} };
+const prod = id => PRODUTOS.find(p => p.id === id);
+
+// corLogo: só no chaveiro (cor da logo); itens iguais com cor de logo diferente ficam separados
+function somar(p, tam, corNome, qtd, corLogo) {
+  const existente = carrinho.find(i => i.id === p.id && i.tam === tam && i.cor === corNome && (i.corLogo || "") === (corLogo || ""));
+  if (existente) existente.qtd += qtd;
+  else carrinho.push(corLogo ? { id: p.id, tam, cor: corNome, corLogo, qtd } : { id: p.id, tam, cor: corNome, qtd });
+}
+
+function adicionar(p, tam, corNome, qtd, corLogo) {
+  somar(p, tam, corNome, qtd, corLogo);
+  salvar(); render();
+  toast(`${qtd}× ${p.nome} adicionado ao orçamento`);
+}
+
+// Seletor de tamanhos: toca no tamanho e ajusta a quantidade com − e +.
+// Cada tamanho mostra quantas peças já tem; o total aparece em cima.
+function gradeVazia(tams) { return Object.fromEntries(tams.map(t => [t, 0])); }
+
+function gradeHTML(tams, est, rotulo = "peças") {
+  return `<div class="tams-sel" data-grade data-rotulo="${rotulo}">
+    <div class="opt-label">Quantidade por tamanho <em data-total>0 ${rotulo}</em></div>
+    <div class="tam-chips" role="group" aria-label="Tamanho">
+      ${tams.map(t => `<button type="button" class="tam-chip" data-tc="${t}" aria-pressed="${t === est.ativo}"><span>${t}</span><b data-n></b></button>`).join("")}
+    </div>
+    <div class="tam-step">
+      <span class="tam-step-rot">Tamanho <b data-ativo>${est.ativo}</b></span>
+      <div class="qty">
+        <button type="button" data-step="-1" aria-label="Menos uma no tamanho escolhido">−</button>
+        <input type="number" min="0" inputmode="numeric" data-step-val aria-label="Quantidade no tamanho escolhido" value="${est.grade[est.ativo]}">
+        <button type="button" data-step="1" aria-label="Mais uma no tamanho escolhido">+</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function atualizarGrade(el, est, digitando = false) {
+  let total = 0;
+  el.querySelectorAll("[data-tc]").forEach(b => {
+    const q = est.grade[b.dataset.tc] || 0;
+    total += q;
+    b.setAttribute("aria-pressed", b.dataset.tc === est.ativo);
+    b.classList.toggle("tem", q > 0);
+    b.querySelector("[data-n]").textContent = q > 0 ? q : "";
+  });
+  el.querySelector("[data-ativo]").textContent = est.ativo;
+  const inp = el.querySelector("[data-step-val]");
+  if (!digitando) inp.value = est.grade[est.ativo];
+  el.querySelector("[data-total]").textContent = `${total} ${total === 1 ? el.dataset.rotulo.replace(/s$/, "") : el.dataset.rotulo}`;
+}
+
+function ligarGrade(el, est) {
+  el.addEventListener("click", e => {
+    const chip = e.target.closest("[data-tc]");
+    if (chip) {
+      est.ativo = chip.dataset.tc;
+      // primeiro toque num tamanho vazio já conta 1 peça
+      if (!est.grade[est.ativo]) est.grade[est.ativo] = 1;
+    }
+    const step = e.target.closest("[data-step]");
+    if (step) est.grade[est.ativo] = Math.max(0, (est.grade[est.ativo] || 0) + Number(step.dataset.step));
+    if (chip || step) {
+      const inp = el.querySelector("[data-step-val]");
+      if (document.activeElement === inp) inp.blur();
+      atualizarGrade(el, est);
+    }
+  });
+  el.addEventListener("input", e => {
+    if (!e.target.matches("[data-step-val]")) return;
+    est.grade[est.ativo] = Math.max(0, parseInt(e.target.value, 10) || 0);
+    atualizarGrade(el, est, true);
+  });
+  el.addEventListener("focusin", e => { if (e.target.matches("[data-step-val]")) e.target.select(); });
+  atualizarGrade(el, est);
+}
+
+const pedidosDa = est => Object.entries(est.grade).filter(([, q]) => q > 0);
+
+// Botão confirma e o contador do topo pula
+function confirmarAdicao(btn) {
+  btn.textContent = "Adicionado ✓";
+  clearTimeout(btn._t);
+  btn._t = setTimeout(() => { btn.textContent = btn.dataset.texto || "Adicionar"; }, 1500);
+  const cnt = document.getElementById("count");
+  cnt.classList.remove("pulo"); void cnt.offsetWidth; cnt.classList.add("pulo");
+}
+
+// Kits prontos: a cor escolhida vale para as peças que têm essa cor; as outras ficam na cor padrão
+const KITS = [
+  { id: "boas-vindas", nome: "Kit Boas-vindas", para: "Para receber novos funcionários e clientes.", itens: ["camisa", "copo", "chaveiro"] },
+  { id: "uniforme", nome: "Kit Uniforme", para: "Para a equipe no dia a dia e nos dias frios.", itens: ["polo", "moletom"] },
+  { id: "evento", nome: "Kit Evento", para: "Para feiras, palestras e ações promocionais.", itens: ["camisa", "chaveiro"] },
+  { id: "executivo", nome: "Kit Executivo", para: "Para diretoria, parceiros e presentes especiais.", itens: ["polo", "mochila", "copo"] }
+];
+const kitEstado = {};
+KITS.forEach(k => { kitEstado[k.id] = { cor: prod(k.itens[0]).cores[0][0], grade: gradeVazia(ROUPA), ativo: "M" }; });
+
+const corNoItem = (p, cor) => p.cores.some(c => c[0] === cor) ? cor : p.cores[0][0];
+const precoKit = k => k.itens.reduce((t, id) => { const p = prod(id); t.min += p.min; t.max += p.max; return t; }, { min: 0, max: 0 });
+
+function miniatura(id, cor) {
+  const p = prod(id);
+  const div = document.createElement("div");
+  div.className = "kit-thumb";
+  div.title = p.nome;
+  if (temFoto(id)) {
+    div.innerHTML = FOTO_BOX;
+    montarFoto(div.firstChild, id, cor);
+  } else {
+    div.innerHTML = svg(p);
+    pintar(div, (p.cores.find(c => c[0] === cor) || p.cores[0])[1]);
+  }
+  return div;
+}
+
+function renderKits() {
+  const box = document.getElementById("kitsGrid");
+  box.innerHTML = KITS.map(k => {
+    const est = kitEstado[k.id], principal = prod(k.itens[0]), preco = precoKit(k);
+    return `
+    <article class="kit" data-kit="${k.id}">
+      <div class="kit-fotos" style="--n:${k.itens.length}"></div>
+      <div class="kit-body">
+        <h3>${k.nome}</h3>
+        <p class="kit-para">${k.para}</p>
+        <ul class="kit-itens">
+          ${k.itens.map(id => { const p = prod(id); return `<li><span>1× ${p.nome}</span>${MOSTRAR_PRECOS ? `<span>${faixa(p.min, p.max)}</span>` : ""}</li>`; }).join("")}
+        </ul>
+        <div>
+          <div class="opt-label">Cor <em>${est.cor}</em></div>
+          <div class="swatches" role="group" aria-label="Cor do kit">
+            ${principal.cores.map(([n, h]) => `<button type="button" class="sw" style="--s:${h}" data-c="${n}" aria-label="${n}" title="${n}" aria-pressed="${n === est.cor}"></button>`).join("")}
+          </div>
+        </div>
+        ${gradeHTML(ROUPA, est, "kits")}
+        <p class="kit-nota">O tamanho vale para as roupas do kit; copo, mochila e chaveiro são tamanho único.</p>
+        <div class="buy">
+          ${MOSTRAR_PRECOS ? `<div class="price">Por kit<strong>${preco.min === preco.max ? brl(preco.min) : `${brl(preco.min)} <small>a ${brl(preco.max)}</small>`}</strong></div>`
+            : `<div class="price">Valor<strong class="sob">Sob orçamento</strong></div>`}
+          <div class="actions">
+            <button type="button" class="btn btn-primary add" data-texto="Adicionar kits">Adicionar kits</button>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  }).join("");
+  box.querySelectorAll(".kit").forEach(el => {
+    const k = KITS.find(x => x.id === el.dataset.kit);
+    const fotos = el.querySelector(".kit-fotos");
+    k.itens.forEach(id => fotos.appendChild(miniatura(id, corNoItem(prod(id), kitEstado[k.id].cor))));
+    ligarGrade(el.querySelector("[data-grade]"), kitEstado[k.id]);
+  });
+}
+
+document.getElementById("kitsGrid").addEventListener("click", e => {
+  const el = e.target.closest(".kit");
+  if (!el) return;
+  const k = KITS.find(x => x.id === el.dataset.kit), est = kitEstado[k.id];
+  const sw = e.target.closest(".sw");
+  if (sw) { est.cor = sw.dataset.c; renderKits(); return; }
+  const add = e.target.closest(".add");
+  if (add) {
+    const pedidos = pedidosDa(est);
+    if (!pedidos.length) { toast("Toque num tamanho e escolha quantos kits"); return; }
+    const total = pedidos.reduce((s, [, q]) => s + q, 0);
+    k.itens.forEach(id => {
+      const p = prod(id), cor = corNoItem(p, est.cor);
+      if (p.tam.length > 1) pedidos.forEach(([t, q]) => somar(p, t, cor, q));
+      else somar(p, p.tam[0], cor, total, p.id === "chaveiro" ? corLogoAuto(hexChaveiro(cor)) : undefined);
+    });
+    salvar(); render();
+    toast(`${total} ${total === 1 ? "kit adicionado" : "kits adicionados"}: ${k.nome} (${pedidos.map(([t, q]) => `${t} ${q}`).join(" · ")})`);
+    est.grade = gradeVazia(ROUPA);
+    atualizarGrade(el.querySelector("[data-grade]"), est);
+    confirmarAdicao(add);
+  }
+});
+function totais() {
+  return carrinho.reduce((t, i) => { const p = prod(i.id); t.min += p.min * i.qtd; t.max += p.max * i.qtd; return t; }, { min: 0, max: 0 });
+}
+
+// Junta as linhas do orçamento por peça e cor, com os tamanhos na ordem PP → G3 (e "A definir" no fim)
+function agrupar() {
+  const grupos = new Map();
+  carrinho.forEach(i => {
+    const p = prod(i.id), chave = `${i.id}|${i.cor}|${i.corLogo || ""}`;
+    if (!grupos.has(chave)) grupos.set(chave, { p, cor: i.cor, corLogo: i.corLogo || "", tam: new Map(), total: 0 });
+    const g = grupos.get(chave);
+    g.tam.set(i.tam, (g.tam.get(i.tam) || 0) + i.qtd);
+    g.total += i.qtd;
+  });
+  return [...grupos.values()].map(g => {
+    const ordem = [...g.p.tam, "A definir"];
+    g.lista = [...g.tam.entries()].sort((a, b) => ordem.indexOf(a[0]) - ordem.indexOf(b[0]));
+    return g;
+  });
+}
+const pecas = n => `${n} ${n === 1 ? "peça" : "peças"}`;
+
+function mensagem() {
+  const linhas = agrupar().map(g => {
+    const preco = MOSTRAR_PRECOS ? ` — ${faixa(g.p.min * g.total, g.p.max * g.total)}` : "";
+    if (g.p.tam.length > 1) {
+      return `• ${g.p.nome} — ${g.cor}\n   ${g.lista.map(([t, q]) => `${t}: ${q}`).join(" · ")}  (${pecas(g.total)})${preco}`;
+    }
+    return `• ${g.total}x ${g.p.nome} — ${g.cor}${g.corLogo ? `, logo ${g.corLogo.toLowerCase()}` : ""} (${g.lista[0][0]})${preco}`;
+  });
+  const totalPecas = carrinho.reduce((s, i) => s + i.qtd, 0);
+  const t = totais();
+  const nome = document.getElementById("nome").value.trim();
+  const emp = document.getElementById("empresa").value.trim();
+  const obs = document.getElementById("obs").value.trim();
+  return ["Olá, Ponto Nobre! Gostaria de um orçamento de produtos personalizados:", "", ...linhas, "",
+    `Total: ${pecas(totalPecas)}`, "",
+    MOSTRAR_PRECOS ? `Estimativa: ${faixa(t.min, t.max)}` : null,
+    logos.length ? (logos.every(l => l.link)
+      ? `${logos.length > 1 ? "Logos (toque no link para ver e baixar)" : "Logo (toque no link para ver e baixar)"}:`
+      : `${logos.length > 1 ? "Logos" : "Logo"} (vou enviar ${logos.length > 1 ? "os arquivos" : "o arquivo"} aqui na conversa):`) : null,
+    ...logos.flatMap(l => [`• ${POSICOES[l.pos]}: ${l.link || `"${l.nome}"`}`,
+      ...pecasAjustadas(l).map(([nome, partes]) => `   ${nome}: ${partes.join(", ")}`)]),
+    nome ? `Nome: ${nome}` : null, emp ? `Empresa: ${emp}` : null, obs ? `Observações: ${obs}` : null
+  ].filter(l => l !== null).join("\n").trim();
+}
+
+function atualizarLink() {
+  const wa = document.getElementById("wa");
+  const vazio = carrinho.length === 0;
+  wa.setAttribute("aria-disabled", vazio);
+  wa.href = vazio ? "#" : `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem())}`;
+}
+
+// Números do topo, da barra de baixo e do total (sem refazer a lista do orçamento)
+function atualizarContadores() {
+  const n = carrinho.reduce((s, i) => s + i.qtd, 0);
+  document.getElementById("count").textContent = n;
+  const tot = totais();
+  document.getElementById("barraOrc").hidden = n === 0;
+  document.body.classList.toggle("tem-orc", n > 0);
+  document.getElementById("barraQtd").innerHTML = `${n} ${n === 1 ? "item" : "itens"}<span class="so-largo"> no orçamento</span>`;
+  document.getElementById("barraTotal").textContent = MOSTRAR_PRECOS ? faixa(tot.min, tot.max) : "Pronto para enviar";
+  const tg = document.querySelector("#resumo .tot-geral b");
+  if (tg) tg.textContent = pecas(n);
+  document.getElementById("total").textContent = faixa(tot.min, tot.max);
+  atualizarLink();
+}
+
+function render() {
+  atualizarContadores();
+  document.getElementById("empty").hidden = carrinho.length > 0;
+  document.getElementById("summary").hidden = carrinho.length === 0;
+  const ul = document.getElementById("items");
+  ul.innerHTML = agrupar().map(g => {
+    const p = g.p, unico = p.tam.length === 1;
+    return `<li class="item" data-id="${p.id}" data-cor="${g.cor}" data-logo="${g.corLogo}">
+      <div class="mini" data-id="${p.id}" data-cor="${g.cor}" data-logo="${g.corLogo}" data-hex="${(p.cores.find(c => c[0] === g.cor) || p.cores[0])[1]}">${temFoto(p.id) ? FOTO_BOX : svg(p)}</div>
+      <div class="item-info">
+        <div class="item-topo"><b>${p.nome}</b><button type="button" class="rm">Remover</button></div>
+        <span>${g.cor}${g.corLogo ? ` · logo ${g.corLogo.toLowerCase()}` : ""} · <span data-grupo>${pecas(g.total)}</span>${MOSTRAR_PRECOS ? ` · ${faixa(p.min * g.total, p.max * g.total)}` : ""}</span>
+        <div class="item-tams">${g.lista.map(([t, q]) => `
+          <span class="it-tam" data-t="${t}"><i>${unico ? "Qtd" : t}</i>
+            <button type="button" data-d="-1" aria-label="Menos uma ${unico ? "" : `no tamanho ${t}`}">−</button><b>${q}</b><button type="button" data-d="1" aria-label="Mais uma ${unico ? "" : `no tamanho ${t}`}">+</button>
+          </span>`).join("")}</div>
+      </div></li>`;
+  }).join("");
+  const resumo = document.getElementById("resumo");
+  resumo.hidden = carrinho.length === 0;
+  resumo.innerHTML = `<p class="tot-geral">Total do pedido: <b>${pecas(carrinho.reduce((s, i) => s + i.qtd, 0))}</b></p>`;
+  ul.querySelectorAll(".mini").forEach(m => {
+    const box = m.querySelector(".foto-box");
+    if (box) montarFoto(box, m.dataset.id, m.dataset.cor, "frente", m.dataset.logo || undefined);
+    else pintar(m, m.dataset.hex);
+  });
+  const t = totais();
+  document.getElementById("total").textContent = faixa(t.min, t.max);
+  document.getElementById("linhaTotal").hidden = !MOSTRAR_PRECOS;
+  document.getElementById("notaOrc").textContent = MOSTRAR_PRECOS
+    ? "Valor final confirmado no atendimento, conforme arte e quantidade."
+    : "Envie a lista pelo WhatsApp e respondemos com os valores, conforme quantidade, técnica e arte.";
+  atualizarLink();
+}
+
+document.getElementById("items").addEventListener("click", e => {
+  const li = e.target.closest(".item"); if (!li) return;
+  const { id, cor, logo } = li.dataset;
+  const doItem = x => x.id === id && x.cor === cor && (x.corLogo || "") === logo;
+  const d = e.target.closest("[data-d]");
+  if (d) {
+    const t = d.closest("[data-t]").dataset.t;
+    const i = carrinho.find(x => doItem(x) && x.tam === t);
+    if (i) {
+      i.qtd += Number(d.dataset.d);
+      if (i.qtd <= 0) {
+        carrinho.splice(carrinho.indexOf(i), 1);
+        salvar(); render();
+        return;
+      }
+      d.closest("[data-t]").querySelector("b").textContent = i.qtd;
+      const doGrupo = carrinho.filter(doItem).reduce((s, x) => s + x.qtd, 0);
+      li.querySelector("[data-grupo]").textContent = pecas(doGrupo);
+    }
+    salvar(); atualizarContadores();
+  }
+  if (e.target.closest(".rm")) {
+    carrinho = carrinho.filter(x => !doItem(x));
+    salvar(); render();
+  }
+});
+["nome", "empresa", "obs"].forEach(id => document.getElementById(id).addEventListener("input", atualizarLink));
+document.getElementById("form").addEventListener("submit", e => e.preventDefault());
+
+const drawer = document.getElementById("drawer"), scrim = document.getElementById("scrim");
+function abrir() { drawer.hidden = false; scrim.hidden = false; document.getElementById("closeCart").focus(); }
+function fechar() { drawer.hidden = true; scrim.hidden = true; }
+["openCart", "fab", "ctaCart"].forEach(id => document.getElementById(id).addEventListener("click", abrir));
+document.getElementById("closeCart").addEventListener("click", fechar);
+scrim.addEventListener("click", fechar);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !drawer.hidden) fechar(); });
+
+document.getElementById("copy").addEventListener("click", () => {
+  if (!carrinho.length) { toast("Adicione um produto antes de copiar"); return; }
+  const txt = mensagem();
+  const fallback = () => {
+    const ta = document.getElementById("obs");
+    const antes = ta.value; ta.value = txt; ta.select();
+    toast("Copie o texto selecionado (Ctrl+C) e depois desfaça");
+    setTimeout(() => { ta.value = antes; }, 8000);
+  };
+  try {
+    navigator.clipboard.writeText(txt).then(() => toast("Mensagem copiada"), fallback);
+  } catch (e) { fallback(); }
+});
+
+// Logo do cliente: prévia em todos os produtos
+const patch = document.getElementById("patch");
+const ICONE_UPLOAD = document.getElementById("patchThumb").innerHTML;
+
+async function aplicarLogo(file) {
+  if (!file) return;
+  if (logos.length >= MAX_LOGOS) { toast(`Use até ${MAX_LOGOS} logos por peça`); return; }
+  if (!/^image\//.test(file.type)) { toast("Envie uma imagem: PNG, JPG, SVG ou WEBP"); return; }
+  if (file.size > 15 * 1024 * 1024) { toast("Arquivo acima de 15 MB. Tente uma versão menor"); return; }
+  toast("Removendo o fundo da logo…");
+  let png;
+  let proporcao = 1;
+  try {
+    png = await logoSemFundo(file);
+    const bmp = await createImageBitmap(png);
+    proporcao = bmp.width / bmp.height;   // largura ÷ altura da logo, para encaixar no tamanho certo
+    bmp.close();
+  }
+  catch (e) { toast("Não foi possível ler essa imagem. Tente outro arquivo"); return; }
+  const base = file.name.replace(/\.[^.]+$/, "");
+  // vai para o lugar com menos logos; com os 6 lugares ocupados, entra embaixo das que já estão lá
+  const noLugar = p => logos.filter(l => l.pos === p).length;
+  const pos = ORDEM_POSICOES.reduce((melhor, p) => noLugar(p) < noLugar(melhor) ? p : melhor);
+  const ja = noLugar(pos);
+  const nova = { id: ++logoSeq, url: URL.createObjectURL(png), nome: base + "-sem-fundo.png", pos, link: null, bordadoEm: Date.now(), ajustes: {}, proporcao };
+  // a distância é a altura da própria logo com uma folga; nas mangas (giradas) desce ao longo do braço.
+  // Contas em pixels da foto (1% da largura = 12 px, 1% da altura = 9 px) e depois no tamanho da área.
+  if (ja) pecasDaLogo(nova).forEach(id => {
+    const area = (LOGO_AREAS[pos === "costas" ? COSTAS[id] : id] || {})[pos];
+    if (!area) return;
+    const r = (area.r || 0) * Math.PI / 180, passo = caixaDaLogo(area, proporcao).h * 9 * 1.2 * ja;
+    nova.ajustes[id] = { ...PADRAO, dx: -Math.sin(r) * passo / 12 / area.w, dy: Math.cos(r) * passo / 9 / area.h };
+  });
+  logos.push(nova);
+  guardarLogo(nova, png);
+  atualizarLogo();
+  toast(`Logo adicionada ${pos.startsWith("manga") ? "na" : "no"} ${POSICOES[pos].toLowerCase()}. Você pode trocar o lugar na lista`);
+}
+
+// Guarda a logo no site (Cloudflare) para o link ir na mensagem do WhatsApp.
+// Fora do site publicado (arquivo no PC, prévia) não há servidor: a mensagem pede o arquivo na conversa.
+async function guardarLogo(logo, png) {
+  if (!/^https?:$/.test(location.protocol)) return;
+  try {
+    const r = await fetch("/api/logo", {
+      method: "POST",
+      headers: { "content-type": "image/png", "x-nome": encodeURIComponent(logo.nome) },
+      body: png
+    });
+    if (!r.ok) return;
+    const { id, url } = await r.json();
+    // capa da prévia: o WhatsApp mostra o link como cartão com esta imagem
+    try {
+      const capa = await capaDaLogo(png);
+      await fetch("/api/logo", { method: "POST", headers: { "content-type": "image/jpeg", "x-capa-de": id }, body: capa });
+    } catch (e) { /* sem capa, a prévia usa a própria logo */ }
+    if (logos.includes(logo)) { logo.link = url; atualizarLogo(); }
+  } catch (e) { /* sem servidor: segue sem o link */ }
+}
+
+// Capa 1200x630 da prévia: a logo no centro, sobre fundo escuro ou claro conforme a cor dela
+async function capaDaLogo(png) {
+  const src = URL.createObjectURL(png);
+  const img = new Image();
+  img.src = src;
+  try { await img.decode(); } finally { URL.revokeObjectURL(src); }
+  const amostra = document.createElement("canvas");
+  amostra.width = amostra.height = 48;
+  const ax = amostra.getContext("2d", { willReadFrequently: true });
+  ax.drawImage(img, 0, 0, 48, 48);
+  const px = ax.getImageData(0, 0, 48, 48).data;
+  let soma = 0, n = 0;
+  for (let i = 0; i < px.length; i += 4) if (px[i + 3] > 128) { soma += 0.299 * px[i] + 0.587 * px[i + 1] + 0.114 * px[i + 2]; n++; }
+  const clara = n && soma / n > 150;
+  const cv = document.createElement("canvas");
+  cv.width = 1200; cv.height = 630;
+  const c = cv.getContext("2d");
+  c.fillStyle = clara ? "#0a1020" : "#eef1f6";
+  c.fillRect(0, 0, 1200, 630);
+  const k = Math.min(1000 / img.naturalWidth, 430 / img.naturalHeight);
+  const w = img.naturalWidth * k, h = img.naturalHeight * k;
+  c.drawImage(img, (1200 - w) / 2, 70 + (430 - h) / 2, w, h);
+  c.fillStyle = clara ? "#8f9bb8" : "#5a6478";
+  c.font = "600 30px Figtree, 'Segoe UI', sans-serif";
+  c.textAlign = "center";
+  c.fillText("Logo para orçamento · Ponto Nobre", 600, 585);
+  return new Promise((ok, erro) => cv.toBlob(b => b ? ok(b) : erro(new Error("capa")), "image/jpeg", 0.88));
+}
+
+// Converte qualquer imagem em PNG: tira a cor de fundo e corta as sobras
+async function logoSemFundo(file) {
+  const src = URL.createObjectURL(file);
+  const img = new Image();
+  img.src = src;
+  try { await img.decode(); } finally { URL.revokeObjectURL(src); }
+  let w = img.naturalWidth || 600, h = img.naturalHeight || 600;
+  const MAX = 900, k = Math.min(1, MAX / Math.max(w, h));
+  w = Math.max(1, Math.round(w * k)); h = Math.max(1, Math.round(h * k));
+  const cv = document.createElement("canvas");
+  cv.width = w; cv.height = h;
+  const ctx = cv.getContext("2d", { willReadFrequently: true });
+  ctx.drawImage(img, 0, 0, w, h);
+  const data = ctx.getImageData(0, 0, w, h);
+  const px = data.data;
+
+  // Cor de fundo: mediana dos pixels da borda da imagem
+  const borda = [];
+  const amostra = i => borda.push(i * 4);
+  for (let x = 0; x < w; x++) { amostra(x); amostra((h - 1) * w + x); }
+  for (let y = 1; y < h - 1; y++) { amostra(y * w); amostra(y * w + w - 1); }
+  const transparentes = borda.filter(i => px[i + 3] < 30).length;
+
+  if (transparentes / borda.length < 0.6) {
+    const mediana = c => { const v = borda.map(i => px[i + c]).sort((a, b) => a - b); return v[v.length >> 1]; };
+    const bg = [mediana(0), mediana(1), mediana(2)];
+    const T1 = 34, T2 = 90; // até T1 some; entre T1 e T2 fica semitransparente (borda suave)
+    for (let i = 0; i < px.length; i += 4) {
+      const dr = px[i] - bg[0], dg = px[i + 1] - bg[1], db = px[i + 2] - bg[2];
+      const d = Math.sqrt(dr * dr + dg * dg + db * db);
+      if (d <= T1) { px[i + 3] = 0; continue; }
+      if (d < T2) {
+        const a = (d - T1) / (T2 - T1);
+        // tira a "contaminação" da cor de fundo na borda, evitando halo
+        for (let c = 0; c < 3; c++) px[i + c] = Math.max(0, Math.min(255, (px[i + c] - bg[c] * (1 - a)) / a));
+        px[i + 3] = Math.round(px[i + 3] * a);
+      }
+    }
+  }
+
+  // Corta as sobras transparentes em volta da logo
+  let x0 = w, y0 = h, x1 = -1, y1 = -1;
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    if (px[(y * w + x) * 4 + 3] > 10) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+  }
+  ctx.putImageData(data, 0, 0);
+  if (x1 < 0) throw new Error("imagem vazia");
+  const pad = 4;
+  x0 = Math.max(0, x0 - pad); y0 = Math.max(0, y0 - pad);
+  x1 = Math.min(w - 1, x1 + pad); y1 = Math.min(h - 1, y1 + pad);
+  const out = document.createElement("canvas");
+  out.width = x1 - x0 + 1; out.height = y1 - y0 + 1;
+  out.getContext("2d").drawImage(cv, x0, y0, out.width, out.height, 0, 0, out.width, out.height);
+  return new Promise((ok, erro) => out.toBlob(b => b ? ok(b) : erro(new Error("png")), "image/png"));
+}
+
+function atualizarLogo() {
+  grid.querySelectorAll(".card").forEach(c => {
+    c.querySelector(".art svg.produto").outerHTML = svg(prod(c.dataset.id));
+    mostrarArte(c);
+  });
+  atualizarVitrine();
+  renderKits();
+  const tem = logos.length > 0;
+  const thumb = tem ? `<img src="${logos[0].url}" alt="">` : ICONE_UPLOAD;
+  document.getElementById("patchThumb").innerHTML = thumb;
+  document.getElementById("drawerThumb").innerHTML = thumb;
+  document.getElementById("patchTitle").textContent = tem
+    ? (logos.length > 1 ? "Suas logos nos produtos" : "Sua logo nos produtos") : "Veja os produtos com a sua logo";
+  document.getElementById("patchText").innerHTML = tem
+    ? "Escolha onde cada logo vai na peça. Na mochila e no copo, elas entram na ordem da lista. A prévia é ilustrativa: a arte final é ajustada para cada técnica e aprovada por você."
+    : 'Envie a logo da sua empresa em qualquer formato de imagem. O fundo é removido automaticamente e ela aparece em todos os produtos.<span class="arrastar"> Também dá para arrastar o arquivo até aqui.</span>';
+  const btn = document.getElementById("logoBtn");
+  btn.textContent = tem ? "Adicionar outra logo" : "Enviar minha logo";
+  btn.hidden = logos.length >= MAX_LOGOS;
+  const lista = document.getElementById("logosLista");
+  lista.hidden = !tem;
+  lista.innerHTML = logos.map((l, i) => `
+    <li data-i="${i}">
+      <div class="patch-thumb"><img src="${l.url}" alt=""></div>
+      <div class="nome">${esc(l.nome)}<small>Logo ${i + 1}</small></div>
+      <select aria-label="Lugar da logo ${i + 1}" id="pos-${i}">
+        ${Object.entries(POSICOES).map(([k, v]) => `<option value="${k}"${k === l.pos ? " selected" : ""}>${v}</option>`).join("")}
+      </select>
+      <div class="ajustes" role="group" aria-label="Ajustar a logo ${i + 1}">
+        <button type="button" class="mini-btn ajustar" data-ajustar>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M9 6l3-3 3 3M9 18l3 3 3-3M6 9l-3 3 3 3M18 9l3 3-3 3"/></svg>
+          Ajustar na peça</button>
+        <span class="aj-resumo"></span>
+        <button type="button" class="mini-btn" data-aj-reset>Restaurar</button>
+      </div>
+      <div class="acoes">
+        <a class="mini-btn" href="${l.url}" download="${esc(l.nome)}">Baixar PNG</a>
+        <button class="mini-btn remover" type="button">Remover</button>
+      </div>
+    </li>`).join("");
+  logos.forEach(atualizarResumo);
+  document.getElementById("drawerLogo").textContent = tem
+    ? `${logos.map(l => `${l.nome} (${POSICOES[l.pos].toLowerCase()})`).join(", ")}. ${logos.every(l => l.link)
+        ? (logos.length > 1 ? "Os links das logos vão junto na mensagem." : "O link da logo vai junto na mensagem.")
+        : `Envie ${logos.length > 1 ? "os arquivos" : "o arquivo"} na conversa do WhatsApp.`}`
+    : "Nenhuma logo escolhida.";
+  render();
+}
+
+document.getElementById("logoFile").addEventListener("change", e => { aplicarLogo(e.target.files[0]); e.target.value = ""; });
+const listaLogos = document.getElementById("logosLista");
+listaLogos.addEventListener("change", e => {
+  const li = e.target.closest("li");
+  if (!li || e.target.tagName !== "SELECT") return;
+  // nas roupas o deslocamento é de cada lugar, então volta ao centro; tamanho e giro continuam
+  const logo = logos[+li.dataset.i];
+  Object.assign(logo, { pos: e.target.value, bordadoEm: Date.now() });
+  Object.entries(logo.ajustes).forEach(([id, aj]) => { if (id !== "mochila") aj.dx = aj.dy = 0; });
+  if (e.target.value === "costas") Object.keys(COSTAS).forEach(id => { estado[id].lado = "costas"; });
+  atualizarLogo();
+});
+listaLogos.addEventListener("click", e => {
+  const li = e.target.closest("li");
+  if (!li) return;
+  if (e.target.closest("[data-ajustar]")) { abrirEditor(logos[+li.dataset.i]); return; }
+  if (e.target.closest("[data-aj-reset]")) {
+    const logo = logos[+li.dataset.i];
+    logo.ajustes = {};
+    atualizarResumo(logo);
+    atualizarLink();
+    document.querySelectorAll(`.foto-logo[data-lid="${logo.id}"]`).forEach(el => {
+      aplicarAjuste(el, PADRAO);
+      el.classList.add("realce");
+      clearTimeout(el._realce);
+      el._realce = setTimeout(() => el.classList.remove("realce"), 700);
+    });
+    return;
+  }
+  if (!e.target.closest(".remover")) return;
+  const [tirada] = logos.splice(+li.dataset.i, 1);
+  URL.revokeObjectURL(tirada.url);
+  atualizarLogo();
+});
+["dragenter", "dragover"].forEach(t => patch.addEventListener(t, e => { e.preventDefault(); patch.classList.add("drag"); }));
+["dragleave", "drop"].forEach(t => patch.addEventListener(t, () => patch.classList.remove("drag")));
+patch.addEventListener("drop", e => { e.preventDefault(); aplicarLogo(e.dataTransfer.files[0]); });
+
+// Ajuste da logo numa peça (tamanho, giro e deslocamento): muda só a logo nas prévias dessa peça, sem redesenhar
+function mudarAjuste(logo, id) {
+  const aj = logo.ajustes[id];
+  aj.esc = Math.min(2, Math.max(0.4, Math.round(aj.esc * 100) / 100));
+  aj.giro = Math.min(180, Math.max(-180, Math.round(aj.giro)));
+  aj.dx = Math.min(3, Math.max(-3, Math.round(aj.dx * 1000) / 1000));
+  aj.dy = Math.min(3, Math.max(-3, Math.round(aj.dy * 1000) / 1000));
+  document.querySelectorAll(`.foto-logo[data-lid="${logo.id}"][data-peca="${id}"]`).forEach(el => aplicarAjuste(el, aj));
+  atualizarResumo(logo);
+  if (editor.open && logo === edLogo) atualizarEditor();
+  atualizarLink();
+}
+function atualizarResumo(logo) {
+  const li = listaLogos.querySelector(`li[data-i="${logos.indexOf(logo)}"]`);
+  if (!li) return;
+  const nomes = pecasAjustadas(logo).map(([nome]) => nome);
+  li.querySelector(".aj-resumo").textContent = nomes.length ? `Ajustada em: ${nomes.join(", ")}` : "Sem ajustes";
+  li.querySelector("[data-aj-reset]").disabled = !nomes.length;
+}
+
+// Editor: arrasta para mover, puxa o canto para o tamanho e a bolinha de cima para girar.
+// No celular, dois dedos aumentam e giram de uma vez. O ajuste vale só para a peça escolhida.
+const editor = document.getElementById("editor");
+const palco = document.getElementById("edPalco");
+const moldura = document.getElementById("moldura");
+const edEsc = document.getElementById("edEsc"), edGiro = document.getElementById("edGiro");
+let edLogo = null, edPeca = "camisa";
+const edAj = () => edLogo.ajustes[edPeca] ||= { ...PADRAO };   // ajuste da peça aberta no editor
+
+// Roupas com esse lugar, e a mochila se a logo aparece nela
+const pecasDaLogo = logo => PRODUTOS.map(p => p.id).filter(id => id === "mochila"
+  ? logosNoProduto("mochila").some(x => x.logo === logo)
+  : logo.pos === "costas" ? COSTAS[id] && LOGO_AREAS[COSTAS[id]] : LOGO_AREAS[id] && LOGO_AREAS[id][logo.pos]);
+
+function abrirEditor(logo) {
+  edLogo = logo;
+  const pecas = pecasDaLogo(logo);
+  if (!pecas.includes(edPeca)) edPeca = pecas[0];
+  document.getElementById("edTitulo").textContent = `Ajustar logo ${logos.indexOf(logo) + 1}`;
+  document.getElementById("edPecas").innerHTML = pecas.map(id =>
+    `<button type="button" data-peca="${id}" aria-pressed="${id === edPeca}">${esc(prod(id).nome)}</button>`).join("");
+  montarPalco();
+  editor.showModal();
+  moldura.focus();
+}
+function montarPalco() {
+  const box = palco.querySelector(".foto-box");
+  montarFoto(box, edPeca, estado[edPeca].cor, edLogo.pos === "costas" ? "costas" : "frente");
+  box.querySelectorAll(".foto-logo").forEach(el => {
+    el.classList.remove("bordando");
+    el.classList.toggle("ativa", el.dataset.lid === String(edLogo.id));
+  });
+  // na mochila o lugar vem da ordem da lista: frente ou bolso
+  const naMochila = logosNoProduto("mochila").findIndex(x => x.logo === edLogo);
+  document.getElementById("edLugar").textContent = `${edPeca === "mochila" ? ["Frente da mochila", "Bolso da mochila"][naMochila] : POSICOES[edLogo.pos]} · só nesta peça`;
+  atualizarEditor();
+}
+// A moldura fica do tamanho da logo já com a escala, para as bolinhas não crescerem junto
+function atualizarEditor() {
+  const el = palco.querySelector(`.foto-logo[data-lid="${edLogo.id}"]`);
+  if (!el) return;
+  const aj = ajusteDe(edLogo, edPeca);
+  const [x, y, w, h] = ["left", "top", "width", "height"].map(k => parseFloat(el.style[k]));
+  const s = aj.esc;
+  Object.assign(moldura.style, {
+    left: x + w * (1 - s) / 2 + "%", top: y + h * (1 - s) / 2 + "%", width: w * s + "%", height: h * s + "%",
+    transform: `rotate(${el.style.getPropertyValue("--giro")})`
+  });
+  edEsc.value = Math.round(s * 100);
+  edGiro.value = aj.giro;
+  document.getElementById("edEscVal").textContent = `${Math.round(s * 100)}%`;
+  document.getElementById("edGiroVal").textContent = `${aj.giro}°`;
+  document.getElementById("edRestaurar").disabled = !ajustePartes(aj, edLogo.pos, edPeca).length;
+}
+
+const toques = new Map();   // dedos (ou o mouse) apertados no palco: id → {x, y}
+let gesto = null;
+const angulo = (a, b) => Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+const distancia = (a, b) => Math.hypot(b.x - a.x, b.y - a.y) || 1;
+const meio = (a, b) => ({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+const volta = g => ((g + 540) % 360) - 180;   // diferença de ângulo entre -180° e 180°
+// perto de 0° e 90°, o giro "gruda" para ficar reto
+const reto = g => { const r = Math.round(g / 90) * 90; return Math.abs(g - r) < 4 ? r : g; };
+
+function comecarGesto(tipo) {
+  const aj = edAj();
+  const el = palco.querySelector(`.foto-logo[data-lid="${edLogo.id}"]`);
+  const m = moldura.getBoundingClientRect();
+  const pts = [...toques.values()].map(p => ({ ...p }));
+  gesto = {
+    tipo: pts.length > 1 ? "pinca" : tipo, pts, palco: palco.getBoundingClientRect(),
+    centro: { x: m.left + m.width / 2, y: m.top + m.height / 2 },
+    aw: Number(el.dataset.aw), ah: Number(el.dataset.ah),
+    aj, esc: aj.esc, giro: aj.giro, dx: aj.dx, dy: aj.dy
+  };
+}
+function mover(g, de, para) {
+  g.aj.dx = g.dx + (para.x - de.x) / g.palco.width * 100 / g.aw;
+  g.aj.dy = g.dy + (para.y - de.y) / g.palco.height * 100 / g.ah;
+}
+palco.addEventListener("pointerdown", e => {
+  if (e.button > 0) return;
+  e.preventDefault();
+  try { palco.setPointerCapture(e.pointerId); } catch (erro) { /* sem captura: segue só dentro do palco */ }
+  toques.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  const alca = e.target.closest(".alca-tam") ? "tam" : e.target.closest(".alca-giro") ? "giro" : "mover";
+  comecarGesto(toques.size > 1 ? "pinca" : alca);
+});
+palco.addEventListener("pointermove", e => {
+  if (!gesto || !toques.has(e.pointerId)) return;
+  toques.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  const g = gesto, pts = [...toques.values()], [p, q] = pts;
+  if (g.tipo === "mover") mover(g, g.pts[0], p);
+  else if (g.tipo === "tam") g.aj.esc = g.esc * distancia(g.centro, p) / distancia(g.centro, g.pts[0]);
+  else if (g.tipo === "giro") g.aj.giro = reto(g.giro + volta(angulo(g.centro, p) - angulo(g.centro, g.pts[0])));
+  else if (q) {
+    g.aj.esc = g.esc * distancia(p, q) / distancia(g.pts[0], g.pts[1]);
+    g.aj.giro = reto(g.giro + volta(angulo(p, q) - angulo(g.pts[0], g.pts[1])));
+    mover(g, meio(g.pts[0], g.pts[1]), meio(p, q));
+  }
+  mudarAjuste(edLogo, edPeca);
+});
+// soltou um dedo da pinça: continua arrastando com o que ficou
+const soltar = e => {
+  if (!toques.delete(e.pointerId)) return;
+  if (toques.size) comecarGesto("mover"); else gesto = null;
+};
+palco.addEventListener("pointerup", soltar);
+palco.addEventListener("pointercancel", soltar);
+palco.addEventListener("wheel", e => {
+  e.preventDefault();
+  edAj().esc *= e.deltaY < 0 ? 1.05 : 1 / 1.05;
+  mudarAjuste(edLogo, edPeca);
+}, { passive: false });
+moldura.addEventListener("keydown", e => {
+  const passo = e.shiftKey ? 0.1 : 0.02;
+  const setas = { ArrowLeft: [-passo, 0], ArrowRight: [passo, 0], ArrowUp: [0, -passo], ArrowDown: [0, passo] }[e.key];
+  if (!setas) return;
+  e.preventDefault();
+  const aj = edAj();
+  aj.dx += setas[0]; aj.dy += setas[1];
+  mudarAjuste(edLogo, edPeca);
+});
+edEsc.addEventListener("input", () => { edAj().esc = edEsc.value / 100; mudarAjuste(edLogo, edPeca); });
+edGiro.addEventListener("input", () => { edAj().giro = Number(edGiro.value); mudarAjuste(edLogo, edPeca); });
+document.getElementById("edRestaurar").addEventListener("click", () => {
+  Object.assign(edAj(), PADRAO);
+  mudarAjuste(edLogo, edPeca);
+});
+// copia o ajuste desta peça para as outras onde a logo aparece
+document.getElementById("edTodas").addEventListener("click", () => {
+  const aj = edAj();
+  pecasDaLogo(edLogo).forEach(id => { edLogo.ajustes[id] = { ...aj }; mudarAjuste(edLogo, id); });
+  // o aviso (toast) ficaria atrás da janela, então o próprio botão confirma
+  const b = document.getElementById("edTodas");
+  b.textContent = "Aplicado em todas ✓";
+  clearTimeout(b._volta);
+  b._volta = setTimeout(() => { b.textContent = "Usar em todas"; }, 1600);
+});
+document.getElementById("edPecas").addEventListener("click", e => {
+  const b = e.target.closest("[data-peca]");
+  if (!b) return;
+  edPeca = b.dataset.peca;
+  document.querySelectorAll("#edPecas [data-peca]").forEach(x => x.setAttribute("aria-pressed", x === b));
+  montarPalco();
+});
+// fecha no X, no "Pronto" ou clicando fora da janela
+editor.addEventListener("click", e => {
+  const r = editor.getBoundingClientRect();
+  const fora = e.target === editor && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom);
+  if (fora || e.target.closest("[data-fechar]")) editor.close();
+});
+
+// Botão fixo do WhatsApp e Instagram
+const linkDuvida = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent("Olá, Ponto Nobre! Tenho uma dúvida sobre os produtos personalizados.")}`;
+document.getElementById("waFloat").href = linkDuvida;
+document.getElementById("faqWa").href = linkDuvida;
+document.getElementById("footWa").href = linkDuvida;
+if (INSTAGRAM_USUARIO) {
+  const ig = document.getElementById("insta");
+  ig.href = `https://www.instagram.com/${INSTAGRAM_USUARIO}/`;
+  document.getElementById("instaNome").textContent = "@" + INSTAGRAM_USUARIO;
+  ig.hidden = false;
+}
+
+// Vitrine rotativa
+(function () {
+  const ordem = ["camisa", "babylook", "polo", "sueter", "trico", "moletom", "mochila", "copo", "chaveiro"];
+  const box = document.getElementById("vitrine");
+  const pontos = document.getElementById("pontos");
+  const imgs = ordem.map((id, i) => {
+    const p = prod(id);
+    const tmp = document.createElement("div");
+    tmp.innerHTML = FOTO_BOX;
+    const img = tmp.firstChild;
+    if (i === 0) img.querySelector(".foto").loading = "eager";
+    montarFoto(img, id, corDaFoto(id));
+    box.insertBefore(img, box.firstChild);
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-label", `Mostrar ${p.nome}`);
+    b.addEventListener("click", () => { ir(i); reiniciar(); });
+    pontos.appendChild(b);
+    return img;
+  });
+  atualizarVitrine = () => imgs.forEach((im, k) => montarFoto(im, ordem[k], corDaFoto(ordem[k])));
+  let atual = 0, timer = null;
+  function ir(i) {
+    atual = (i + ordem.length) % ordem.length;
+    imgs.forEach((im, k) => im.classList.toggle("on", k === atual));
+    pontos.querySelectorAll("button").forEach((b, k) => b.setAttribute("aria-current", k === atual));
+    const p = prod(ordem[atual]);
+    const nome = document.getElementById("vitrineNome");
+    nome.querySelector("b").textContent = p.nome;
+    nome.querySelector("span").textContent = MOSTRAR_PRECOS ? (p.min === p.max ? "" : "a partir de ") + brl(p.min) : p.pers;
+  }
+  const parado = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function reiniciar() {
+    clearInterval(timer);
+    if (!parado) timer = setInterval(() => ir(atual + 1), 2800);
+  }
+  box.addEventListener("mouseenter", () => clearInterval(timer));
+  box.addEventListener("mouseleave", reiniciar);
+  ir(0); reiniciar();
+})();
+
+let tt;
+function toast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg; el.hidden = false;
+  clearTimeout(tt); tt = setTimeout(() => { el.hidden = true; }, 2400);
+}
+
+renderKits();
+render();
+</script>

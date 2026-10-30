@@ -1,0 +1,10 @@
+# Configuração do site no Cloudflare Pages.
+# Publicar: wrangler pages deploy --branch main
+name = "pontonobre"
+pages_build_output_dir = "publicar"
+compatibility_date = "2026-10-01"
+
+# Onde ficam guardadas as logos que os clientes enviam pelo orçamento
+[[kv_namespaces]]
+binding = "LOGOS"
+id = "6f89548bb2cb464588d01e17b1d859a0"
