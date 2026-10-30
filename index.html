@@ -2465,6 +2465,21 @@ function atualizarLink() {
   wa.href = vazio ? "#" : `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem())}`;
 }
 
+// Ao enviar pelo WhatsApp, a loja também recebe o pedido por e-mail, com as logos anexadas
+// (functions/api/orcamento-email.js). Se falhar, o WhatsApp abre do mesmo jeito.
+document.getElementById("wa").addEventListener("click", () => {
+  if (!carrinho.length || !/^https?:$/.test(location.protocol)) return;
+  const pedido = JSON.stringify({
+    mensagem: mensagem(),
+    logos: logos.map(l => ({ id: ((l.link || "").match(/\/l\/([a-f0-9]{16})$/) || [])[1] })).filter(l => l.id)
+  });
+  try {
+    if (!navigator.sendBeacon("/api/orcamento-email", new Blob([pedido], { type: "application/json" }))) throw 0;
+  } catch (e) {
+    fetch("/api/orcamento-email", { method: "POST", headers: { "content-type": "application/json" }, body: pedido, keepalive: true }).catch(() => {});
+  }
+});
+
 // Números do topo, da barra de baixo e do total (sem refazer a lista do orçamento)
 function atualizarContadores() {
   const n = carrinho.reduce((s, i) => s + i.qtd, 0);
