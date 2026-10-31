@@ -588,12 +588,19 @@ input.sr:focus-visible + label { outline: 2px solid var(--blue-hi); outline-offs
   background: var(--ink); color: var(--fg); border: 1px solid var(--line); border-radius: 8px;
   padding: 9px 10px; font: 600 14px var(--f-body); cursor: pointer;
 }
-.logos .acoes { display: flex; gap: 6px; }
+.logos .acoes { display: flex; gap: 6px; grid-column: 4; grid-row: 1; }
 .logos .ajustes { grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .aj-resumo { color: var(--muted); font-size: 13px; }
 .mini-btn.ajustar { color: var(--fg); border-color: var(--prata-linha); display: inline-flex; align-items: center; gap: 6px; }
 .mini-btn.ajustar svg { width: 15px; height: 15px; }
 .mini-btn:disabled { opacity: .45; cursor: default; }
+/* cor da logo: original (colorida) ou pintada numa cor só */
+.logos .cor-logo { grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cor-logo > span { color: var(--muted); font-size: 13px; margin-right: 2px; }
+.swl.original { background: conic-gradient(#e53935, #fdd835, #43a047, #1e88e5, #8e24aa, #e53935); }
+.swl.outra { position: relative; overflow: hidden; cursor: pointer; background: conic-gradient(from 90deg, #fff, #888, #222, #fff); }
+.swl.outra input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; border: 0; padding: 0; }
+.swl.outra:focus-within { outline: 2px solid var(--blue-hi); outline-offset: 3px; }
 
 /* Editor da logo: arrastar para mover, puxar o canto para o tamanho e a bolinha de cima para girar */
 .editor {
@@ -648,7 +655,8 @@ input.sr:focus-visible + label { outline: 2px solid var(--blue-hi); outline-offs
 .mini-btn:hover { color: var(--fg); border-color: var(--prata-linha); }
 @media (max-width: 640px) {
   .logos li { grid-template-columns: 44px minmax(0, 1fr); }
-  .logos select, .logos .acoes, .logos .ajustes { grid-column: 1 / -1; }
+  .logos select, .logos .acoes, .logos .ajustes, .logos .cor-logo { grid-column: 1 / -1; }
+  .logos .acoes { grid-row: auto; }
   .logos .acoes .mini-btn { flex: 1; text-align: center; }
 }
 .logo-box { display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px dashed var(--line); border-radius: 12px; font-size: 14px; }
@@ -2454,6 +2462,7 @@ function mensagem() {
       ? `${logos.length > 1 ? "Logos (toque no link para ver e baixar)" : "Logo (toque no link para ver e baixar)"}:`
       : `${logos.length > 1 ? "Logos" : "Logo"} (vou enviar ${logos.length > 1 ? "os arquivos" : "o arquivo"} aqui na conversa):`) : null,
     ...logos.flatMap(l => [`• ${POSICOES[l.pos]}: ${l.link || `"${l.nome}"`}`,
+      ...(l.cor ? [`   Cor da logo: ${l.cor[0]}`] : []),
       ...pecasAjustadas(l).map(([nome, partes]) => `   ${nome}: ${partes.join(", ")}`)]),
     nome ? `Nome: ${nome}` : null, emp ? `Empresa: ${emp}` : null, obs ? `Observações: ${obs}` : null
   ].filter(l => l !== null).join("\n").trim();
@@ -2606,7 +2615,8 @@ async function aplicarLogo(file) {
   const noLugar = p => logos.filter(l => l.pos === p).length;
   const pos = ORDEM_POSICOES.reduce((melhor, p) => noLugar(p) < noLugar(melhor) ? p : melhor);
   const ja = noLugar(pos);
-  const nova = { id: ++logoSeq, url: URL.createObjectURL(png), nome: base + "-sem-fundo.png", pos, link: null, bordadoEm: Date.now(), ajustes: {}, proporcao };
+  const original = URL.createObjectURL(png);
+  const nova = { id: ++logoSeq, url: original, original, png, blob: png, base, cor: null, nome: base + "-sem-fundo.png", pos, link: null, bordadoEm: Date.now(), ajustes: {}, proporcao };
   // a distância é a altura da própria logo com uma folga; nas mangas (giradas) desce ao longo do braço.
   // Contas em pixels da foto (1% da largura = 12 px, 1% da altura = 9 px) e depois no tamanho da área.
   if (ja) pecasDaLogo(nova).forEach(id => {
@@ -2638,8 +2648,44 @@ async function guardarLogo(logo, png) {
       const capa = await capaDaLogo(png);
       await fetch("/api/logo", { method: "POST", headers: { "content-type": "image/jpeg", "x-capa-de": id }, body: capa });
     } catch (e) { /* sem capa, a prévia usa a própria logo */ }
-    if (logos.includes(logo)) { logo.link = url; atualizarLogo(); }
+    // se a cor mudou enquanto enviava, este link é da versão antiga
+    if (logos.includes(logo) && logo.blob === png) { logo.link = url; atualizarLogo(); }
   } catch (e) { /* sem servidor: segue sem o link */ }
+}
+
+// Cores prontas para pintar a logo numa cor só (bom para bordado de uma linha e gravação)
+const CORES_PINTAR = [["Branco", "#ffffff"], ["Preto", "#151515"], ["Prata", "#c3c8d0"], ["Dourado", "#c9a24a"],
+  ["Azul-marinho", "#1f2f63"], ["Azul", "#1e6fd9"], ["Vermelho", "#c62828"], ["Verde", "#2e7d32"]];
+
+// Pinta todos os pixels visíveis da logo com a cor escolhida, mantendo a transparência das bordas
+async function pintarLogo(png, hex) {
+  const bmp = await createImageBitmap(png);
+  const cv = document.createElement("canvas");
+  cv.width = bmp.width; cv.height = bmp.height;
+  const c = cv.getContext("2d");
+  c.drawImage(bmp, 0, 0);
+  bmp.close();
+  c.globalCompositeOperation = "source-in";
+  c.fillStyle = hex;
+  c.fillRect(0, 0, cv.width, cv.height);
+  return new Promise((ok, erro) => cv.toBlob(b => b ? ok(b) : erro(new Error("png")), "image/png"));
+}
+
+// cor = null volta para a logo original; senão [nome, hex]
+async function mudarCorLogo(logo, cor) {
+  if ((logo.cor && logo.cor[1]) === (cor && cor[1])) return;
+  let blob = logo.png;
+  if (cor) {
+    try { blob = await pintarLogo(logo.png, cor[1]); }
+    catch (e) { toast("Não foi possível mudar a cor dessa logo"); return; }
+  }
+  if (!logos.includes(logo)) return;
+  if (logo.url !== logo.original) URL.revokeObjectURL(logo.url);
+  const sufixo = cor ? "-" + cor[0].toLowerCase().normalize("NFD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "";
+  Object.assign(logo, { cor, blob, url: cor ? URL.createObjectURL(blob) : logo.original,
+    nome: `${logo.base}${sufixo}-sem-fundo.png`, link: null, bordadoEm: Date.now() });
+  atualizarLogo();
+  guardarLogo(logo, blob);
 }
 
 // Capa 1200x630 da prévia: a logo no centro, sobre fundo escuro ou claro conforme a cor dela
@@ -2762,6 +2808,14 @@ function atualizarLogo() {
         <span class="aj-resumo"></span>
         <button type="button" class="mini-btn" data-aj-reset>Restaurar</button>
       </div>
+      <div class="cor-logo" role="group" aria-label="Cor da logo ${i + 1}">
+        <span>Cor da logo:</span>
+        <button type="button" class="swl original" data-cor-logo="" aria-label="Original" title="Original" aria-pressed="${!l.cor}"></button>
+        ${CORES_PINTAR.map(([n, h]) => `<button type="button" class="swl" style="--s:${h}" data-cor-logo="${h}" data-nome="${n}" aria-label="${n}" title="${n}" aria-pressed="${!!l.cor && l.cor[1] === h}"></button>`).join("")}
+        <label class="swl outra" title="Outra cor"${l.cor && !CORES_PINTAR.some(c => c[1] === l.cor[1]) ? ` style="background:${l.cor[1]}" aria-pressed="true"` : ""}>
+          <input type="color" data-cor-outra value="${l.cor ? l.cor[1] : "#1e6fd9"}" aria-label="Outra cor da logo ${i + 1}">
+        </label>
+      </div>
       <div class="acoes">
         <a class="mini-btn" href="${l.url}" download="${esc(l.nome)}">Baixar PNG</a>
         <button class="mini-btn remover" type="button">Remover</button>
@@ -2780,6 +2834,10 @@ document.getElementById("logoFile").addEventListener("change", e => { aplicarLog
 const listaLogos = document.getElementById("logosLista");
 listaLogos.addEventListener("change", e => {
   const li = e.target.closest("li");
+  if (li && e.target.matches("[data-cor-outra]")) {
+    mudarCorLogo(logos[+li.dataset.i], [e.target.value.toUpperCase(), e.target.value]);
+    return;
+  }
   if (!li || e.target.tagName !== "SELECT") return;
   // nas roupas o deslocamento é de cada lugar, então volta ao centro; tamanho e giro continuam
   const logo = logos[+li.dataset.i];
@@ -2792,6 +2850,8 @@ listaLogos.addEventListener("click", e => {
   const li = e.target.closest("li");
   if (!li) return;
   if (e.target.closest("[data-ajustar]")) { abrirEditor(logos[+li.dataset.i]); return; }
+  const sw = e.target.closest("[data-cor-logo]");
+  if (sw) { mudarCorLogo(logos[+li.dataset.i], sw.dataset.corLogo ? [sw.dataset.nome, sw.dataset.corLogo] : null); return; }
   if (e.target.closest("[data-aj-reset]")) {
     const logo = logos[+li.dataset.i];
     logo.ajustes = {};
@@ -2807,7 +2867,8 @@ listaLogos.addEventListener("click", e => {
   }
   if (!e.target.closest(".remover")) return;
   const [tirada] = logos.splice(+li.dataset.i, 1);
-  URL.revokeObjectURL(tirada.url);
+  URL.revokeObjectURL(tirada.original);
+  if (tirada.url !== tirada.original) URL.revokeObjectURL(tirada.url);
   atualizarLogo();
 });
 ["dragenter", "dragover"].forEach(t => patch.addEventListener(t, e => { e.preventDefault(); patch.classList.add("drag"); }));
