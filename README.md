@@ -2,7 +2,7 @@
 
 Site de catálogo e orçamento da **Ponto Nobre**, que faz camisas, polos, suéteres, moletons, baby looks, mochilas, copos Stanley e chaveiros com a logo de empresas. O cliente envia a logo, vê na hora como ela fica em cada peça, monta o pedido e recebe o orçamento pelo WhatsApp.
 
-**No ar:** https://pontonobre.pages.dev
+**No ar:** https://pontonobrebordados.com.br
 
 ## O que o site faz
 

@@ -1,4 +1,4 @@
-// Página da logo enviada no orçamento: https://pontonobre.pages.dev/l/<id>
+// Página da logo enviada no orçamento: https://pontonobrebordados.com.br/l/<id>
 // No WhatsApp, o link vira um cartão com a capa; ao abrir, mostra a logo grande com botão de baixar.
 
 const esc = t => String(t).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
