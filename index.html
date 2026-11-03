@@ -1174,12 +1174,12 @@ const corDaFoto = id => COR_DA_FOTO[id] || "Branco";
 // Fotos geradas por ferramentas/gerar_cores.py: a cor da foto original não tem sufixo,
 // "-liso" é a peça sem a logo Ponto Nobre (para receber a logo do cliente)
 // Peças fotografadas sem logo não precisam da versão "-liso"
-const SEM_LOGO = new Set(["camisa-costas", "babylook-costas", "polo-costas", "sueter-costas", "moletom-costas", "trico-costas", "jaqueta", "jaqueta-costas"]);
+const SEM_LOGO = new Set(["camisa-costas", "babylook-costas", "polo-costas", "sueter-costas", "moletom-costas", "trico-costas", "jaqueta-costas"]);
 // Produtos que também têm foto das costas: id do produto → id da foto das costas
 const COSTAS = { camisa: "camisa-costas", babylook: "babylook-costas", polo: "polo-costas", sueter: "sueter-costas", moletom: "moletom-costas", trico: "trico-costas", jaqueta: "jaqueta-costas" };
 const corBase = id => corDaFoto(id.replace(/-costas$/, ""));
 // Trocou fotos? Aumente a versão para o navegador de quem já visitou não mostrar as antigas
-const VERSAO_FOTOS = 2;
+const VERSAO_FOTOS = 3;
 const fotoNaCor = (id, cor, liso) =>
   FOTOS[id].replace(".jpg", (liso && !SEM_LOGO.has(id) ? "-liso" : "") + (cor === corBase(id) ? "" : `-${cor.toLowerCase()}`) + ".jpg") + `?v=${VERSAO_FOTOS}`;
 

@@ -4,13 +4,13 @@ Uso:  python ferramentas/preparar_fotos.py entrada.jpg saida.jpg [--logo x y lar
 Ex.:  python ferramentas/preparar_fotos.py assets/produtos/_trico-frente-original.jpg assets/produtos/trico-liso.jpg
       python ferramentas/preparar_fotos.py assets/produtos/_trico-frente-original.jpg assets/produtos/trico.jpg --logo 53.6 22.5 10.1
 
-      python ferramentas/preparar_fotos.py assets/produtos/_jaqueta-original.jpg assets/produtos/jaqueta.jpg --escura
+      python ferramentas/preparar_fotos.py assets/produtos/_jaqueta-original.jpg assets/produtos/jaqueta.jpg --escura --logo 54 28.8 9.5
       python ferramentas/preparar_fotos.py assets/produtos/_moletom-original.jpg assets/produtos/moletom.jpg --mascara-de assets/produtos/_moletom-liso-original.jpg
 
 --logo borda a logo Ponto Nobre em preto, como nas outras fotos (posição e largura em % da foto).
 --mascara-de recorta a peça usando outra foto do mesmo tamanho (a versão sem logo, de tirar_logo.py),
   para manter a logo que já veio na foto.
---escura recorta peça escura (ex.: jaqueta preta) que já veio sobre fundo azul.
+--escura recorta peça escura (ex.: jaqueta preta) que já veio sobre fundo azul; com --logo, a logo fica prata.
 Serve para peças claras sobre fundo liso (o fundo original é trocado pelo azul).
 """
 import sys
@@ -97,7 +97,13 @@ def preparar(entrada, saida, logo=None, mascara_de=None, escura=False):
 
     if logo:
         lx, ly, lw = logo
-        bordado = logo_bordada(round(LARGURA * lw / 100))
+        largura = round(LARGURA * lw / 100)
+        if escura:
+            # peça preta: a logo fica prata, como na mochila
+            lg = Image.open(LOGO).convert("RGBA")
+            bordado = lg.resize((largura, round(largura * lg.height / lg.width)), Image.LANCZOS)
+        else:
+            bordado = logo_bordada(largura)
         base.paste(bordado, (round(LARGURA * lx / 100), round(ALTURA * ly / 100)), bordado)
 
     base.save(saida, quality=86, optimize=True, progressive=True)
