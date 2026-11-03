@@ -3064,6 +3064,9 @@ const linkDuvida = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent("
 document.getElementById("waFloat").href = linkDuvida;
 document.getElementById("faqWa").href = linkDuvida;
 document.getElementById("footWa").href = linkDuvida;
+// No celular, o WhatsApp abre na mesma aba: no iPhone, o link numa aba nova às vezes não abre o app
+if (matchMedia("(pointer: coarse)").matches)
+  ["wa", "waFloat", "faqWa", "footWa"].forEach(id => document.getElementById(id).removeAttribute("target"));
 if (INSTAGRAM_USUARIO) {
   const ig = document.getElementById("insta");
   ig.href = `https://www.instagram.com/${INSTAGRAM_USUARIO}/`;
