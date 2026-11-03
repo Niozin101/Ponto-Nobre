@@ -727,7 +727,7 @@ input.sr:focus-visible + label { outline: 2px solid var(--blue-hi); outline-offs
       <div>
         <h1>Veja sua logo <span class="b">bordada antes de pedir</span></h1>
         <p class="sub">Uniformes e brindes personalizados para a sua empresa</p>
-        <p class="lead">Envie a logo da sua empresa e veja na hora como ela fica em camisas, baby looks, polos, suéteres, moletons, mochilas, copos e chaveiros. Depois é só montar o pedido e receber o orçamento pelo WhatsApp.</p>
+        <p class="lead">Envie a logo da sua empresa e veja na hora como ela fica em camisas, baby looks, polos, suéteres, moletons, jaquetas, mochilas, copos e chaveiros. Depois é só montar o pedido e receber o orçamento pelo WhatsApp.</p>
         <div class="cta-row">
           <label class="btn btn-primary" for="logoFile">Enviar minha logo</label>
           <a class="btn btn-ghost" href="#produtos">Ver catálogo</a>
@@ -885,7 +885,7 @@ input.sr:focus-visible + label { outline: 2px solid var(--blue-hi); outline-offs
           <details>
             <summary>Qual técnica serve para cada produto?</summary>
             <ul>
-              <li><strong>Camisa, baby look, polo, suéteres, moletom e mochila:</strong> bordado.</li>
+              <li><strong>Camisa, baby look, polo, suéteres, moletom, jaqueta puffer e mochila:</strong> bordado.</li>
               <li><strong>Copo Stanley:</strong> gravação a laser.</li>
               <li><strong>Chaveiro:</strong> impressão 3D.</li>
             </ul>
@@ -900,7 +900,7 @@ input.sr:focus-visible + label { outline: 2px solid var(--blue-hi); outline-offs
           <h3>Produtos, produção e entrega</h3>
           <details>
             <summary>Quais tamanhos e cores vocês têm?</summary>
-            <p>Camisa, polo, suéteres e moletom vão do <strong>PP ao G3</strong>, e a baby look do <strong>PP ao GG</strong>. Mochila e chaveiro têm tamanho único, e o copo Stanley tem 473 ml. As cores disponíveis aparecem em cada produto do catálogo. O copo é feito só na cor preta.</p>
+            <p>Camisa, polo, suéteres, moletom e jaqueta puffer vão do <strong>PP ao G3</strong>, e a baby look do <strong>PP ao GG</strong>. Mochila e chaveiro têm tamanho único, e o copo Stanley tem 473 ml. As cores disponíveis aparecem em cada produto do catálogo. O copo e a jaqueta puffer são feitos só na cor preta.</p>
           </details>
           <details>
             <summary>Qual o prazo de produção?</summary>
@@ -1126,6 +1126,9 @@ const PRODUTOS = [
     tam: ROUPA, cores: ["Branco","Preto","Cinza","Marinho","Vermelho","Verde","Bege"].map(n => cor(n)), min: 119.99, max: 119.99 },
   { id: "moletom", cat: "vestuario", nome: "Blusa Moletom", shape: "hoodie", mat: "Moletom Flanelado", pers: "Bordado",
     tam: ROUPA, cores: [cor("Branco"),cor("Preto"),cor("Cinza"),cor("Marinho"),cor("Vermelho"),cor("Verde"),cor("Azul", C.AzulClaro),cor("Rosa"),cor("Bege")], min: 149.99, max: 149.99 },
+  // Preço sob consulta: o valor vem no orçamento
+  { id: "jaqueta", cat: "vestuario", nome: "Jaqueta Puffer", shape: "hoodie", mat: "Nylon Acolchoado", pers: "Bordado",
+    tam: ROUPA, cores: [cor("Preto")], min: 0, max: 0 },
   { id: "mochila", cat: "acessorios", nome: "Mochila", shape: "bag", mat: "Poliéster / Nylon", pers: "Bordado",
     tam: ["Único"], cores: [cor("Preto"), cor("Cinza")], min: 199.99, max: 199.99 },
   { id: "copo", cat: "acessorios", nome: "Copo Stanley Personalizado", shape: "cup", mat: "Aço Inox (Stanley)", pers: "Gravação a Laser",
@@ -1153,25 +1156,27 @@ const FOTOS = {
   sueter: "assets/produtos/sueter.jpg",
   moletom: "assets/produtos/moletom.jpg",
   trico: "assets/produtos/trico.jpg",
+  jaqueta: "assets/produtos/jaqueta.jpg",
   "camisa-costas": "assets/produtos/camisa-costas.jpg",
   "babylook-costas": "assets/produtos/babylook-costas.jpg",
   "polo-costas": "assets/produtos/polo-costas.jpg",
   "sueter-costas": "assets/produtos/sueter-costas.jpg",
   "moletom-costas": "assets/produtos/moletom-costas.jpg",
   "trico-costas": "assets/produtos/trico-costas.jpg",
+  "jaqueta-costas": "assets/produtos/jaqueta-costas.jpg",
   mochila: "assets/produtos/mochila.jpg",
   copo: "assets/produtos/copo.jpg"
 };
 // Cor da peça na foto original (as demais cores são geradas a partir dela)
-const COR_DA_FOTO = { mochila: "Preto", copo: "Preto", chaveiro: "Preto" };
+const COR_DA_FOTO = { mochila: "Preto", copo: "Preto", chaveiro: "Preto", jaqueta: "Preto" };
 const corDaFoto = id => COR_DA_FOTO[id] || "Branco";
 
 // Fotos geradas por ferramentas/gerar_cores.py: a cor da foto original não tem sufixo,
 // "-liso" é a peça sem a logo Ponto Nobre (para receber a logo do cliente)
 // Peças fotografadas sem logo não precisam da versão "-liso"
-const SEM_LOGO = new Set(["camisa-costas", "babylook-costas", "polo-costas", "sueter-costas", "moletom-costas", "trico-costas"]);
+const SEM_LOGO = new Set(["camisa-costas", "babylook-costas", "polo-costas", "sueter-costas", "moletom-costas", "trico-costas", "jaqueta", "jaqueta-costas"]);
 // Produtos que também têm foto das costas: id do produto → id da foto das costas
-const COSTAS = { camisa: "camisa-costas", babylook: "babylook-costas", polo: "polo-costas", sueter: "sueter-costas", moletom: "moletom-costas", trico: "trico-costas" };
+const COSTAS = { camisa: "camisa-costas", babylook: "babylook-costas", polo: "polo-costas", sueter: "sueter-costas", moletom: "moletom-costas", trico: "trico-costas", jaqueta: "jaqueta-costas" };
 const corBase = id => corDaFoto(id.replace(/-costas$/, ""));
 // Trocou fotos? Aumente a versão para o navegador de quem já visitou não mostrar as antigas
 const VERSAO_FOTOS = 2;
@@ -1221,6 +1226,12 @@ const LOGO_AREAS = {
     "centro": { x: 39.9, y: 20.5, w: 20.3, h: 14.7 },
     "manga-dir": { x: 27.5, y: 27.9, w: 5.5, h: 4.6, r: 10, cw: 7.5 }, "manga-esq": { x: 67, y: 27.9, w: 5.5, h: 4.6, r: -10, cw: 7.5 }
   },
+  // Jaqueta: sem "centro", porque o zíper passa no meio do peito
+  jaqueta: {
+    "peito-esq": { x: 54, y: 28, w: 9.5, h: 7.5 }, "peito-dir": { x: 36.5, y: 28, w: 9.5, h: 7.5 },
+    "manga-dir": { x: 28.8, y: 37, w: 5.5, h: 4.6, r: 5, cw: 7 }, "manga-esq": { x: 65.7, y: 37, w: 5.5, h: 4.6, r: -5, cw: 7 }
+  },
+  "jaqueta-costas": { "costas": { x: 38, y: 31, w: 24, h: 17 } },
   "trico-costas": { "costas": { x: 38, y: 18.7, w: 24, h: 18.4 } },
   "camisa-costas": { "costas": { x: 38, y: 18, w: 24, h: 18 } },
   "babylook-costas": { "costas": { x: 38, y: 20, w: 24, h: 17 } },
@@ -3062,7 +3073,7 @@ if (INSTAGRAM_USUARIO) {
 
 // Vitrine rotativa
 (function () {
-  const ordem = ["camisa", "babylook", "polo", "sueter", "trico", "moletom", "mochila", "copo", "chaveiro"];
+  const ordem = ["camisa", "babylook", "polo", "sueter", "trico", "moletom", "jaqueta", "mochila", "copo", "chaveiro"];
   const box = document.getElementById("vitrine");
   const pontos = document.getElementById("pontos");
   const imgs = ordem.map((id, i) => {
